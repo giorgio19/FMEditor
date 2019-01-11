@@ -53,8 +53,25 @@ var bindings = {
     handler: function(range,context){
       // this.hideSymbols = false;
       // this.previousEditorSelection = this.editorInstance.getSelection();
-      this.quill.insertText(this.quill.getSelection(), ' \n     ');
+      this.quill.insertText(this.quill.getSelection(), '\n      ');
       // this.previousEditorSelection = this.editorInstance.getSelection();
+    }
+  },
+  follows:{
+    key: 'f',
+    empty: false,
+    collapsed: true,
+    prefix: /[/(){}╱∏∑◇○ʯ□≡=¬≢≠≥≤⇒⇐⇍⇏≔<>∈∅Ʊ⊂⊃⊆⊇∉⊄⊅⊈⊉∪∩~⋅*∘∙÷×Ρ↓↑←→ ℕℤℚℝ𝔹〈〉◃▹σ★∀∃⋁⋀≺⪯⪰≻ΩΟΘπ#𝜙⨝+-^a-zA-Zs]*;f$/,
+    handler: function(range, context){
+      if (context.offset == 8){
+        this.quill.deleteText(range.index - 8, 9);
+        this.quill.insertText(range.index, followsFromUnicode + '     \u3008  \u3009');
+        this.quill.setSelection(range.index + 1);
+      } else {
+        this.quill.deleteText(range.index - 2, 2);
+        this.quill.insertText(range.index - 2, ' ' + followsFromUnicode);
+        this.quill.setSelection(range.index + 1);
+      }
     }
   },
   implies: {
@@ -62,13 +79,13 @@ var bindings = {
     collapsed: true,
     prefix: /[/(){}╱∏∑◇○ʯ□≡=¬≢≠≥≤⇒⇐⇍⇏≔<>∈∅Ʊ⊂⊃⊆⊇∉⊄⊅⊈⊉∪∩~⋅*∘∙÷×Ρ↓↑←→ ℕℤℚℝ𝔹〈〉◃▹σ★∀∃⋁⋀≺⪯⪰≻ΩΟΘπ#𝜙⨝+-^a-zA-Zs]*;i$/,
     handler: function(range, context){
-      if(context.offset == 7){
-        this.quill.deleteText(range.index - 7, 8);
-        this.quill.insertText(range.index + 1, impliesUnicode + '     \u3008  \u3009');
-        this.quill.setSelection(range.index+1);
+      if(context.offset == 8){
+        this.quill.deleteText(range.index - 8, 9);
+        this.quill.insertText(range.index + 1, impliesUnicode + '      \u3008  \u3009');
+        this.quill.setSelection(range.index + 1);
       } else {
-        this.quill.deleteText(range.index-2, 2);
-        this.quill.insertText(range.index-2, ' ' + impliesUnicode + ' ');
+        this.quill.deleteText(range.index - 2, 2);
+        this.quill.insertText(range.index - 2, ' ' + impliesUnicode + ' ');
         this.quill.setSelection(range.index + 1);
       }
     }
