@@ -11,6 +11,7 @@
     <h3 class="title">Formal Methods Editor</h3>
     <button class="topbar-btn topbar-right" id="save_button" onclick="saveFile()">Save</button>
 		<button class="topbar-btn topbar-right" id="load_button" onclick="loadFile()">Load</button>
+    <button class="topbar-btn topbar-right" id="text"onclick="print()">Print</button>
 		<!-- <div class="clear"></div> -->
   </div>
   <body>
@@ -28,6 +29,12 @@
           <option value="32px">32</option>
         </select>
       </span>
+      <span class="ql-formats" style="float:right">
+        <button (click)="addNewThm()" class="fa fa-plus-circle" style="color:red"></button>
+      </span>
+      <span class="ql-formats" style="float: right;">
+        <div class="loader" id="exportLoader" style="visibility: hidden;"></div>
+    </span>
   </div>
 </body>
   <div id="editor"></div>

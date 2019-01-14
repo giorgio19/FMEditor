@@ -108,6 +108,15 @@ var dialog = remote.require('electron').dialog;
 
 var loadedfs;
 
+function print() {
+  var delta = editor.getContents();
+  var text = editor.getText(0,100);
+  var sent = text.split('\n');
+  console.log(delta);
+  console.log(text);
+  console.log(sent);
+}
+
 function saveFile() {
     if(!loadedfs) {
         dialog.showSaveDialog({ filters: [

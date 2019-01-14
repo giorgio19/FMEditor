@@ -1,3 +1,5 @@
+// SlickCompiler.java
+
 import { ImplicationExprContext,
          EquivalenceExprContext,
          AtomContext,
@@ -37,6 +39,7 @@ import { ImplicationExprContext,
          AdHocTheoremContext,
          StartExpoContext,
          EndExpoContext,
+         CaseProofContex,
          CaseListContext,
          Case1Context,
          Case2Context,
@@ -51,113 +54,47 @@ import { ImplicationExprContext,
          FunctionDotContext,
          FunctionParenContext,
          HeaderContext,
-         //@ts-ignore
          BodyContext,
-         //@ts-ignore
          RangeContext,
-         InverseCallContext,
+         InvereseCallContext,
          ArrayExprContext,
-         //@ts-ignore
          EmptyRangeExpr,
          RightFollowsLeftMethodContext,
          LeftImpliesRightMethodContext
 } from './SlickParser';
 
-import { ANTLRInputStream, CommonTokenStream } from 'antlr4ts';
-import { TerminalNode, ParseTreeWalker } from 'antlr4ts/tree';
-import { TokenStream } from 'antlr4ts';
+import { ANTLRInputStream, CommonTokenStream } from 'antlr4';
+import { TerminalNode, ParseTreeWalker } from 'antlr4/tree';
+import { TokenStream } from 'antlr4/tree';
 import { SlickParser } from './SlickParser';
 import { SlickListener } from './SlickListener';
 import { SlickLexer } from './SlickLexer';
 
 import * as fs from 'fs';
 
-
-import * as theoremInput from './theorems.json';
-
-export class Antlr implements SlickListener {
+export class SlickCompiler implements SlickListener {
   private parser : SlickParser;
   private bible : Object;
   private latex : Object;
   private output : string;
-  public preamble : string;
-  public postamble: string;
+  private preamble : string;
   private input : string;
   private chars : ANTLRInputStream;
   private lexer : SlickLexer;
   private tokens : CommonTokenStream;
-  private tree: DocContext;
-  private stack : Array<any>;
-  private lineCount: number;
-  private exprCount: number;
+  private stack : Array;
 
 
   constructor() {
-    const theoremsStr = JSON.stringify(theoremInput);
+    this.preamble = fs.readFileSync("preamble.tex").toString();
+    let theoremsStr= fs.readFileSync("theorems.json").toString();
     this.bible = {};
     let theorems = JSON.parse(theoremsStr).theorems;
     for (let i = 0; i < theorems.length; i++) {
       let theorem = theorems[i];
       this.bible[theorem.rule] = "(" + theorem.rule + ") " + (theorem.name? theorem.name.substr(0,1).toUpperCase() + theorem.name.substr(1) + ":\\ \\ ": ":\\ \\ ") + theorem.eq;
     }
-    this.preamble =
-  '\\documentclass[11pt]{amsart} \n' +
-  '\\usepackage{times} \n' +
-  '\\usepackage{amssymb,latexsym}\n' +
-  '\\usepackage[usenames, dvipsnames]{color}\n' +
-  // '\\usepackage{ wasysym } \n\n' +
 
-  '\\newcommand{\\lgap}{12pt}                            % Line gap \n' +
-  '\\newcommand{\\slgap}{4pt}                            % Small line gap \n' +
-  '\\newcommand{\\equivs}{\\ensuremath{\\;\\equiv\\;}}       % Equivales with space \n' +
-  '\\newcommand{\\equivss}{\\ensuremath{\\;\\;\\equiv\\;\\;}}  % Equivales with double space \n' +
-  '\\newcommand{\\nequiv}{\\ensuremath{\\not\\equiv}}       % Inequivalent \n' +
-  '\\newcommand{\\impl}{\\ensuremath{\\Rightarrow}}        % Implies \n' +
-  '\\newcommand{\\nimpl}{\\ensuremath{\\not\\Rightarrow}}   % Does not imply \n' +
-  '\\newcommand{\\foll}{\\ensuremath{\\Leftarrow}}         % Follows from \n' +
-  '\\newcommand{\\nfoll}{\\ensuremath{\\not\\Leftarrow}}    % Does not follow from \n' +
-  '\\newcommand{\\proofbreak}{\\\\ \\\\ \\\\ \\\\} \n\n' +
-  '% These macros are used for quantifications. Thanks to David Gries for sharing \n' +
-  '\\newcommand{\\thedr}{\\rule[-.25ex]{.32mm}{1.75ex}}   % Symbol that separates dummy from range in quantification \n' +
-  '\\newcommand{\\dr}{\\;\\,\\thedr\\,\\;}                    % Symbol that separates dummy from range, with spacing \n' +
-  '\\newcommand{\\rb}{:}                                 % Symbol that separates range from body in quantification \n' +
-  '\\newcommand{\\drrb}{\\;\\thedr\\,{:}\\;}                 % Symbol that separates dummy from body when range is missing \n' +
-  '\\newcommand{\\all}{\\forall}                          % Universal quantification \n' +
-  '\\newcommand{\\ext}{\\exists}                          % Existential quantification \n' +
-  '\\newcommand{\\Gll} {\\langle}                         % Open hint \n' +
-  '\\newcommand{\\Ggg} {\\rangle}                         % Close hint \n\n' +
-
-  '% Proof \n' +
-  '\\newcommand{\\Step}[1]{\\>{$#1$}} \n' +
-  '\\newcommand{\\Hint}[1] {\\\\=\\>\\>\\ \\ \\ $\\Gll$\\ \\text{#1}\\ $\\Ggg$ \\\\}   % Single line hint \n' +
-  '\\newcommand{\\done}{{\\color{BurntOrange} \\ \\ $//$}} \n\n' +
-
-  '% Math symbols \\n' +
-  '\\newcommand{\\nat}{\\mathbb{N}} \n' +
-  '\\newcommand{\\real}{\\mathbb{R}} \n' +
-  '\\newcommand{\\integer}{\\mathbb{Z}} \n' +
-  '\\newcommand{\\bool}{\\mathbb{B}} \n\n' +
-
-  '% Single and double quotes \n' +
-  '\\newcommand{\\Lq}{\\mbox{`}} \n' +
-  '\\newcommand{\\Rq}{\\mbox{\'}} \n' +
-  '\\newcommand{\\Lqq}{\\mbox{``}} \n' +
-  '\\newcommand{\\Rqq}{\\mbox{\'\'}} \n\n' +
-
-
-  '\\oddsidemargin  0.0in \n' +
-  '\\evensidemargin 0.0in \n' +
-  '\\textwidth      6.5in \n' +
-  '\\headheight     0.0in \n' +
-  '\\topmargin      0.0in \n' +
-  '\\textheight=9.0in \n' +
-  '\\parindent=0in \n' +
-  '\\pagestyle{empty} \n\n' +
-
-  '\\begin{document} \n' +
-  '\\begin{tabbing} \n' +
-  '99.\\;\\=(m)\\;\\=\\kill \n';
-    this.postamble = "\\end{tabbing}\\end{document}\n\n";
     // this.listener = new SlickListener();
     this.latex = {
       '⋀' : '\\wedge',
@@ -195,11 +132,11 @@ export class Antlr implements SlickListener {
   }
 
   public exitDoc = (ctx : DocContext) => {
-    // this.output += this.preamble;
+    this.output += this.preamble;
     while (this.stack.length > 0) {
       this.output += this.stack.shift() + "\n";
     }
-    // this.output += "\\end{tabbing}\\end{document}\n\n";
+    this.output += "\\end{tabbing}\\end{document}\n\n";
   }
 
   public exitStartExpo = (ctx : StartExpoContext) => {
@@ -267,7 +204,6 @@ export class Antlr implements SlickListener {
   public exitJunctionExpr = (ctx : JunctionExprContext) => {
     let rhs = this.stack.pop();
     let lhs = this.stack.pop();
-    //@ts-ignore
     let x = lhs + " " + this.latex[ctx.JOP()] + " " + rhs;
     this.stack.push(x);
   }
@@ -275,7 +211,6 @@ export class Antlr implements SlickListener {
   public exitImplicationExpr = (ctx : ImplicationExprContext) => {
     let rhs = this.stack.pop();
     let lhs = this.stack.pop();
-    //@ts-ignore
     let x = lhs + " " + this.latex[ctx.IMPOP()] + " " + rhs;
     this.stack.push(x);
   }
@@ -283,7 +218,6 @@ export class Antlr implements SlickListener {
   public exitEquivalenceExpr = (ctx : EquivalenceExprContext) => {
     let rhs = this.stack.pop();
     let lhs = this.stack.pop();
-    //@ts-ignore
     let x = lhs + " " + this.latex[ctx.EQOP()] + " " + rhs;
     this.stack.push(x);
   }
@@ -335,7 +269,6 @@ export class Antlr implements SlickListener {
   }
 
   public exitQuantifiedExpr = (ctx : QuantifiedExprContext) => {
-    //@ts-ignore
     let q = this.latex[ctx.QUANTIFIER()];
     let body = this.stack.pop();
     let range = this.stack.pop();
@@ -345,7 +278,6 @@ export class Antlr implements SlickListener {
 
   public exitBibleTheorem = (ctx : BibleTheoremContext) => {
     let proveOrReprove = ctx.PROVE();
-    //@ts-ignore
     let theorem = this.bible[ctx.RULENUM()];
     this.stack.push("\\color{blue}" + proveOrReprove + "\\ " + theorem + "\\\\\n");
   }
@@ -383,7 +315,7 @@ export class Antlr implements SlickListener {
     this.stack.push("\\color{blue}by showing the LHS is equivalent to the RHS\\\\\n");
   }
 
-  public exitRightEquivalesLeftMethod = (ctx : RightEquivalesLeftMethodContext) => {
+  public exitRightEquivalesLeftMethod = (ctx : RightEquivalesLefttMethodContext) => {
     this.stack.push("\\color{blue}by showing the RHS is equivalent to the LHS\\\\\n");
   }
 
@@ -485,14 +417,12 @@ export class Antlr implements SlickListener {
   public exitRelativeExpr = (ctx : RelativeExprContext) => {
     let rhs = this.stack.pop();
     let lhs = this.stack.pop();
-    //@ts-ignore
     this.stack.push(lhs + " " + this.latex[ctx.RELOP()] + " " + rhs);
   }
 
   public exitAdditionExpr = (ctx : AdditionExprContext) => {
     let rhs = this.stack.pop();
     let lhs = this.stack.pop();
-    //@ts-ignore
     this.stack.push(lhs + " " + this.latex[ctx.ADDOP()] + " " + rhs);
   }
 
@@ -503,7 +433,7 @@ export class Antlr implements SlickListener {
     this.stack.push(e + "[" + vList + " := " + eList + "]");
   }
 
-  public exitInverseCall = (ctx : InverseCallContext) => {
+  public exitInverseCall = (ctx : InvereseCallContext) => {
     let f = this.stack.pop();
     let finv = f.substr(0,1) + "^{-1}" + f.substr(1);
     this.stack.push(finv);
@@ -541,17 +471,16 @@ export class Antlr implements SlickListener {
     s += "\\\\\n"
     return s;
   }
-  public compile(data: string) {
-   this.input = data;
-   this.chars = new ANTLRInputStream(this.input);
-   this.lexer = new SlickLexer(this.chars);
-   this.tokens = new CommonTokenStream(this.lexer);
-   this.parser = new SlickParser(this.tokens);
-   this.parser.buildParseTree = true;
-   this.tree = this.parser.doc();
-   //@ts-ignore
-   ParseTreeWalker.DEFAULT.walk(this, this.tree);
-   return this.output;
- }
 
+  public compile(data : string) {
+    this.input = data;
+    this.chars = new ANTLRInputStream(this.input);
+    this.lexer = new SlickLexer(this.chars);
+    this.tokens = new CommonTokenStream(this.lexer);
+    this.parser = new SlickParser(this.tokens);
+    this.parser.buildParseTrees = true;
+    this.tree = this.parser.doc();
+    ParseTreeWalker.DEFAULT.walk(this, this.tree);
+    return this.output;
+  }
 }
