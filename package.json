@@ -1,7 +1,7 @@
 {
   "name": "fmeditor",
   "version": "1.0.0",
-  "description": "",
+  "description": "Editor for Formal Methods using Electron and Quill.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
