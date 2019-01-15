@@ -23,8 +23,8 @@ app.on('ready', function() {
   mainWindow = new BrowserWindow({
     'width': 800,
     'height': 600,
-    'minWidth': 360,
-    'minHeight': 300,
+    'minWidth': 800,
+    'minHeight': 600,
     'frame': false
   });
   //load the index.html

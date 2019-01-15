@@ -115,7 +115,7 @@ function print() {
   console.log('jquery in');
 }
   var delta = editor.getContents();
-  var text = editor.getText(0,100);
+  var text = editor.getText();
   var sent = text.split('\n');
   console.log(delta);
   console.log(text);
@@ -150,7 +150,7 @@ function loadFile() {
 }
 
 function writeToFile(editor, filename) {
-    var html = editor.getHTML();
+    var html = editor.getText();
     fs.writeFile(filename, html, function(err) {
         if(err) {
             return console.log(err);
@@ -163,6 +163,6 @@ function readFromFile(editor, filename) {
         if(err) {
             console.log(err);
         }
-        editor.setHTML(data);
+        editor.setText(data);
     });
 }
