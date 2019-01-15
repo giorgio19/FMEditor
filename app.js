@@ -109,6 +109,11 @@ var dialog = remote.require('electron').dialog;
 var loadedfs;
 
 function print() {
+  if (typeof jQuery === 'undefined') {
+  console.log('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
+} else {
+  console.log('jquery in');
+}
   var delta = editor.getContents();
   var text = editor.getText(0,100);
   var sent = text.split('\n');
