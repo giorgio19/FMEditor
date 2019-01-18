@@ -103,34 +103,7 @@
 //     }
 //
 //     // this.listener = new SlickListener();
-//     this.latex = {
-//       '⋀' : '\\wedge',
-//       '⋁' : '\\vee',
-//       '=' : '=',
-//       '≠' : '\\neq',
-//       '≡' : '\\equiv',
-//       '⇒' : '\\Rightarrow',
-//       '⇐' : '\\Leftarrow',
-//       '¬' : '\\neg',
-//       '≢' : '\\not \\equiv',
-//       '≔' : ':=',
-//       '*' : "\\star",
-//       '%' : "\\star",
-//       '∀' : "\\forall",
-//       '∃' : "\\exists",
-//       '∑' : "\\Sigma",
-//       '∏' : "\\Pi",
-//       '<' : '<',
-//       '>' : '>',
-//       '≤' : '\\leq',
-//       '≥' : '\\geq',
-//       '+' : '+',
-//       '-' : '-',
-//       '∪' : '\\cup',
-//       '∩' : '\\cap',
-//       '|:': '\\drrb',
-//       '|' : '\\dr'
-//     };
+
 //
 //     this.input;
 //     this.chars;
@@ -563,6 +536,46 @@ class SlickCompiler extends SlickListener {
       this.output += "\\end{tabbing}\\end{document}\n\n";
     }
 
+    this.listener.exitStartExpo = (ctx) => {
+    if (ctx.EXPO()) {
+      let expo = ctx.EXPO().toString();
+      expo = expo.substr(3);
+      expo = this.removeFm(expo);
+      expo = this.formatExpo(expo);
+      this.stack.push("\\\\\n\\text{" + expo);
+    }
+  }
+
+    this.listener.exitEndExpo = (ctx) => {
+      if (ctx.EXPO()) {
+        let expo = ctx.EXPO().toString();
+        expo = expo.substr(3);
+        expo = this.removeFm(expo);
+        expo = this.formatExpo(expo);
+        this.stack.push("\\\\\n\\text{" + expo);
+      }
+    }
+
+    this.listener.enterStandardProof = (ctx) => {
+      this.lineCount = 0;
+    }
+
+    this.listener.exitStandardProof = (ctx) => {
+      let proofText = "";
+      for (let i = 0; i < this.lineCount; i++) {
+        proofText = this.stack.pop() + "\n" + proofText;
+      }
+      if (ctx.END()) {
+        proofText += "\\done\n";
+      }
+      let head = "";
+      if (ctx.proofHead()) {
+        head = "\\underline{Proof}\\\\\\\\\n";
+      }
+      this.stack.push(head + proofText);
+      this.lineCount = 0;
+    }
+
     this.listener.exitProof = (ctx) => {
       this.stack.push("\\done\n");
     }
@@ -612,6 +625,10 @@ class SlickCompiler extends SlickListener {
       let theorem = this.bible[ctx.RULENUM().getText()];
       this.stack.push("Prove\\ " + theorem + "\\\\ \\\\\n");
     }
+
+
+
+
   }
 
   removeFm(s) {
