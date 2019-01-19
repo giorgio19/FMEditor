@@ -76,7 +76,7 @@ var bindings = {
         }
       }
     },
-    follows:{
+  follows:{
       key: 'f',
       empty:false,
       prefix: /;f$/,
@@ -90,7 +90,80 @@ var bindings = {
             this.quill.setSelection(range.index + 1);
           }
         }
+      },
+  equals:{
+    key: 'q',
+    empty:false,
+    prefix: /;e$/,
+    handler: function(range,context){
+        this.quill.deleteText(range.index - 2, 2);
+        if(context.offset == 2){
+          this.quill.insertText(range.index - 2, equalsUnicode + "  " + hintUnicode);
+          this.quill.setSelection(range.index + 8);
+        } else {
+          this.quill.insertText(range.index - 2, ' ' + equalsUnicode + ' ');
+          this.quill.setSelection(range.index + 1);
+        }
       }
+  },
+  less:{
+    key: 't',
+    empty:false,
+    prefix: /;l$/,
+    handler: function(range,context){
+        this.quill.deleteText(range.index - 2, 2);
+        if(context.offset == 2){
+          this.quill.insertText(range.index - 2, lessThanUnicode + "  " + hintUnicode);
+          this.quill.setSelection(range.index + 8);
+        } else {
+          this.quill.insertText(range.index - 2, ' ' + lessThanUnicode + ' ');
+          this.quill.setSelection(range.index + 1);
+        }
+      }
+  },
+  lessE:{
+    key: 'e',
+    empty:false,
+    prefix: /;l$/,
+    handler: function(range,context){
+        this.quill.deleteText(range.index - 2, 2);
+        if(context.offset == 2){
+          this.quill.insertText(range.index - 2, lessThanOrEqUnicode + "  " + hintUnicode);
+          this.quill.setSelection(range.index + 8);
+        } else {
+          this.quill.insertText(range.index - 2, ' ' + lessThanOrEqUnicode + ' ');
+          this.quill.setSelection(range.index + 1);
+        }
+      }
+  },
+  greater:{key: 't',
+  empty:false,
+  prefix: /;g$/,
+  handler: function(range,context){
+      this.quill.deleteText(range.index - 2, 2);
+      if(context.offset == 2){
+        this.quill.insertText(range.index - 2, greaterThanUnicode + "  " + hintUnicode);
+        this.quill.setSelection(range.index + 8);
+      } else {
+        this.quill.insertText(range.index - 2, ' ' + greaterThanUnicode + ' ');
+        this.quill.setSelection(range.index + 1);
+      }
+    }},
+  greaterE:{
+    key: 'e',
+    empty:false,
+    prefix: /;g$/,
+    handler: function(range,context){
+        this.quill.deleteText(range.index - 2, 2);
+        if(context.offset == 2){
+          this.quill.insertText(range.index - 2, greaterThanorEqUnicode + "  " + hintUnicode);
+          this.quill.setSelection(range.index + 8);
+        } else {
+          this.quill.insertText(range.index - 2, ' ' + greaterThanorEqUnicode + ' ');
+          this.quill.setSelection(range.index + 1);
+        }
+      }
+  },
 }
 
 var Quill = require('quill');
