@@ -182,7 +182,7 @@ class SlickCompiler extends SlickListener {
     }
 
     this.listener.exitAtom = (ctx) => {
-      this.stack.push(ctx.text);
+      this.stack.push(ctx.getText());
     }
 
     this.listener.exitJunctionExpr = (ctx) => {
@@ -220,7 +220,7 @@ class SlickCompiler extends SlickListener {
 
     this.listener.exitLeibnizExpr = (ctx) => {
       let z = this.stack.pop();
-      let v = ctx.VAR().text;
+      let v = ctx.VAR().getText();
       let e = this.stack.pop()
       let x = e + "^\{" + v + "\}_\{" + z + "\}";
       this.stack.push(x);
@@ -232,7 +232,7 @@ class SlickCompiler extends SlickListener {
     }
 
     this.listener.exitHint = (ctx) => {
-      let token = ctx.COMMENT().text; //this line does not generate a proper token
+      let token = ctx.COMMENT().getText(); //this line does not generate a proper token
       token = token.substr(1, token.length - 2);
       token = this.removeFm(token);
       token = token.replace(/(\W)([B-Zb-z])(\W)/g, "$1\\textit{$2}$3");
@@ -247,7 +247,7 @@ class SlickCompiler extends SlickListener {
     }
 
     this.listener.exitHintOp = (ctx) => {
-      this.stack.push(ctx.text);
+      this.stack.push(ctx.getText());
     }
 
     this.listener.exitEmptyRangeExpr = (ctx) => {
