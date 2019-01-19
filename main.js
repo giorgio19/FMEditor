@@ -5,15 +5,13 @@ const{remote, ipcRenderer} = require('electron');
 const{app, BrowserWindow} = require('electron');
 
 
-var mainWindow = null;
+let mainWindow = null;
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
     app.quit();
-  }
 });
 
 // This method will be called when Electron has finished
@@ -21,16 +19,20 @@ app.on('window-all-closed', function() {
 // Some APIs can only be used after this event occurs.
 app.on('ready', function() {
   mainWindow = new BrowserWindow({
+    show: false,
     'width': 800,
     'height': 600,
     'minWidth': 800,
     'minHeight': 600,
-    'frame': false
+    titleBarStyle: '',
+    title: 'Formal Methods Editor',
   });
   //load the index.html
   mainWindow.loadFile('index.html');
-  //open DevTools
-  mainWindow.webContents.openDevTools();
+
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show()
+  })
 
   //emit when the window is closed
   mainWindow.on('closed', function() {
@@ -49,3 +51,4 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
