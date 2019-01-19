@@ -5,14 +5,16 @@ const SlickListener = require('./SlickListener.js').SlickListener;
 const SlickLexer = require('./SlickLexer.js').SlickLexer;
 const SlickParser = require('./SlickParser.js').SlickParser;
 const fs = require('fs');
-const theoremsStr= fs.readFileSync("theorems.json").toString();
+const theoremsStr = require('./theorems.json');
+// console.log(theorems);
+// const theoremsStr= fs.readFileSync(theorems).toString();
 
 
 class SlickCompiler extends SlickListener {
   constructor() {
     super();
     this.bible = {};
-    let theorems = JSON.parse(theoremsStr).theorems;
+    let theorems = theoremsStr.theorems;
     for (let i = 0; i < theorems.length; i++) {
       let theorem = theorems[i];
       this.bible[theorem.rule] = "(" + theorem.rule + ") " + (theorem.name? "\\textbf{" + theorem.name + "}: ": " ") + theorem.eq;

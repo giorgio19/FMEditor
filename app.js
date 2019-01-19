@@ -1,3 +1,9 @@
+const fs = require('fs');
+const remote = require('electron').remote;
+const dialog = remote.require('electron').dialog;
+const SlickCompiler = require('./Antlr/SlickCompiler').SlickCompiler
+
+
 const padding = '     ';
 const spacing = 5;
 const equalsUnicode = '\u003D';
@@ -102,24 +108,14 @@ var editor = new Quill('#editor', {
 });
 // Save and Load files
 
-var fs = require('fs');
-var remote = require('electron').remote;
-var dialog = remote.require('electron').dialog;
-
 var loadedfs;
 
 function print() {
-  if (typeof jQuery === 'undefined') {
-  console.log('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
-} else {
-  console.log('jquery in');
-}
-  var delta = editor.getContents();
   var text = editor.getText();
-  var sent = text.split('\n');
-  console.log(delta);
+  var compiler = new SlickCompiler();
+  var results = compiler.compile(text);
   console.log(text);
-  console.log(sent);
+  console.log(results);
 }
 
 function saveFile() {
