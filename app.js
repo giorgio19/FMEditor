@@ -2,7 +2,7 @@ const padding = '     ';
 const spacing = 5;
 const equalsUnicode = '\u003D';
 const impliesUnicode = '\u21D2';
-const followsFromUnicode = '\u21d0 ';
+const followsFromUnicode = '\u21d0';
 const lessThanUnicode = '\u003C';
 const greaterThanUnicode = '\u003E';
 const doesNotEqualUnicode = '\u2262';
@@ -65,7 +65,7 @@ var bindings = {
     handler: function(range, context){
       if (context.offset == 8){
         this.quill.deleteText(range.index - 8, 9);
-        this.quill.insertText(range.index, followsFromUnicode + '     \u3008  \u3009');
+        this.quill.insertText(range.index, followsFromUnicode + '      \u3008  \u3009');
         this.quill.setSelection(range.index + 1);
       } else {
         this.quill.deleteText(range.index - 2, 2);
