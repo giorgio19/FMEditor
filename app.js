@@ -54,8 +54,15 @@ const plusUnicode = '\u002B';
 
 
 var bindings = {
+  padEnter:{
+    key: 13,
+    shiftKey: true,
+    handler: function(range,context){
+      this.quill.insertText(range.index, '\n     ')
+    }
+  },
   implies:{
-    key: 'n',
+    key: 'm',
     empty:false,
     prefix: /;i$/,
     handler: function(range,context){
@@ -68,7 +75,22 @@ var bindings = {
           this.quill.setSelection(range.index + 1);
         }
       }
-    }
+    },
+    follows:{
+      key: 'f',
+      empty:false,
+      prefix: /;f$/,
+      handler: function(range,context){
+          this.quill.deleteText(range.index - 2, 2);
+          if(context.offset == 2){
+            this.quill.insertText(range.index - 2, followsFromUnicode + hintUnicode);
+            this.quill.setSelection(range.index + 6);
+          } else {
+            this.quill.insertText(range.index - 2, ' ' + followsFromUnicode + ' ');
+            this.quill.setSelection(range.index + 1);
+          }
+        }
+      }
 }
 
 var Quill = require('quill');
@@ -94,8 +116,7 @@ function print() {
 function saveFile() {
     if(!loadedfs) {
         dialog.showSaveDialog({ filters: [
-						{ name: 'txt', extensions: ['txt'] },
-            { name: 'html', extensions: ['html'] },
+						{ name: 'txt', extensions: ['txt'] }
         ]}, function(filename) {
             if(filename === undefined) return;
             writeToFile(editor, filename);
@@ -108,8 +129,7 @@ function saveFile() {
 
 function loadFile() {
     dialog.showOpenDialog({ filters: [
-        { name: 'txt', extensions: ['txt', 'html'] },
-				{ name: 'html', extensions: ['html', 'txt'] },
+        { name: 'txt', extensions: ['txt'] },
     ]}, function(filenames) {
         if(filenames === undefined) return;
         var filename = filenames[0];
