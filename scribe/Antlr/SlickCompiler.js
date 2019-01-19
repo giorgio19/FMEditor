@@ -232,8 +232,7 @@ class SlickCompiler extends SlickListener {
     }
 
     this.listener.exitHint = (ctx) => {
-      let token = ctx.COMMENT();
-      console.log(token);
+      let token = ctx.COMMENT().text; //this line does not generate a proper token
       token = token.substr(1, token.length - 2);
       token = this.removeFm(token);
       token = token.replace(/(\W)([B-Zb-z])(\W)/g, "$1\\textit{$2}$3");
