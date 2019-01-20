@@ -178,6 +178,11 @@ var editor = new Quill('#editor', {
 
 var loadedfs;
 
+function format(){
+  editor.format('color', 'red');
+  console.log('color should be red');
+}
+
 function print() {
   var text = editor.getText();
   var compiler = new SlickCompiler();
