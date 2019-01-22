@@ -52,6 +52,63 @@ const eventuallyUnicode = '\u25c7';
 const booleanSymbol = '𝔹';
 const plusUnicode = '\u002B';
 
+$(".panel-left").resizable({
+  handleSelector: ".splitter",
+  resizeHeight: false
+});
+
+$(".panel-top").resizable({
+  handleSelector: ".splitter-horizontal",
+  resizeWidth: false
+});
+
+function bindKey(quill, text, prefix, key, shift, replace, hint, pair, quant) {
+  // console.log('keySeq type = ' + typeof keySeq);
+  // const key: string = (typeof keySeq === 'number' ? keySeq : keySeq.substr(keySeq.length - 1, 1));
+  // const prefix: string = (typeof keySeq === 'number' ? '' : (keySeq.length > 1 ? keySeq.substr(0, keySeq.length - 1) : ''));
+  let bindObj;
+  if (shift) {
+    bindObj = {key: key, shiftKey: true};
+  } else {
+    bindObj = {key: key};
+  }
+  const anchor = (hint ? '\\s{5}' : '\\S*');
+  const bindOptions = {
+    collapsed: true,
+    prefix: new RegExp(anchor + prefix + '$'),
+    // offset: -10
+  };
+  if (hint) {
+    // bindOptions.offset = 5 + prefix.length;
+  }
+  quill.keyboard.addBinding(bindObj, bindOptions,
+  (range, context) => {
+    quill.format('bold', false);
+    quill.format('italic', false);
+    let preLength = prefix.length;
+    if (prefix.startsWith('\\')) {
+        preLength--;
+    }
+    const off = (hint ? this.spacing + preLength : preLength);
+    if (replace) {
+      quill.deleteText(range.index - off, off);
+    }
+    quill.insertText(range.index - (replace ? off : 0), text);
+    quill.setSelection(range.index + (hint ? + text.length - 7 - preLength : preLength + text.length - (pair ? 1 : quant ? 11 : 2)));
+  });
+}
+
+function bindHint(quill, text, prefix, key, shift, replace) {
+  this.bindKey(quill, text, prefix, key, shift, replace, true);
+}
+
+function bindPair(quill, text, prefix, key, shift, replace) {
+  this.bindKey(quill, text, prefix, key, shift, replace, false, true);
+}
+
+function bindQuant(quill, text, prefix, key, shift, replace) {
+  this.bindKey(quill, text, prefix, key, shift, replace, false, false, true);
+}
 
 var bindings = {
   padEnter:{
