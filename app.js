@@ -64,6 +64,7 @@ $(".panel-top").resizable({
 });
 
 var bindings = {
+  //for indented line
   padEnter:{
     key: 13,
     shiftKey: true,
@@ -71,6 +72,8 @@ var bindings = {
       this.quill.insertText(range.index, '\n     ')
     }
   },
+
+  //open and close ()[]{}
   parenthesis:{
     key: '9',
     shiftKey: true,
@@ -94,6 +97,27 @@ var bindings = {
       this.quill.setSelection(range.index + 3);
     }
   },
+  //left-hint
+  leftBracket:{
+    key: 'b',
+    empty: false,
+    prefix: /;l$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, ' ' + leftBracketUnicode + ' ');
+    }
+  },
+  //right-hint
+  rightBracket:{    
+    key: 'b',
+    empty: false,
+    prefix: /;r$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, ' ' + rightBracketUnicode + ' ');
+  }},
+
+  //hint bindings with inline bindings
   implies:{
     key: 'm',
     empty:false,
@@ -124,7 +148,7 @@ var bindings = {
           }
         }
       },
-  equals:{
+  equals:{ //may only need hint version
     key: 'q',
     empty:false,
     prefix: /;e$/,
@@ -197,6 +221,8 @@ var bindings = {
         }
       }
   },
+
+  //non-hint bindings
   itRelation:{
     key: 't',
     empty:false,
@@ -279,6 +305,262 @@ var bindings = {
       this.quill.deleteText(range.index - 1, 1);
       this.quill.insertText(range.index - 1, ' ' + disjunctionUnicode + ' ');
     }
+  },
+  not:{
+    key: '1',
+    shiftKey: true,
+    empty: false,
+    prefix: /!$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, ' ¬ ');
+    }
+  },
+  notEquivales:{
+    key: 187,
+    empty: false,
+    prefix: /!$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, ' ' + disjunctionUnicode + ' ');
+    }
+  },
+  textSub:{
+    key: 187,
+    empty: false,
+    prefix: /:$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, ' ' + textSubUnicode + ' ');
+    }
+  },
+  arrow:{
+    key: 190,
+    shiftKey:true,
+    empty: false,
+    prefix: /-$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, ' → ');
+    }
+  },
+  elementOf:{
+    key: 'l',
+    empty: false,
+    prefix: /;e$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, ' ' + elementOfUnicode + ' ');
+    }
+  },
+  union:{
+    key: 'n',
+    empty: false,
+    prefix: /;u$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, ' ' + unionUnicode + ' ');
+    }
+  },
+  union2:{
+    key: 220,
+    empty: false,
+    prefix: /[|]$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, ' ' + unionUnicode + ' ');
+    }
+  },
+  intersect:{
+    key: 'n',
+    empty: false,
+    prefix: /;i$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, ' ' + intersectionUnicode + ' ');
+    }
+  },
+  intersect2:{
+    key: '7',
+    empty: false,
+    prefix: /&$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, ' ' + intersectionUnicode + ' ');
+    }
+  },
+  division:{
+    key: 191,
+    empty: false,
+    prefix: /[/]$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, ' ÷ ');
+    }
+  },
+  mult:{
+    key: '8',
+    shiftKey: true,
+    empty: false,
+    prefix: /[*]$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, ' ⋅ ');
+    }
+  },
+  star:{
+    key: 't',
+    empty: false,
+    prefix: /;s$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, ' ' + genQuantifierUnicode);
+    }
+  },
+  forAll:{
+    key: 'a',
+    empty: false,
+    prefix: /;f$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, ' ' + universalQuantifierUnicode);
+    }
+  },
+  exists:{
+    key: 'x',
+    empty: false,
+    prefix: /;e$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, ' ' + existentialQuanitiferUnicode);
+    }
+  },
+
+  //heuristics
+  header:{
+    key: 'd',
+    empty:false,
+    prefix: /;hea$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 4, 4);
+      this.quill.insertText(range.index - 4, 'Name:\t\t\t\t\nPin:\t\t\t\t\t\nClass:\t\t\t\t\nAssignment:\t\n\nProve ');
+    }
+  },
+  prove:{
+    key: 'r',
+    empty:false,
+    prefix: /;p$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index -2, 'Prove ');
+    }
+  },
+  showEquiv:{
+    key: '1',
+    empty:false,
+    prefix: /;$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, 'by showing equivalence to a previous theorem');
+    }
+  },
+  lhsEq:{
+    key: '2',
+    empty:false,
+    prefix: /;$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, 'by showing the LHS is equivalent to the RHS');
+    }
+  },
+  rhsEqL:{
+    key: '3',
+    empty:false,
+    prefix: /;$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, 'by showing RHS is equivalent to the LHS');
+    }
+  },
+  lhsI:{
+    key: '4',
+    empty:false,
+    prefix: /;$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, 'by showing the LHS implies the RHS');
+    }
+  },
+  lhsF:{
+    key: '5',
+    empty:false,
+    prefix: /;$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, 'by showing the LHS follows from the RHS');
+    }
+  },
+  assume:{
+    key: '6',
+    empty:false,
+    prefix: /;$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, 'by assuming the conjuncts of the antecedent');
+    }
+  },
+  whichIs:{
+    key: 'w',
+    empty:false,
+    prefix: /;$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, '\nwhich is ');
+    }
+  },
+  textSubHeur:{    
+    key: 's',
+    empty:false,
+    prefix: /;t$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, 'textual subsitution ');
+    }
+  },
+
+  //quantifier with formatting
+  genQuant:{
+    key: 'q',
+    shiftKey: true,
+    empty: false,
+    prefix: /;g$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, '(' + genQuantifierUnicode + ' |  : ) ');
+      this.quill.setSelection(range.index);
+    }
+  },
+  universalQuant:{
+    key: 'q',
+    shiftKey: true,
+    empty: false,
+    prefix: /;u$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, '(' + universalQuantifierUnicode + ' |  : ) ');
+      this.quill.setSelection(range.index);
+    }
+  },
+  existentialQuant:{
+    key: 'q',
+    shiftKey: true,
+    empty: false,
+    prefix: /;e$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, '(' + existentialQuanitiferUnicode + ' |  : ) ');
+      this.quill.setSelection(range.index);
+    }
   }
 }
 
@@ -290,37 +572,7 @@ var editor = new Quill('#editor', {
   placeholder: '     Enter your proof...',
 	theme: 'bubble'
 });
-    // this.bindKey(this.editor, '¬', '!', '1', true, true);                                                  // negation
-    // this.bindKey(this.editor, ' ' + notEquivalesUnicode + ' ', '!', 187, false, true);                //not equivales
-    // this.bindKey(this.editor, ' ' + textSubUnicode + ' ', ':', 187, false, true);                                  // replace by/gets
-    // this.bindKey(this.editor, ' → ', '-', 190, true, true);                                                 // right arrow
-    // this.bindKey(this.editor, ' ' + leftBracketUnicode + ' ', ';l', 'b', false, true);                             // left hint bracket
-    // this.bindKey(this.editor, ' ' + rightBracketUnicode, ';r', 'b', false, true);                                  // right hint bracket
-    // this.bindKey(this.editor, ' ' + elementOfUnicode + ' ', ';e', 'l', false, true);                               // element of
-    // this.bindKey(this.editor, ' ' + unionUnicode + ' ', ';u', 'n', false, true);                                   // union
-    // this.bindKey(this.editor, ' ' + unionUnicode + ' ', '\\|', 220, false, true);                                  // union
-    // this.bindKey(this.editor, ' ' + intersectionUnicode + ' ', ';i', 'n', false, true);                            // intersection
-    // this.bindKey(this.editor, ' ' + intersectionUnicode + ' ', '&', '7', false, true);                             // intersection
-    // this.bindKey(this.editor, ' ÷ ', '/', 191, false, true);                                                       // division symbol
-    // this.bindKey(this.editor, ' ⋅ ', '\\*', '8', true, true);                                               // multiplication symbol
-    // this.bindKey(this.editor, ' ' + genQuantifierUnicode + ' ', ';s', 't', false, true);                           // star symbol
-    // this.bindKey(this.editor, ' ' + universalQuantifierUnicode, ';f', 'a', false, true);                           // forAll symbol
-    // this.bindKey(this.editor, ' ' + existentialQuanitiferUnicode, ';e', 'x', false, true);                         // exists symbol
 
-    // this.bindKey(this.editor, 'Name:\t\t\t\t\nPin:\t\t\t\t\t\nClass:\t\t\t\t\nAssignment:\t\n\nProve ', ';hea', 'd');
-    // this.bindHint(this.editor, 'Prove ', ';p', 'r');
-    // this.bindKey(this.editor, 'by showing equivalence to previous theorem', ';', '1');
-    // this.bindKey(this.editor, 'by showing the LHS is equivalent to the RHS', ';', '2');
-    // this.bindKey(this.editor, 'by showing the RHS is equivalent to the LHS', ';', '3');
-    // this.bindKey(this.editor, 'by showing the LHS implies the RHS', ';', '4');
-    // this.bindKey(this.editor, 'by showing the LHS follows from the RHS', ';', '5');
-    // this.bindKey(this.editor, 'by assuming the conjuncts of the antecedent', ';', '6');
-    // this.bindKey(this.editor, '\nwhich is ', ';', 'w');
-    // this.bindKey(this.editor, 'textual substitution ', ';t', 's');
-
-    // this.bindQuant(this.editor, '(' + this.genQuantifierUnicode + ' |  : )', ';g', 'q');
-    // this.bindQuant(this.editor, '(' + this.universalQuantifierUnicode + ' |  : )', ';u', 'q');
-    // this.bindQuant(this.editor, '(' + this.existentialQuanitiferUnicode + ' |  : )', ';e', 'q');
 // Save and Load files
 var loadedfs;
 

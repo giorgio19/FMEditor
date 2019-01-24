@@ -11,7 +11,7 @@ body, html {
 }
 
 /* horizontal panel*/
-    .panel-container {
+  .panel-container {
 	display: flex;
 	flex-direction: row;
 	height: inherit;
