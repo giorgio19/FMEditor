@@ -10,16 +10,12 @@ body, html {
   overflow: auto;
 }
 
-.page-container {
-	margin: 20px;
-  }
-  
-  
-  /* horizontal panel*/
-  
-  .panel-container {
+/* horizontal panel*/
+    .panel-container {
 	display: flex;
 	flex-direction: row;
+	height: inherit;
+	width: inherit;
 	border: 1px solid silver;
 	overflow: hidden;
 	
