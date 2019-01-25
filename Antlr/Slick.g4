@@ -24,14 +24,14 @@ theorem : PROVE '(' RULENUM ')'    # BibleTheorem
 
 method : 'by' methodName ;
 
-methodName : 'showing' 'equivalence' 'to' 'previous' 'theorem'    # PreviousTheoremMethod
-  | 'showing' 'the' 'LHS' 'is' 'equivalent' 'to' 'the' 'RHS'      # LeftEquivalesRightMethod
-  | 'showing' 'the' 'RHS' 'is' 'equivalent' 'to' 'the' 'LHS'      # RightEquivalesLeftMethod
-  | 'showing' 'the' 'LHS' 'implies' 'the' 'RHS'                   # LeftImpliesRightMethod
-  | 'showing' 'the' 'RHS' 'follows' 'from' 'the' 'LHS'            # RightFollowsLeftMethod
-  | 'assuming' 'the' 'conjuncts' 'of' 'the' 'antecedent'          # AssumingConjunctsMethod
-  | 'contradiction'                                               # ContradictionMethod
-  | 'proving' 'the' 'contrapositive' ':' expr                     # ContrapositiveMethod
+methodName : 'showing' 'equivalence' 'to' 'a' 'previous' 'theorem'  # PreviousTheoremMethod
+  | 'showing' 'the' 'LHS' 'is' 'equivalent' 'to' 'the' 'RHS'        # LeftEquivalesRightMethod
+  | 'showing' 'the' 'RHS' 'is' 'equivalent' 'to' 'the' 'LHS'        # RightEquivalesLeftMethod
+  | 'showing' 'the' 'LHS' 'implies' 'the' 'RHS'                     # LeftImpliesRightMethod
+  | 'showing' 'the' 'RHS' 'follows' 'from' 'the' 'LHS'              # RightFollowsLeftMethod
+  | 'assuming' 'the' 'conjuncts' 'of' 'the' 'antecedent'            # AssumingConjunctsMethod
+  | 'contradiction'                                                 # ContradictionMethod
+  | 'proving' 'the' 'contrapositive' ':' expr                       # ContrapositiveMethod
 ;
 
 caseProof: theorem 'by' 'case' 'analysis' 'on' VAR caseList caseProof1 caseProof2 ;

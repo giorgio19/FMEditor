@@ -455,6 +455,15 @@ var bindings = {
       this.quill.insertText(range.index -2, 'Prove ');
     }
   },
+  endProof: {
+    key: 'd',
+    empty: false,
+    prefix: /;en$/,
+    handler: function (range, context) {
+      this.quill.deleteText(range.index - 3, 3);
+      this.quill.insertText(range.index - 3, ' ' + endProofUnicode + endProofUnicode);
+    }
+  },
   showEquiv:{
     key: '1',
     empty:false,
