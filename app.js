@@ -108,7 +108,7 @@ var bindings = {
     }
   },
   //right-hint
-  rightBracket:{    
+  rightBracket:{
     key: 'b',
     empty: false,
     prefix: /;r$/,
@@ -447,12 +447,22 @@ var bindings = {
     }
   },
   prove:{
-    key: 'r',
+    key: 'p',
     empty:false,
-    prefix: /;p$/,
+    prefix: /;$/,
     handler: function(range, context){
-      this.quill.deleteText(range.index - 2, 2);
-      this.quill.insertText(range.index -2, 'Prove ');
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, 'Prove ');
+    }
+  },
+  proof:{
+    key: 'p',
+    shiftKey: true,
+    empty: false,
+    prefix: /;$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, 'Proof:\n     ');
     }
   },
   endProof: {
@@ -462,6 +472,15 @@ var bindings = {
     handler: function (range, context) {
       this.quill.deleteText(range.index - 3, 3);
       this.quill.insertText(range.index - 3, ' ' + endProofUnicode + endProofUnicode);
+    }
+  },
+  newProof:{
+    key: 'w',
+    empty:false,
+    prefix: /;ne$/,
+    handler: function (range, context) {
+      this.quill.deleteText(range.index - 3, 3);
+      this.quill.insertText(range.index - 3, '\n------------------------------\n');
     }
   },
   showEquiv:{
@@ -527,7 +546,7 @@ var bindings = {
       this.quill.insertText(range.index - 1, '\nwhich is ');
     }
   },
-  textSubHeur:{    
+  textSubHeur:{
     key: 's',
     empty:false,
     prefix: /;t$/,

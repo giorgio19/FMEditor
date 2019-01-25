@@ -188,22 +188,22 @@ class SlickCompiler extends SlickListener {
     }
 
     this.listener.exitJunctionExpr = (ctx) => {
-      let lhs = this.stack.pop();
       let rhs = this.stack.pop();
+      let lhs = this.stack.pop();
       let x = lhs + " " + this.latex[ctx.JOP()] + " " + rhs;
       this.stack.push(x);
     }
 
     this.listener.exitImplicationExpr = (ctx) => {
-      let lhs = this.stack.pop();
       let rhs = this.stack.pop();
+      let lhs = this.stack.pop();
       let x = lhs + " " + this.latex[ctx.IMPOP()] + " " + rhs;
       this.stack.push(x);
     }
 
     this.listener.exitEquivalenceExpr = (ctx) => {
-      let lhs = this.stack.pop();
       let rhs = this.stack.pop();
+      let lhs = this.stack.pop();
       let x = lhs + " " + this.latex[ctx.EQOP()] + " " + rhs;
       this.stack.push(x);
     }
