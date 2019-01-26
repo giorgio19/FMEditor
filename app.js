@@ -3,7 +3,7 @@ const remote = require('electron').remote;
 const dialog = remote.require('electron').dialog;
 const SlickCompiler = require('./Antlr/SlickCompiler').SlickCompiler
 const Quill = require('quill');
-const theoremsStr = require('./Antlr/theorems.json');
+
 
 const padding = '     ';
 const spacing = 5;
@@ -601,14 +601,6 @@ var editor = new Quill('#editor', {
 	theme: 'bubble'
 });
 
-
-//for Bible rendering from theorems.json
-MathJax.Hub.Queue(["Typeset", MathJax.Hub, createTable.tr]);
-
-$(document).ready(function () {
-  createTable();
-});
-
 // Save and Load files
 var loadedfs;
 
@@ -668,17 +660,6 @@ function readFromFile(editor, filename) {
     });
 }
 
-function createTable(){
-    var theorems = theoremsStr.theorems;
-    var tr;
-    for (var i = 0; i < theorems.length; i++) {
-        tr = $('<tr/>');
-        tr.append("<td>" + theorems[i].name + "</td>");
-        tr.append("<td>" + theorems[i].eq + "</td>");
-        // tr.append("<td>" + json[i].team + "</td>");
-        $('table').append(tr);
-    }
-}
 
 // keeping in case can get it to work at another time
 
