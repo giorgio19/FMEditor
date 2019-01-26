@@ -36,7 +36,7 @@
       "type": "axiom",
       "rule": "3.8",
       "eq": "$\\textit{false} \\equiv \\neg \\textit{true}$",
-      "name": "definition of \\textit{false}"
+      "name": "definition of $\\textit{false}$"
     },
     {
       "type": "axiom",
@@ -62,7 +62,7 @@
     {
       "rule": "3.13",
       "eq": "$\\neg \\textit{false} \\equiv \\textit{true}$",
-      "name": "negation of \\textit{false}"
+      "name": "negation of $\\textit{false}$"
     },
     {
       "rule": "3.14",
@@ -1280,6 +1280,7 @@
       "rule": "",
       "eq": "&vellip;"
     },
+
 
 
 
