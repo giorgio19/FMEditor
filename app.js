@@ -594,11 +594,11 @@ var bindings = {
 
 var editor = new Quill('#editor', {
 	modules: {
-		// toolbar: {container: '#toolbar'},
+		toolbar: false,
     keyboard: {bindings: bindings}
   },
   placeholder: '     Enter your proof...',
-	theme: 'bubble'
+	theme: 'snow'
 });
 
 // Save and Load files
