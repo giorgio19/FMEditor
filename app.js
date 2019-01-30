@@ -606,7 +606,8 @@ var loadedfs;
 
 function format(){
   editor.format('color', 'red');
-  console.log('color should be red');
+  editor.format('font', 'monospace')
+  console.log('color should be red and with a monospace font');
 }
 
 function print() {
