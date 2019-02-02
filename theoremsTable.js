@@ -1,5 +1,5 @@
 const theoremsStr = require('./Antlr/theorems.json');
-
+///making comment so can show a change
 //for Bible rendering from theorems.json
 MathJax.Hub.Queue(["Typeset", MathJax.Hub, createTable.tr]);
 
