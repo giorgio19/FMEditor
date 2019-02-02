@@ -5,69 +5,7 @@ body, html {
 	width: 100%;
 	overflow: hidden;
 	background: #1e1e1e;
-	margin-bottom: auto;
 }
-
-/* horizontal panel*/
-  .panel-container {
-	display: flex;
-	flex-direction: row;
-	height: inherit;
-	width: inherit;
-	margin-top:30px;
-	border: 1px solid silver;
-	overflow: hidden;
-
-	/* avoid browser level touch actions */
-	xtouch-action: none;
-  }
-
-  .panel-left {
-	flex: 0 0 auto;
-	/* only manually resize */
-	padding: 10px;
-	width: 300px;
-	min-height: 200px;
-	min-width: 150px;
-	white-space: nowrap;
-	background: #838383;
-	color: white;
-  }
-
-  .splitter {
-	flex: 0 0 auto;
-	width: 18px;
-	background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
-	min-height: 200px;
-	cursor: col-resize;
-  }
-
-  .panel-right {
-	flex: 1 1 auto;
-	/* resizable */
-	padding: 10px;
-	width: 100%;
-	height: 500px;
-	min-height: 200px;
-	min-width: 200px;
-	background: #eee;
-	overflow: scroll;
-  }
-
-
-  /* vertical panel */
-
-  .panel-container-vertical {
-	display: flex;
-	flex-direction: column;
-	height: 500px;
-	border: 1px solid silver;
-	overflow: hidden;
-  }
-
-
-
-
 button {
   -webkit-app-region: no-drag;
 	outline: none;
@@ -78,11 +16,11 @@ button {
 }
 /*Topbar*/
 .topbar {
-	height: 30px;
+	height: 36px;
 	width:100%;
 	float: left;
 	background: #1e1e1e;
-	/* margin-bottom: 36px; */
+	margin-bottom: 36px;
 	position: absolute;
 	z-index: 99;
 }
@@ -125,15 +63,34 @@ button {
 	cursor: pointer;
 }
 
+/*Toolbar*/
+#toolbar{
+	text-align: left;
+	position: absolute;
+	background: #535353;
+	height: 36px;
+	width: 100%;
+	padding-top: 8px;
+	margin-top: 36px;
+	margin-bottom: 36px;
+	margin-left: 0px;
+	margin-right: 0px;
+	
+}
+
+/*Editor*/
 #editor {
 	text-align: left;
-	top: 30px;
-	width:inherit;
-	height:90%;
-	position: absolute;
-	overflow-y: scroll;
+	position: static;
 	background: #1e1e1e;
-	font-size: 16px;
-	font-family: montserrat;
-	padding: 25px 25px 25px 25px;
+	width: 100%;
+	height: 100%;
+	font-size: 12px;
+	overflow-y: auto;
+	display: block;
 }
+
+
+/*Typography */ 
+
+
