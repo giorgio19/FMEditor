@@ -25,7 +25,6 @@ body, html {
   .panel-left {
 	flex: 0 0 auto;
 	/* only manually resize */
-	padding: 10px;
 	width: 300px;
 	min-height: 200px;
 	min-width: 150px;
@@ -53,19 +52,6 @@ body, html {
 	background: #eee;
 	overflow: scroll;
   }
-
-
-  /* vertical panel */
-
-  .panel-container-vertical {
-	display: flex;
-	flex-direction: column;
-	height: 500px;
-	border: 1px solid silver;
-	overflow: hidden;
-  }
-
-
 
 
 button {
