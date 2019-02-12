@@ -8,6 +8,10 @@ body, html {
 	margin-bottom: auto;
 }
 
+.page-container{
+	height: 97.5%
+}
+
 /* horizontal panel*/
   .panel-container {
 	display: flex;
@@ -17,7 +21,6 @@ body, html {
 	margin-top:30px;
 	border: 1px solid silver;
 	overflow: hidden;
-
 	/* avoid browser level touch actions */
 	xtouch-action: none;
   }
@@ -27,7 +30,7 @@ body, html {
 	/* only manually resize */
 	/* padding: 25px 25px 25px 25px; */
 	width: 50%;
-	height: 500px;
+	/* height: inhe */
 	min-height: 200px;
 	min-width: 50%;
 	white-space: nowrap;
@@ -36,18 +39,8 @@ body, html {
 	color: white;
 	font-family: montserrat;
 	border-width: thin;
+	position: relative;
   }
-
-
-	/* #editor {
-		text-align: left;
-		position: relative;
-		overflow-y: scroll;
-		background: #1e1e1e;
-		font-size: 16px;
-		font-family: montserrat;
-		padding: 25px 25px 25px 25px;
-	} */
 
   .splitter {
 	flex: 0 0 auto;
@@ -61,7 +54,7 @@ body, html {
 	flex: 1 1 auto;
 	/* resizable */
 	width: 50%;
-	height: 500px;
+	/* height: 500px; */
 	min-height: 200px;
 	background: #eee;
 	overflow: scroll;
@@ -96,6 +89,7 @@ button {
 	outline: none;
 	border: none;
 }
+
 .clear {
 	clear: both;
 }

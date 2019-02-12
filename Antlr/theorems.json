@@ -841,7 +841,7 @@
     },
     {
       "rule": "9.30",
-      "eq": "$(\\exists x \\mid R : P) \\Rightarrow Q \\text{ is a theorem iff}\\$R \\wedge P)[x := \\hat{x}] \\Rightarrow Q \\text{ is a theorem.}$"
+      "eq": "$(\\exists x \\mid R : P) \\Rightarrow Q \\text{ is a theorem iff (R} \\wedge P)[x := \\hat{x}] \\Rightarrow Q \\text{ is a theorem.}$"
     },
 
 
