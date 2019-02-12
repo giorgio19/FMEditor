@@ -1263,7 +1263,7 @@
     {
       "type": "axiom",
       "rule": "11.76",
-      "eq": "$\\text{Set }S\\text{ partitions }T\\text{ if}\\\\\\text{(i) the sets in }S\\text{ are pairwise disjoint and}\\\\\\text{(ii) the union of the sets in }S\\text{ is }T\\text{, that is, if}\\$\\forall u,v\\mid u \\in S \\wedge v \\in S \\wedge u \\neq v: u \\cap v = \\emptyset) \\wedge (\\cup u \\mid u \\in S : u) = T$",
+      "eq": "$\\text{Set }S\\text{ partitions }T\\text{ if}\\\\\\text{(i) the sets in }S\\text{ are pairwise disjoint and}\\\\\\text{(ii) the union of the sets in }S\\text{ is }T\\text{, that is, if}\\\\(\\forall u,v\\mid u \\in S \\wedge v \\in S \\wedge u \\neq v: u \\cap v = \\emptyset) \\wedge (\\cup u \\mid u \\in S : u) = T$",
       "name": "partition"
     },
 
@@ -1350,7 +1350,7 @@
       "section": "Inductively defined binary trees",
       "type": "axiom",
       "rule": "12.30",
-      "eq": "$\\emptyset\\text{ is a binary tree, called the empty tree.}\\$d,l,r)\\text{ is a binary tree, for } d: \\mathbb{Z}\\text{ and } l, r\\text{ binary trees.}$",
+      "eq": "$\\emptyset\\text{ is a binary tree, called the empty tree.}\\\\\\#(d,l,r)\\text{ is a binary tree, for } d: \\mathbb{Z}\\text{ and } l, r\\text{ binary trees.}$",
       "name": "definition, binary tree"
     },
     {
@@ -1514,7 +1514,7 @@
     {
       "type": "axiom",
       "rule": "p.22",
-      "eq" : "$wp.IFG.R\\ \\equiv\\ (B1 \\vee B2 \\vee B3) \\wedge\\$B1 \\Rightarrow wp.S1.R) \\wedge (B2 \\Rightarrow wp.S2.R) \\wedge (B3 \\Rightarrow wp.S3.R)$",
+      "eq" : "$wp.IFG.R\\ \\equiv\\ \\\\ (B1 \\vee B2 \\vee B3) \\wedge\\$B1 \\Rightarrow wp.S1.R) \\wedge (B2 \\Rightarrow wp.S2.R) \\wedge (B3 \\Rightarrow wp.S3.R)$",
       "name": "definition, $IFG$"
     },
     {
@@ -1568,11 +1568,6 @@
       "rule": "14.2",
       "eq": "$\\langle b,c \\rangle = \\langle b', c'\\rangle\\ \\equiv\\ \\ b = b' \\wedge c = c'$",
       "name": "pair equality"
-
-    },
-    {
-      "rule": "",
-      "eq": "&vellip;"
     }
 
 

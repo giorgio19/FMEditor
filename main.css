@@ -25,13 +25,29 @@ body, html {
   .panel-left {
 	flex: 0 0 auto;
 	/* only manually resize */
-	width: 300px;
+	/* padding: 25px 25px 25px 25px; */
+	width: 50%;
+	height: 500px;
 	min-height: 200px;
-	min-width: 150px;
+	min-width: 50%;
 	white-space: nowrap;
-	background: #838383;
+	background: #1e1e1e;
+	overflow: scroll;
 	color: white;
+	font-family: montserrat;
+	border-width: thin;
   }
+
+
+	/* #editor {
+		text-align: left;
+		position: relative;
+		overflow-y: scroll;
+		background: #1e1e1e;
+		font-size: 16px;
+		font-family: montserrat;
+		padding: 25px 25px 25px 25px;
+	} */
 
   .splitter {
 	flex: 0 0 auto;
@@ -44,15 +60,36 @@ body, html {
   .panel-right {
 	flex: 1 1 auto;
 	/* resizable */
-	padding: 10px;
-	width: 100%;
+	width: 50%;
 	height: 500px;
 	min-height: 200px;
-	min-width: 200px;
 	background: #eee;
 	overflow: scroll;
+	border-width: thin;
+	position: relative;
   }
 
+table, td{
+	border: 1px solid black;
+	height:40px;
+	width: 500px;
+	position:relative;
+	text-align: center;
+	font-size: 12px;
+	font-family: montserrat;
+}
+
+th.centerIt{
+	border: 1px solid black;
+	text-align: center;
+}
+
+td.eq{
+	border: 1px solid black;
+	text-align: left;
+	width: 300;
+	padding-left: 10px;
+}
 
 button {
   -webkit-app-region: no-drag;
@@ -78,6 +115,7 @@ button {
 	float: left;
 	position: relative;
 	z-index: 1;
+	overflow-y: scroll;
 }
 .topbar .title {
 	position: absolute;
@@ -109,17 +147,4 @@ button {
 .topbar-btn:active {
 	background: #1e1e1e;
 	cursor: pointer;
-}
-
-#editor {
-	text-align: left;
-	top: 30px;
-	width:inherit;
-	height:90%;
-	position: absolute;
-	overflow-y: scroll;
-	background: #1e1e1e;
-	font-size: 16px;
-	font-family: montserrat;
-	padding: 25px 25px 25px 25px;
 }
