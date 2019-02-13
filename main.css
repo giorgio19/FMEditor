@@ -13,54 +13,46 @@ body, html {
 }
 
 /* horizontal panel*/
-  .panel-container {
+.panel-container {
 	display: flex;
 	flex-direction: row;
 	height: inherit;
 	width: inherit;
 	margin-top:30px;
-	border: 1px solid silver;
 	overflow: hidden;
 	/* avoid browser level touch actions */
 	xtouch-action: none;
-  }
+}
 
-  .panel-left {
+.panel-left {
 	flex: 0 0 auto;
 	/* only manually resize */
-	/* padding: 25px 25px 25px 25px; */
 	width: 50%;
-	/* height: inhe */
-	min-height: 200px;
 	min-width: 50%;
 	white-space: nowrap;
-	background: #1e1e1e;
+	background: #3a3a3a;
 	overflow: scroll;
 	color: white;
-	font-family: montserrat;
-	border-width: thin;
 	position: relative;
   }
 
-  .splitter {
+.splitter {
 	flex: 0 0 auto;
-	width: 18px;
+	width: 10px;
 	background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
 	min-height: 200px;
 	cursor: col-resize;
-  }
+}
 
-  .panel-right {
+.panel-right {
 	flex: 1 1 auto;
 	/* resizable */
 	width: 50%;
-	/* height: 500px; */
-	min-height: 200px;
 	background: #eee;
 	overflow: scroll;
-	border-width: thin;
+	padding: 10px 10px 10px 10px;
 	position: relative;
-  }
+}
 
 table, td{
 	border: 1px solid black;
@@ -136,9 +128,4 @@ button {
 }
 .topbar-btn:hover {
 	background: #535353;
-	cursor: pointer;
-}
-.topbar-btn:active {
-	background: #1e1e1e;
-	cursor: pointer;
 }

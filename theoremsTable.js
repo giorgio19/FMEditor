@@ -45,9 +45,8 @@ function createTable(){
     var tr;
     for (var i = 0; i < theorems.length; i++) {
         tr = $('<tr/>');
-        var names = theorems[i].name;
         tr.append("<td>" + "(" + theorems[i].rule.bold() + ")" + "</td>");
-        names != undefined ? tr.append("<td>" + names[0].toUpperCase() + names.slice(1) + "</td>") : tr.append("<td> </td>");
+        theorems[i].name != undefined ? tr.append("<td>" + theorems[i].name + "</td>") : tr.append("<td> </td>");
         tr.append("<td class='eq'>" + theorems[i].eq + "</td>");
         $('table').append(tr);
     }
