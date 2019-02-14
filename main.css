@@ -129,3 +129,10 @@ button {
 .topbar-btn:hover {
 	background: #535353;
 }
+
+.topbar-drop{
+	height:30px;
+}
+.topbar-drop-selected{
+	background-color: DodgerBlue;
+}
