@@ -299,7 +299,7 @@ class SlickCompiler extends SlickListener {
   }
 
   this.listener.exitPreviousTheoremMethod = (ctx) => {
-    this.stack.push("\\color{blue}by showing equivalence to previous theorem\\\\\n");
+    this.stack.push("\\color{blue}by showing equivalence to a previous theorem\\\\\n");
   }
 
   this.listener.exitLeftEquivalesRightMethod = (ctx) => {

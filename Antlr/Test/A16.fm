@@ -37,7 +37,7 @@ Proof:
 ------------------------------
 
 Prove (9.9)
-by showing equivalence to previous theorem
+by showing equivalence to a previous theorem
 
 Proof:
   (∀x | R : P ≡ Q) ⇒ ((∀x | R : P) ≡ (∀x | R : Q))

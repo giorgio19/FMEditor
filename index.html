@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="main.css">
@@ -10,9 +11,9 @@
     <script src="./theoremsTable.js"></script>
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
   </head>
+
   <div class="topbar"style="-webkit-app-region: drag">
-    <!-- <button id="close-btn" class="topbar-btn topbar-left" onClick=remote.getCurrentWindow().close()>X</button>
-		<button id="mini-btn" class="topbar-btn topbar-left" onClick=remote.getCurrentWindow().minimize()>_</button> -->
+    <!-- experimenting with dropdown for symbols -->
     <div class="topbar-left" style="width:200px;">
       <select>
         <option value="implies">⇒</option>
@@ -32,8 +33,7 @@
               <div id="editor"></div>
             </div>
 
-            <div class="splitter">
-            </div>
+            <div class="splitter"></div>
 
             <div class="panel-right">
               <div id="theorems">
@@ -47,10 +47,8 @@
               </div>
             </div>
         </div>
-
-
     </div>
-
 </body>
-	<script src="app.js" charset="utf-8"></script>
+  
+<script src="app.js" charset="utf-8"></script>
 </html>

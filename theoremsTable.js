@@ -1,5 +1,4 @@
 const theoremsStr = require('./Antlr/theorems.json');
-// const bible = require('./Antlr/preamble.tex');
 
 MathJax.Hub.Config({
   extensions: [

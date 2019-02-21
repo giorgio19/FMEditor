@@ -1,4 +1,5 @@
 const fs = require('fs');
+const latex = require('node-latex');
 const remote = require('electron').remote;
 const dialog = remote.require('electron').dialog;
 const SlickCompiler = require('./Antlr/SlickCompiler').SlickCompiler
@@ -613,9 +614,15 @@ function format(){
 function print() {
   var text = editor.getText();
   var compiler = new SlickCompiler();
-  var results = compiler.compile(text);
+  const input = compiler.compile(text);
+  dialog.showSaveDialog({filters: [{name: 'pdf', extensions: ['pdf']},
+  ]}, function(filename){
+    const output = fs.createWriteStream(filename);
+    const pdf = latex(input).pipe(output);
+    pdf.on('error', err => console.error(err));
+  });
   console.log(text);
-  console.log(results);
+  console.log(input);
 }
 
 function saveFile() {
