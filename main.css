@@ -14,14 +14,15 @@ body, html {
 
 /* horizontal panel*/
 .panel-container {
-	display: flex;
-	flex-direction: row;
-	height: inherit;
-	width: inherit;
-	margin-top:30px;
-	overflow: hidden;
-	/* avoid browser level touch actions */
-	xtouch-action: none;
+  display: flex;
+  flex-direction: row;
+  height: inherit;
+  width: inherit;
+  margin-top: 30px;
+  overflow: hidden;
+  font-family: sans-serif;
+  /* avoid browser level touch actions */
+  xtouch-action: none;
 }
 
 .panel-left {
@@ -29,29 +30,30 @@ body, html {
 	/* only manually resize */
 	width: 50%;
 	min-width: 50%;
+  max-width: 99%;
 	white-space: nowrap;
 	background: #3a3a3a;
-	overflow: scroll;
+	overflow: hidden;
 	color: white;
 	position: relative;
   }
 
 .splitter {
 	flex: 0 0 auto;
-	width: 10px;
+	width: 18px;
 	background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
 	min-height: 200px;
 	cursor: col-resize;
 }
 
 .panel-right {
-	flex: 1 1 auto;
-	/* resizable */
-	width: 50%;
-	background: #eee;
-	overflow: scroll;
-	padding: 10px 10px 10px 10px;
-	position: relative;
+  flex: 1 1 auto;
+  /* resizable */
+  width: 50%;
+  background: #eee;
+  overflow: scroll;
+  padding: 10px 10px 10px 10px;
+  position: relative;
 }
 
 table, td{
@@ -61,7 +63,7 @@ table, td{
 	position:relative;
 	text-align: center;
 	font-size: 12px;
-	font-family: montserrat;
+	font-family: sans-serif;
 }
 
 th.centerIt{
@@ -101,7 +103,6 @@ button {
 	float: left;
 	position: relative;
 	z-index: 1;
-	overflow-y: scroll;
 }
 .topbar .title {
 	position: absolute;
@@ -111,7 +112,7 @@ button {
 	margin: 7px 0;
 	color: white;
 	font-size: 16px;
-	font-family: montserrat;
+	font-family: sans-serif;
 }
 .topbar-right {
 	top: 0;
@@ -119,7 +120,7 @@ button {
 	float: right;
 	position: relative;
 	z-index: 1;
-	font-family: montserrat;
+	font-family: sans-serif;
 }
 .topbar-btn {
 	height: 30px;
