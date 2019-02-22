@@ -66,16 +66,21 @@ table, td{
 	font-family: sans-serif;
 }
 
-th.centerIt{
-	border: 1px solid black;
-	text-align: center;
+th.centerIt {
+  border: 1px solid black;
+  text-align: center;
 }
 
-td.eq{
-	border: 1px solid black;
-	text-align: left;
-	width: 300;
-	padding-left: 10px;
+td.eq {
+  border: 1px solid black;
+  text-align: left;
+  padding: 10px 15px 10px 15px;
+}
+
+td.name{
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 button {
