@@ -89,12 +89,12 @@
     },
     {
       "rule": "3.19",
-      "eq": "$p \\not \\equiv q \\equiv r \\ \\ \\equiv \\ \\ p \\equiv q \\not \\equiv r$",
+      "eq": "$p \\not \\equiv q \\equiv r \\ \\equiv \\ p \\equiv q \\not \\equiv r$",
       "name": "Mutual interchangeability"
     },
     {
       "rule": "3.19.1",
-      "eq": "$p \\not \\equiv p \\not \\equiv q \\ \\ \\equiv \\ \\ q$"
+      "eq": "$p \\not \\equiv p \\not \\equiv q \\ \\equiv \\ q$"
     },
 
 
@@ -195,23 +195,13 @@
       "name": "Contradiction"
     },
     {
-      "rule": "3.43a",
-      "eq": "$p \\wedge (p \\vee q)\\ \\equiv\\ p$",
+      "rule": "3.43",
+      "eq": "$\\text{(a) p} \\wedge (p \\vee q)\\ \\equiv\\ p\\\\\\text{(b) p} \\vee (p \\wedge q)\\ \\equiv\\ p$",
       "name": "Absorption"
     },
     {
-      "rule": "3.43b",
-      "eq": "$p \\vee (p \\wedge q)\\ \\equiv\\ p$",
-      "name": "Absorption"
-    },
-    {
-      "rule": "3.44a",
-      "eq": "$p \\wedge (\\neg p \\vee q)\\ \\equiv\\ p \\wedge q$",
-      "name": "Absorption"
-    },
-    {
-      "rule": "3.44b",
-      "eq": "$p \\vee (\\neg p \\wedge q)\\ \\equiv\\ p \\vee q$",
+      "rule": "3.44",
+      "eq": "$\\text{(a) p} \\wedge (\\neg p \\vee q)\\ \\equiv\\ p \\wedge q\\\\\\text{(b) p} \\vee (\\neg p \\wedge q)\\ \\equiv\\ p \\vee q$",
       "name": "Absorption"
     },
     {
@@ -230,13 +220,8 @@
       "name": "Consensus"
     },
     {
-      "rule": "3.47a",
-      "eq": "$\\neg (p \\wedge q)\\ \\equiv\\ \\neg p \\vee \\neg q$",
-      "name": "De Morgan"
-    },
-    {
-      "rule": "3.47b",
-      "eq": "$\\neg (p \\vee q)\\ \\equiv\\ \\neg p \\wedge \\neg q$",
+      "rule": "3.47",
+      "eq": "$\\text{(a) } \\neg (p \\wedge q)\\ \\equiv\\ \\neg p \\vee \\neg q\\\\\\text{(b) }\\neg (p \\vee q)\\ \\equiv\\ \\neg p \\wedge \\neg q$",
       "name": "De Morgan"
     },
     {
@@ -270,9 +255,6 @@
       "rule": "3.55",
       "eq": "$(p \\wedge q) \\wedge r\\ \\equiv\\ p\\ \\equiv\\ q\\ \\equiv\\ r\\ \\equiv\\ p \\vee q\\ \\equiv\\ q \\vee r\\ \\equiv\\ r \\vee p\\ \\equiv\\ p \\vee q \\vee r$"
     },
-
-
-
     {
       "section": "Implication",
       "type": "axiom",
@@ -377,29 +359,9 @@
       "eq": "$\\textit{false} \\Rightarrow p\\ \\equiv\\ \\textit{true}$"
     },
     {
-      "rule": "3.76a",
-      "eq": "$p \\Rightarrow p \\vee q$",
+      "rule": "3.76",
+      "eq": "$\\text{(a) p} \\Rightarrow p \\vee q\\\\\\text{(b) p}\\wedge q \\Rightarrow p\\\\\\text{(c) p} \\wedge q \\Rightarrow p \\vee q\\\\\\text{(d) p} \\vee (q \\wedge r) \\Rightarrow p \\vee q\\\\\\text{(e) p} \\wedge q \\Rightarrow p \\wedge (q \\vee r)$",
       "name": "Weakening/strengthening"
-    },
-    {
-      "rule": "3.76b",
-      "eq": "$p \\wedge q \\Rightarrow p$",
-      "name": "Weakning/strengthening"
-    },
-    {
-      "rule": "3.76c",
-      "eq": "$p \\wedge q \\Rightarrow p \\vee q$",
-      "name": "Weakning/strengthening"
-    },
-    {
-      "rule": "3.76d",
-      "eq": "$p \\vee (q \\wedge r) \\Rightarrow p \\vee q$",
-      "name": "Weakning/strengthening"
-    },
-    {
-      "rule": "3.76e",
-      "eq": "$p \\wedge q \\Rightarrow p \\wedge (q \\vee r)$",
-      "name": "Weakning/strengthening"
     },
     {
       "rule": "3.76.1",
@@ -479,23 +441,13 @@
     },
 
     {
-      "rule": "3.85a",
-      "eq": "$p \\Rightarrow E^z_p\\ \\equiv\\ p \\Rightarrow E^z_\\textit{true}$</li>",
+      "rule": "3.85",
+      "eq": "$\\text{(a) p }\\Rightarrow E^z_p\\ \\equiv\\ p \\Rightarrow E^z_\\textit{true}\\\\\\text{(b) q}\\wedge p \\Rightarrow E^z_p\\ \\equiv\\ q \\wedge p \\Rightarrow E^z_\\textit{true}$",
       "name": "Replace by $\\textit{true}$"
     },
     {
-      "rule": "3.85b",
-      "eq": "$q \\wedge p \\Rightarrow E^z_p\\ \\equiv\\ q \\wedge p \\Rightarrow E^z_\\textit{true}$",
-      "name": "Replace by $\\textit{true}$"
-    },
-    {
-      "rule": "3.86a",
-      "eq": "$E^z_p \\Rightarrow p\\ \\equiv\\ E^z_\\textit{false} \\Rightarrow p$</li>",
-      "name": "Replace by $\\textit{false}$"
-    },
-    {
-      "rule": "3.86b",
-      "eq": "$E^z_p \\Rightarrow p \\vee q\\ \\equiv\\ E^z_\\textit{false} \\Rightarrow p \\vee q$",
+      "rule": "3.86",
+      "eq": "$\\text{(a) }E^z_p \\Rightarrow p\\ \\equiv\\ E^z_\\textit{false} \\Rightarrow p\\\\\\text{(b) }E^z_p \\Rightarrow p \\vee q\\ \\equiv\\ E^z_\\textit{false} \\Rightarrow p \\vee q$",
       "name": "Replace by $\\textit{false}$"
     },
     {
