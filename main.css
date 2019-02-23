@@ -28,8 +28,8 @@ body, html {
 .panel-left {
 	flex: 0 0 auto;
 	/* only manually resize */
-	width: 50%;
-	min-width: 50%;
+	width: 40%;
+	min-width: 40%;
   max-width: 99%;
 	white-space: nowrap;
 	background: #3a3a3a;

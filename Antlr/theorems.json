@@ -473,20 +473,11 @@
       "name": "Leibniz"
     },
     {
-      "rule": "3.84a",
-      "eq": "$(e = f) \\wedge E^z_e\\ \\equiv\\ (e = f) \\wedge E^z_f$",
+      "rule": "3.84",
+      "eq": "$\\text{(a) (e = f)} \\wedge E^z_e\\ \\equiv\\ (e = f) \\wedge E^z_f\\\\\\text{(b) (e = f)} \\Rightarrow E^z_e\\ \\equiv\\ (e = f) \\Rightarrow E^z_f\\\\\\text{(c) q} \\wedge (e = f) \\Rightarrow E^z_e\\ \\equiv\\ q \\wedge (e = f) \\Rightarrow E^z_f$",
       "name": "Substitution"
     },
-    {
-      "rule": "3.84b",
-      "eq": "$(e = f) \\Rightarrow E^z_e\\ \\equiv\\ (e = f) \\Rightarrow E^z_f$",
-      "name": "Substitution"
-    },
-    {
-      "rule": "3.84c",
-      "eq": "$q \\wedge (e = f) \\Rightarrow E^z_e\\ \\equiv\\ q \\wedge (e = f) \\Rightarrow E^z_f$",
-      "name": "Substitution"
-    },
+
     {
       "rule": "3.85a",
       "eq": "$p \\Rightarrow E^z_p\\ \\equiv\\ p \\Rightarrow E^z_\\textit{true}$</li>",
@@ -1512,7 +1503,7 @@
     {
       "type": "axiom",
       "rule": "p.22",
-      "eq" : "$wp.IFG.R\\ \\equiv\\ \\\\ (B1 \\vee B2 \\vee B3) \\wedge\\$B1 \\Rightarrow wp.S1.R) \\wedge (B2 \\Rightarrow wp.S2.R) \\wedge (B3 \\Rightarrow wp.S3.R)$",
+      "eq" : "$wp.IFG.R\\ \\equiv\\ \\\\ (B1 \\vee B2 \\vee B3) \\wedge\\$B1 \\Rightarrow wp.S1.R) \\\\\\wedge (B2 \\Rightarrow wp.S2.R) \\wedge (B3 \\Rightarrow wp.S3.R)$",
       "name": "Definition, $IFG$"
     },
     {
