@@ -130,7 +130,7 @@ var bindings = {
           this.quill.setSelection(range.index + 6);
         } else {
           this.quill.insertText(range.index - 2, ' ' + impliesUnicode + ' ');
-          this.quill.setSelection(range.index + 1);
+          // this.quill.setSelection(range.index + 1);
         }
       }
     },
@@ -145,7 +145,7 @@ var bindings = {
             this.quill.setSelection(range.index + 6);
           } else {
             this.quill.insertText(range.index - 2, ' ' + followsFromUnicode + ' ');
-            this.quill.setSelection(range.index + 1);
+            // this.quill.setSelection(range.index + 1);
           }
         }
       },
@@ -160,7 +160,7 @@ var bindings = {
           this.quill.setSelection(range.index + 8);
         } else {
           this.quill.insertText(range.index - 2, ' ' + equalsUnicode + ' ');
-          this.quill.setSelection(range.index + 1);
+          // this.quill.setSelection(range.index + 1);
         }
       }
   },
@@ -175,7 +175,7 @@ var bindings = {
           this.quill.setSelection(range.index + 8);
         } else {
           this.quill.insertText(range.index - 2, ' ' + lessThanUnicode + ' ');
-          this.quill.setSelection(range.index + 1);
+          // this.quill.setSelection(range.index + 1);
         }
       }
   },
@@ -190,7 +190,7 @@ var bindings = {
           this.quill.setSelection(range.index + 8);
         } else {
           this.quill.insertText(range.index - 2, ' ' + lessThanOrEqUnicode + ' ');
-          this.quill.setSelection(range.index + 1);
+          // this.quill.setSelection(range.index + 1);
         }
       }
   },
@@ -204,7 +204,7 @@ var bindings = {
         this.quill.setSelection(range.index + 8);
       } else {
         this.quill.insertText(range.index - 2, ' ' + greaterThanUnicode + ' ');
-        this.quill.setSelection(range.index + 1);
+        // this.quill.setSelection(range.index + 1);
       }
     }},
   greaterE:{
@@ -218,7 +218,7 @@ var bindings = {
           this.quill.setSelection(range.index + 8);
         } else {
           this.quill.insertText(range.index - 2, ' ' + greaterThanorEqUnicode + ' ');
-          this.quill.setSelection(range.index + 1);
+          // this.quill.setSelection(range.index + 1);
         }
       }
   },
@@ -610,6 +610,17 @@ function format(){
   editor.format('font', 'monospace')
   console.log('color should be red and with a monospace font');
 }
+
+function symbol(){
+  // var x = document.getElementById("symbolSelect").value;
+  var str = "";
+  var index = editor.getSelection().index;
+  $( "select option:selected" ).each(function() {
+    str += " " + $( this ).val() + " ";
+  });
+  editor.insertText(index, str);
+}
+
 
 function print() {
   var text = editor.getText();

@@ -253,7 +253,7 @@
     },
     {
       "rule": "3.55",
-      "eq": "$(p \\wedge q) \\wedge r\\ \\equiv\\ p\\ \\equiv\\ q\\ \\equiv\\ r\\ \\equiv\\ p \\vee q\\ \\equiv\\ q \\vee r\\ \\equiv\\ r \\vee p\\ \\equiv\\ p \\vee q \\vee r$"
+      "eq": "$(p \\wedge q) \\wedge r\\ \\equiv\\ p\\ \\equiv\\ q\\ \\equiv\\ r\\ \\equiv\\ \\\\\\>\\>\\>\\>\\>\\>\\>p \\vee q\\ \\equiv\\ q \\vee r\\ \\equiv\\ r \\vee p\\ \\equiv\\ p \\vee q \\vee r$"
     },
     {
       "section": "Implication",
@@ -401,18 +401,8 @@
       "name": "Antisymmetry"
     },
     {
-      "rule": "3.82a",
-      "eq": "$(p \\Rightarrow q) \\wedge (q \\Rightarrow r) \\Rightarrow (p \\Rightarrow r)$",
-      "name": "Transitivity"
-    },
-    {
-      "rule": "3.82b",
-      "eq": "$(p \\equiv q) \\wedge (q \\Rightarrow r) \\Rightarrow (p \\Rightarrow r)$",
-      "name": "Transitivity"
-    },
-    {
-      "rule": "3.82c",
-      "eq": "$(p \\Rightarrow q) \\wedge (q \\equiv r) \\Rightarrow (p \\Rightarrow r)$",
+      "rule": "3.82",
+      "eq": "$\\text{(a) (p }\\Rightarrow q) \\wedge (q \\Rightarrow r) \\Rightarrow (p \\Rightarrow r)\\\\\\text{(b) (p} \\equiv q) \\wedge (q \\Rightarrow r) \\Rightarrow (p \\Rightarrow r)\\\\\\text{(c) (p} \\Rightarrow q) \\wedge (q \\equiv r) \\Rightarrow (p \\Rightarrow r)$",
       "name": "Transitivity"
     },
     {
@@ -424,9 +414,6 @@
       "rule": "3.82.2",
       "eq": "$(p \\equiv q) \\Rightarrow (p \\Rightarrow q)$"
     },
-
-
-
     {
       "section": "Leibniz as an axiom",
       "type": "axiom",
@@ -493,7 +480,7 @@
     {
       "section": "Proof technique metatheorems",
       "rule": "4.4",
-      "eq": "To prove $P_1 \\wedge P_2 \\Rightarrow Q$, assume $P_1$ and $P_2$, and prove $Q$.",
+      "eq": "To prove $P_1 \\wedge P_2 \\Rightarrow Q$, assume $P_1$ and $P_2$, and prove $Q$.$\\\\$You cannot use textual subsitution in $P_1$ or $P_2$.",
       "name": "Assume conjuncts of antecedent"
     },
     {
@@ -539,7 +526,7 @@
     {
       "type": "axiom",
       "rule": "8.14",
-      "eq": "$(\\star x\\mid x = E:P) = P[x:=E]$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'x','E'}\\text{ )},\\\\(\\star x\\mid x = E:P) = P[x:=E]$",
       "name": "One-point rule"
     },
     {
