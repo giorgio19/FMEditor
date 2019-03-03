@@ -323,7 +323,7 @@ var bindings = {
     prefix: /!$/,
     handler: function(range,context){
       this.quill.deleteText(range.index - 1, 1);
-      this.quill.insertText(range.index - 1, ' ' + disjunctionUnicode + ' ');
+      this.quill.insertText(range.index - 1, ' ' + notEquivalesUnicode + ' ');
     }
   },
   textSub:{
@@ -614,7 +614,7 @@ function format(){
 function symbol(){
   // var x = document.getElementById("symbolSelect").value;
   var str = "";
-  $( "select option:selected" ).each(function() {
+  $( "#symbolSelect option:selected" ).each(function() {
     str += " " + $( this ).val() + " ";
   });
   editor.insertText(editor.getSelection().index, str);
@@ -622,11 +622,11 @@ function symbol(){
 
 function hint(){
   var str = "";
-  $( "select option:selected" ).each(function() {
+  $( "#hintSelect option:selected" ).each(function() {
     str += $( this ).val();
   });
   if (str == ""){
-    return 0;
+    return;
   } else if (str == "⇒" || str == "⇐"){
     editor.insertText(editor.getSelection().index, str + hintUnicode);
   } else {
