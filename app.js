@@ -614,11 +614,25 @@ function format(){
 function symbol(){
   // var x = document.getElementById("symbolSelect").value;
   var str = "";
-  var index = editor.getSelection().index;
   $( "select option:selected" ).each(function() {
     str += " " + $( this ).val() + " ";
   });
-  editor.insertText(index, str);
+  editor.insertText(editor.getSelection().index, str);
+}
+
+function hint(){
+  var str = "";
+  $( "select option:selected" ).each(function() {
+    str += $( this ).val();
+  });
+  if (str == ""){
+    return 0;
+  } else if (str == "⇒" || str == "⇐"){
+    editor.insertText(editor.getSelection().index, str + hintUnicode);
+  } else {
+    editor.insertText(editor.getSelection().index, str + "  " + hintUnicode);
+  }
+  editor.setSelection(editor.getSelection().index - 2);
 }
 
 

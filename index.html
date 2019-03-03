@@ -15,7 +15,20 @@
   <div class="topbar"style="-webkit-app-region: drag">
     <!-- experimenting with dropdown for symbols -->
     <div class="topbar-left" style="width: 125px;">
+      <select id="symbolSelect" onchange="hint()">
+        <option></option>
+        <option value="=">=</option>
+        <option value="⇒">⇒</option>
+        <option value="⇐">⇐</option>
+        <option value="<"><</option>
+        <option value="≤">≤</option>
+        <option value=">">></option>
+        <option value="≥">≥</option>
+      </select>
+    </div>
+    <div class="topbar-left" style="width: 125px;">
       <select id="symbolSelect" onchange="symbol()">
+        <option></option>
         <option value="⇒">⇒&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;im</option>
         <option value="⇐">⇐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;ff</option>
       </select>
