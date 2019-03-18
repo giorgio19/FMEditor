@@ -408,7 +408,7 @@
     {
       "rule": "3.82.1",
       "eq": "$(p \\equiv q) \\wedge (q \\equiv r) \\Rightarrow (p \\equiv r)$",
-      "name": "transitivity of $\\equiv$"
+      "name": "Transitivity of $\\equiv$"
     },
     {
       "rule": "3.82.2",
@@ -474,14 +474,11 @@
       "eq": "$(p \\Rightarrow q) \\Rightarrow (p \\wedge r \\Rightarrow q \\wedge r)$",
       "name": "Monotonicity of $\\wedge$"
     },
-
-
-
     {
       "section": "Proof technique metatheorems",
       "rule": "4.4",
       "eq": "To prove $P_1 \\wedge P_2 \\Rightarrow Q$, assume $P_1$ and $P_2$, and prove $Q$.$\\\\$You cannot use textual subsitution in $P_1$ or $P_2$.",
-      "name": "Assume conjuncts of antecedent"
+      "name": "Deduction (assume conjuncts of antecedent)"
     },
     {
       "rule": "4.5",
@@ -526,19 +523,19 @@
     {
       "type": "axiom",
       "rule": "8.14",
-      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'x','E'}\\text{ )},\\\\(\\star x\\mid x = E:P) = P[x:=E]$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{ 'x' },\\textit{ 'E'}\\text{ )},\\\\(\\star x\\mid x = E:P) = P[x:=E]$",
       "name": "One-point rule"
     },
     {
       "type": "axiom",
       "rule": "8.15",
-      "eq": "$(\\star x\\mid R:P) \\star (\\star x \\mid R: Q) = (\\star x \\mid R : P \\star Q)$",
+      "eq": "$\\text{Provided } \\textit{P, Q : }\\mathbb{B} \\text{ or }\\textit{R }\\text{is finite,}\\\\(\\star x\\mid R:P) \\star (\\star x \\mid R: Q) = (\\star x \\mid R : P \\star Q)$",
       "name": "Distributivity"
     },
     {
       "type": "axiom",
       "rule": "8.16",
-      "eq": "$(\\star x\\mid R \\vee S : P) = (\\star x \\mid R: P) \\star (\\star x \\mid S : P)$",
+      "eq": "$\\text{Provided }\\textit{R }\\wedge\\textit{ S }\\equiv\\textit{ false }\\text{and }\\textit{P :}\\mathbb{ B}\\text{ or }\\textit{R }\\text{and }\\textit{S }\\text{are finite,}\\\\(\\star x\\mid R \\vee S : P) = (\\star x \\mid R: P) \\star (\\star x \\mid S : P)$",
       "name": "Range split for independent R and S"
     },
     {
