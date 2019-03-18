@@ -535,54 +535,50 @@
     {
       "type": "axiom",
       "rule": "8.16",
-      "eq": "$\\text{Provided }\\textit{R }\\wedge\\textit{ S }\\equiv\\textit{ false }\\text{and }\\textit{P :}\\mathbb{ B}\\text{ or }\\textit{R }\\text{and }\\textit{S }\\text{are finite,}\\\\(\\star x\\mid R \\vee S : P) = (\\star x \\mid R: P) \\star (\\star x \\mid S : P)$",
+      "eq": "$\\text{Provided }\\textit{R }\\wedge\\textit{ S }\\equiv\\textit{ false }\\text{and }\\textit{P : }\\mathbb{B}\\text{ or }\\textit{R }\\text{and }\\textit{S }\\text{are finite,}\\\\(\\star x\\mid R \\vee S : P) = (\\star x \\mid R: P) \\star (\\star x \\mid S : P)$",
       "name": "Range split for independent R and S"
     },
     {
       "type": "axiom",
       "rule": "8.17",
-      "eq": "$(\\star x\\mid R \\vee S : P) \\star (\\star x \\mid R \\wedge S : P) = (\\star x \\mid R : P) \\star (\\star x \\mid S : P)$",
+      "eq": "$\\text{Provided }\\textit{P : }\\mathbb{B}\\text{ or }\\textit{R }\\text{and }\\textit{S}\\text{ are finite,}\\\\(\\star x\\mid R \\vee S : P) \\star (\\star x \\mid R \\wedge S : P) = (\\star x \\mid R : P) \\star (\\star x \\mid S : P)$",
       "name": "Range split"
     },
     {
       "type": "axiom",
       "rule": "8.18",
-      "eq": "$(\\star x\\mid R \\vee S : P) = (\\star x\\mid R : P) \\star (\\star x\\mid S : P)$",
+      "eq": "$\\text{Provided }\\star\\text{ is idempotent or}\\textit{ R }\\text{and}\\textit{ Q }\\text{ are finite,}\\\\(\\star x\\mid R \\vee S : P) = (\\star x\\mid R : P) \\star (\\star x\\mid S : P)$",
       "name": "Range split for idempotent $\\star$"
     },
     {
       "type": "axiom",
       "rule": "8.19",
-      "eq": "$(\\star x\\mid R : (\\star y\\mid Q : P)) = (\\star y\\mid R : (\\star x \\mid Q : P))$",
+      "eq": "$\\text{Provided }\\star\\text{ is idempotent or }\\textit{R }\\text{and }\\textit{Q }\\text{are finite,}\\\\\\neg\\textit{occurs}\\text{(}\\textit{'y', 'R'}\\text{ ), }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'Q'}\\text{ )}\\\\(\\star x\\mid R : (\\star y\\mid Q : P)) = (\\star y\\mid R : (\\star x \\mid Q : P))$",
       "name": "Interchange of dummies"
     },
     {
       "type": "axiom",
       "rule": "8.20",
-      "eq": "$(\\star x, y \\mid R \\wedge Q : P) = (\\star x \\wedge R : (\\star y \\mid Q : P))$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'y', 'R,'}\\text{ ),}\\\\(\\star x, y \\mid R \\wedge Q : P) = (\\star x \\wedge R : (\\star y \\mid Q : P))$",
       "name": "Nesting"
     },
     {
       "type": "axiom",
       "rule": "8.21",
-      "eq": "$(\\star x \\mid R : P) = (\\star y \\mid R[x := y] : P[x := y])$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'y', 'R, P'}\\text{ ),}\\\\(\\star x \\mid R : P) = (\\star y \\mid R[x := y] : P[x := y])$",
       "name": "Dummy renaming"
     },
     {
       "rule": "8.22",
-      "eq": "$(\\star x \\mid R : P) = (\\star y \\mid R[x := f.y]: P[x := f.y])$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'y', 'R, P'}\\text{ ), and }\\textit{f }\\text{ has an inverse,}\\\\(\\star x \\mid R : P) = (\\star y \\mid R[x := f.y]: P[x := f.y])$",
       "name": "Change of dummy"
     },
     {
-      "rule": "8.23a",
-      "eq": "$(\\star i \\mid 0 \\le i < n + 1 : P) = (\\star i \\mid 0 \\le i < n : P) \\star P[i := n]$",
+      "rule": "8.23",
+      "eq": "$\\text{For }\\textit{n: }\\mathbb{N,}\\\\\\text{(a) }(\\star i \\mid 0 \\le i < n + 1 : P) = (\\star i \\mid 0 \\le i < n : P) \\star P[i := n]\\\\\\text{(b) }(\\star i \\mid 0 \\le i < n + 1 : P) = P[i := 0] \\star (\\star i \\mid 0 < i < n + 1: P)$",
       "name": "Split off term"
     },
-    {
-      "rule": "8.23b",
-      "eq": "$(\\star i \\mid 0 \\le i < n + 1 : P) = P[i := 0] \\star (\\star i \\mid 0 < i < n + 1: P)$",
-      "name": "Split off term"
-    },
+
     {
       "section": "Universal quantification",
       "subtext": "Notation: $\\star x \\mid : P)$ means $(\\star x \\mid \\textit{true} : P)$.",
@@ -592,38 +588,13 @@
       "name": "Trading"
     },
     {
-      "rule": "9.3a",
-      "eq": "$(\\forall x \\mid R : P) \\equiv (\\forall x \\mid : \\neg R \\vee P)$",
+      "rule": "9.3",
+      "eq": "$\\text{(a) }(\\forall x \\mid R : P) \\equiv (\\forall x \\mid : \\neg R \\vee P)\\\\\\text{(b) }(\\forall x \\mid R : P) \\equiv (\\forall x \\mid : R \\wedge P \\equiv R)\\\\\\text{(c) }(\\forall x \\mid R : P) \\equiv (\\forall x \\mid : R \\vee P \\equiv P)$",
       "name": "Trading"
     },
     {
-      "rule": "9.3b",
-      "eq": "$(\\forall x \\mid R : P) \\equiv (\\forall x \\mid : R \\wedge P \\equiv R)$",
-      "name": "Trading"
-    },
-    {
-      "rule": "9.3c",
-      "eq": "$(\\forall x \\mid R : P) \\equiv (\\forall x \\mid : R \\vee P \\equiv P)$",
-      "name": "Trading"
-    },
-    {
-      "rule": "9.4a",
-      "eq": "$(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : R \\Rightarrow P)$",
-      "name": "Trading"
-    },
-    {
-      "rule": "9.4b",
-      "eq": "$(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : \\neg R \\vee P)$",
-      "name": "Trading"
-    },
-    {
-      "rule": "9.4c",
-      "eq": "$(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : R \\wedge P \\equiv R)$",
-      "name": "Trading"
-    },
-    {
-      "rule": "9.4d",
-      "eq": "$(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : R \\vee P \\equiv P)$",
+      "rule": "9.4",
+      "eq": "$\\text{(a) }(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : R \\Rightarrow P)\\\\\\text{(b) }(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : \\neg R \\vee P)\\\\\\text{(c) }(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : R \\wedge P \\equiv R)\\\\\\text{(d) }(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : R \\vee P \\equiv P)$",
       "name": "Trading"
     },
     {
@@ -634,17 +605,17 @@
     {
       "type": "axiom",
       "rule": "9.5",
-      "eq": "$P \\vee (\\forall x \\mid R : Q) \\equiv (\\forall x \\mid R : P \\vee Q)$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'P'}\\text{ ),}\\\\P \\vee (\\forall x \\mid R : Q) \\equiv (\\forall x \\mid R : P \\vee Q)$",
       "name": "Distributivity of $\\vee$ over $\\forall$"
     },
     {
       "rule": "9.6",
-      "eq": "$(\\forall x \\mid R : P) \\equiv P \\vee (\\forall x \\mid : \\neg R)$"
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'P'}\\text{ ),}\\\\(\\forall x \\mid R : P) \\equiv P \\vee (\\forall x \\mid : \\neg R)$"
     },
     {
       "rule": "9.7",
-      "eq": "$\\neg (\\forall x \\mid : \\neg R) \\Rightarrow ((\\forall x \\mid R: P \\wedge Q) \\equiv P \\wedge (\\forall x \\mid R : Q))$",
-      "name": "distributivity of $\\wedge$ over $\\forall$"
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'P'}\\text{ ),}\\\\\\neg (\\forall x \\mid : \\neg R) \\Rightarrow ((\\forall x \\mid R: P \\wedge Q) \\equiv P \\wedge (\\forall x \\mid R : Q))$",
+      "name": "Distributivity of $\\wedge$ over $\\forall$"
     },
     {
       "rule": "9.8",
@@ -679,9 +650,6 @@
       "eq": "$P \\text{ is a theorem iff }(\\forall x \\mid : P) \\text{ is a theorem.}$",
       "name": "Metatheorem"
     },
-
-
-
     {
       "section": "Existential quantification",
       "type": "axiom",
