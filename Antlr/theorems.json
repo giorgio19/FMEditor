@@ -658,18 +658,8 @@
       "name": "Generalized De Morgan"
     },
     {
-      "rule": "9.18a",
-      "eq": "$\\neg (\\exists x \\mid R : \\neg P) \\equiv (\\forall x \\mid R : P)$",
-      "name": "Generalized De Morgan"
-    },
-    {
-      "rule": "9.18b",
-      "eq": "$\\neg (\\exists x \\mid R : P) \\equiv (\\forall x \\mid R: \\neg P)$",
-      "name": "Generalized De Morgan"
-    },
-    {
-      "rule": "9.18c",
-      "eq": "$(\\exists x \\mid R : \\neg P) \\equiv \\neg (\\forall x \\mid R : P)$",
+      "rule": "9.18",
+      "eq": "$\\text{(a) }\\neg (\\exists x \\mid R : \\neg P) \\equiv (\\forall x \\mid R : P)\\\\\\text{(b) }\\neg (\\exists x \\mid R : P) \\equiv (\\forall x \\mid R: \\neg P)\\\\\\text{(c) }(\\exists x \\mid R : \\neg P) \\equiv \\neg (\\forall x \\mid R : P)$",
       "name": "Generalized De Morgan"
     },
     {
@@ -693,12 +683,12 @@
     },
     {
       "rule": "9.21",
-      "eq": "$P \\wedge (\\exists x \\mid R : Q) \\equiv (\\exists x \\mid R : P \\wedge Q)$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'P' }\\text{),}\\\\P \\wedge (\\exists x \\mid R : Q) \\equiv (\\exists x \\mid R : P \\wedge Q)$",
       "name": "Distributivity of $\\wedge$ over $\\exists$"
     },
     {
       "rule": "9.22",
-      "eq": "$(\\exists x \\mid R : P) \\equiv P \\wedge (\\exists x \\mid : R)$"
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'P' }\\text{),}\\\\(\\exists x \\mid R : P) \\equiv P \\wedge (\\exists x \\mid : R)$"
     },
     {
       "rule": "9.23",
@@ -731,16 +721,13 @@
     },
     {
       "rule": "9.29",
-      "eq": "$(\\exists x \\mid R : (\\forall y \\mid Q : P)) \\Rightarrow (\\forall y \\mid Q : (\\exists x \\mid R : P))$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'y', 'R' }\\text{)}\\text{ and }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'Q' }\\text{),}\\\\(\\exists x \\mid R : (\\forall y \\mid Q : P)) \\Rightarrow (\\forall y \\mid Q : (\\exists x \\mid R : P))$",
       "name": "Interchange of quantification"
     },
     {
       "rule": "9.30",
-      "eq": "$(\\exists x \\mid R : P) \\Rightarrow Q \\text{ is a theorem iff (R} \\wedge P)[x := \\hat{x}] \\Rightarrow Q \\text{ is a theorem.}$"
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{('}\\hat{x}\\textit{', 'Q' }\\text{),}\\\\(\\exists x \\mid R : P) \\Rightarrow Q \\text{ is a theorem iff (R} \\wedge P)[x := \\hat{x}] \\Rightarrow Q \\text{ is a theorem.}$"
     },
-
-
-
     {
       "section": "A theory of sets",
       "rule": "11.2",
@@ -749,7 +736,7 @@
     {
       "type": "axiom",
       "rule": "11.3",
-      "eq": "$F \\in \\{x \\mid R : E\\} \\equiv (\\exists x \\mid R : F = E)$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{('}\\textit{x', 'F'}\\text{ ),}\\\\F \\in \\{x \\mid R : E\\} \\equiv (\\exists x \\mid R : F = E)$",
       "name": "Set membership"
     },
     {
@@ -785,7 +772,7 @@
     {
       "type": "axiom",
       "rule": "11.5.1",
-      "eq": "$\\{x \\mid R\\} = \\{x \\mid R : x\\}$",
+      "eq": "$\\text{For }\\textit{x }\\text{a single variable,}\\\\\\{x \\mid R\\} = \\{x \\mid R : x\\}$",
       "name": "Abbreviation"
     },
     {
@@ -794,11 +781,11 @@
     },
     {
       "rule": "11.7",
-      "eq": "$x \\in \\{x \\mid R\\}\\ \\equiv\\ R$"
+      "eq": "$x \\in \\{x \\mid R\\}\\ \\equiv\\ R\\\\\\textit{R }\\text{is the characteristic predicate of the set.}$"
     },
     {
       "rule": "11.7.1",
-      "eq": "$y \\in \\{x \\mid R\\}\\ \\equiv\\ R[x := y]$"
+      "eq": "$y \\in \\{x \\mid R\\}\\ \\equiv\\ R[x := y] \\text{for any expression }\\textit{y}$"
     },
     {
       "rule": "11.9",
@@ -810,8 +797,8 @@
     },
     {
       "rule": "11.11",
-      "eq": "<ol class=\"norm\"><li>Use Leibniz directly.</li><li>Use axiom Extensionality (11.4) and prove the (9.8) Lemma<br/>$v \\in S\\ \\equiv\\ v \\in T$ for an arbitrary value $v$.</li><li>Prove $Q \\equiv R$ and conclude $\\{x \\mid Q\\} = \\{x \\mid R\\}$.</li></ol>",
-      "name": "Methods for proving set equality"
+      "eq": "$\\text{(a) Use Leibniz directly.}\\\\\\text{(b) Use axiom Extensionality (11.4) and prove}\\\\\\text{the (9.8) Lemma }v \\in S\\ \\equiv\\ v \\in T\\text{ for an arbitrary value }\\textit{v}.\\\\\\text{(c) Prove }\\textit{Q }\\equiv\\textit{ R }\\text{and conclude }\\{x \\mid Q\\} = \\{x \\mid R\\}.$",
+      "name": "Methods for proving set equality $\\textit{S }= \\textit{T}:$"
     },
 
 
@@ -887,12 +874,12 @@
     },
     {
       "rule": "11.24",
-      "eq": "Let $E_s$ be a set expression constructed from set variables,<br/>$\\emptyset$, $\\textbf{U}$, $\\sim$, $\\cup$, and $\\cap$. Then $E_p$ is the expression constructed from $E_s$<br/>by replacing: $\\emptyset$ with $\\textit{false}$, $\\textbf{U}$ with $\\textit{true}$, $\\cup$ with $\\vee$, $\\cap$ with $\\wedge$, $\\sim$ with $\\neg$.<br/>The construction is reversible: $E_s$ can be constructed from $E_p$.<br/>",
+      "eq": "$\\text{Let }E_s\\text{ be a set expression constructed from set variables, }\\emptyset, \\textbf{U}, \\sim, \\cup,\\text{ and }\\cap.\\\\\\text{Then }E_p\\text{ is the expression constructed from }E_s\\text{ by replacing: }\\\\ \\ \\ \\text{(a) }\\emptyset\\text{ with }\\textit{false},\\\\ \\ \\ \\text{(b) }\\textbf{U}\\text{ with }\\textit{true},\\\\ \\ \\ \\text{(c) }\\cup\\text{ with }\\vee,\\\\ \\ \\ \\text{(d) }\\cap\\text{ with }\\wedge,\\\\ \\ \\ \\text{(e) }\\sim\\text{ with }\\neg.\\\\\\text{The construction is reversible: }E_s\\text{ can be constructed from }E_p.$",
       "name": "$E_p$"
     },
     {
       "rule": "11.25",
-      "eq": "For any set expressions $E_s$ and $F_s$:<ol class=\"norm\"><li>$E_s = F_s$ is valid iff $E_p \\equiv F_p$ is valid,</li><li>$E_s \\subseteq F_s$ is valid iff $E_p \\rightarrow F_p$ is valid,</li><li>$E_s = \\textbf{U}$ is valid iff $E_p$ is valid.</li></ol>",
+      "eq": "$\\text{For any set expressions }E_s\\text{ and }F_s\\\\ \\ \\ \\text{(a) }E_s = F_s\\text{ is valid iff }E_p \\equiv F_p\\text{ is valid,}\\\\ \\ \\ \\text{(b) }E_s \\subseteq F_s\\text{ is valid iff }E_p \\rightarrow F_p\\text{ is valid,}\\\\ \\ \\ \\text{(c) }E_s = \\textbf{U}\\text{ is valid iff }E_p\\text{ is valid.}$",
       "name": "Metatheorem"
     },
 
@@ -986,17 +973,10 @@
       "name": "Distributivity of $\\cap$ over $\\cup$"
     },
     {
-      "rule": "11.42a",
-      "eq": "$\\sim (S \\cup T)\\ =\\ \\sim S\\;\\cap \\sim T$",
+      "rule": "11.42",
+      "eq": "$\\text{(a) }\\sim (S \\cup T)\\ =\\ \\sim S\\;\\cap \\sim T\\\\\\text{(b) }\\sim (S \\cap T)\\ =\\ \\sim S\\;\\cup \\sim T$",
       "name": "De Morgan"
     },
-    {
-      "rule": "11.42b",
-      "eq": "$\\sim (S \\cap T)\\ =\\ \\sim S\\;\\cup \\sim T$",
-      "name": "De Morgan"
-    },
-
-
 
     {
       "section": "Additional properties of $\\cup$ and $\\cap$",
@@ -1123,22 +1103,10 @@
       "eq": "$(\\exists x \\mid x \\in S: x \\not \\in T)\\ \\Rightarrow\\ S \\neq T$"
     },
     {
-      "rule": "11.70a",
-      "eq": "$S \\subseteq T \\wedge T \\subset U\\ \\Rightarrow\\ S \\subset U$",
+      "rule": "11.70",
+      "eq": "$\\text{(a) }S \\subseteq T \\wedge T \\subset U\\ \\Rightarrow\\ S \\subset U\\\\\\text{(b) }S \\subset T \\wedge T \\subseteq U\\ \\Rightarrow\\ S \\subset U\\\\\\text{(c) }S \\subset T \\wedge T \\subset U\\ \\Rightarrow\\ S \\subset U$",
       "name": "Transitivity"
     },
-    {
-      "rule": "11.70b",
-      "eq": "$S \\subset T \\wedge T \\subseteq U\\ \\Rightarrow\\ S \\subset U$",
-      "name": "Transitivity"
-    },
-    {
-      "rule": "11.70c",
-      "eq": "$S \\subset T \\wedge T \\subset U\\ \\Rightarrow\\ S \\subset U$",
-      "name": "Transitivity"
-    },
-
-
 
     {
       "section": "Theorems concerning power set $\\mathcal{P}$",
