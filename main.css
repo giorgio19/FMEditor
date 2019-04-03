@@ -5,30 +5,95 @@ body, html {
 	width: 100%;
 	overflow: hidden;
 	background: #1e1e1e;
-	margin-bottom: 10px;
+	margin-bottom: auto;
+}
+
+.page-container{
+	height: 97.5%
 }
 
 /* horizontal panel*/
-  .panel-container {
-	display: flex;
-	flex-direction: row;
-	height: inherit;
-	width: inherit;
-	margin-top:30px;
-	border: 1px solid silver;
-	overflow: scroll;
+.panel-container {
+  display: flex;
+  flex-direction: row;
+  height: inherit;
+  width: inherit;
+  margin-top: 30px;
+  overflow: hidden;
+  font-family: sans-serif;
+  /* avoid browser level touch actions */
+  xtouch-action: none;
+}
 
-	/* avoid browser level touch actions */
-	xtouch-action: none;
+.panel-left {
+	flex: 0 0 auto;
+	/* only manually resize */
+	width: 40%;
+	min-width: 40%;
+  max-width: 99%;
+	white-space: nowrap;
+	background: #3a3a3a;
+	overflow: hidden;
+	color: white;
+	position: relative;
   }
 
+.splitter {
+	flex: 0 0 auto;
+	width: 18px;
+	background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
+	min-height: 200px;
+	cursor: col-resize;
+}
 
+.panel-right {
+  flex: 1 1 auto;
+  /* resizable */
+  width: 50%;
+  background: #eee;
+  overflow: scroll;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+}
+
+table, td{
+	border: 1px solid black;
+	height:40px;
+	width: 500px;
+	position:relative;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+}
+
+th.centerIt {
+  border: 1px solid black;
+  text-align: center;
+}
+
+td.eq {
+  border: 1px solid black;
+  text-align: left;
+  padding: 10px 15px 10px 15px;
+}
+
+td.name{
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+}
 
 button {
   -webkit-app-region: no-drag;
 	outline: none;
 	border: none;
 }
+
+select{
+	width:inherit;
+	height:30px;
+}
+
 .clear {
 	clear: both;
 }
@@ -57,7 +122,7 @@ button {
 	margin: 7px 0;
 	color: white;
 	font-size: 16px;
-	font-family: montserrat;
+	font-family: sans-serif;
 }
 .topbar-right {
 	top: 0;
@@ -65,7 +130,7 @@ button {
 	float: right;
 	position: relative;
 	z-index: 1;
-	font-family: montserrat;
+	font-family: sans-serif;
 }
 .topbar-btn {
 	height: 30px;
@@ -74,11 +139,6 @@ button {
 }
 .topbar-btn:hover {
 	background: #535353;
-	cursor: pointer;
-}
-.topbar-btn:active {
-	background: #1e1e1e;
-	cursor: pointer;
 }
 
 

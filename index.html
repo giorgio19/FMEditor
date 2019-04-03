@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="main.css">
@@ -10,14 +11,32 @@
     <script src="./theoremsTable.js"></script>
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
   </head>
+
   <div class="topbar"style="-webkit-app-region: drag">
-    <button id="close-btn" class="topbar-btn topbar-left" onClick=remote.getCurrentWindow().close()>X</button>
-		<button id="mini-btn" class="topbar-btn topbar-left" onClick=remote.getCurrentWindow().minimize()>_</button>
-    <h3 class="title">Formal Methods Editor</h3>
+    <!-- experimenting with dropdown for symbols -->
+    <div class="topbar-left" style="width: 125px;">
+      <select id="hintSelect" onchange="hint()">
+        <option></option>
+        <option value="=">=</option>
+        <option value="⇒">⇒</option>
+        <option value="⇐">⇐</option>
+        <option value="<"><</option>
+        <option value="≤">≤</option>
+        <option value=">">></option>
+        <option value="≥">≥</option>
+      </select>
+    </div>
+    <div class="topbar-left" style="width: 125px;">
+      <select id="symbolSelect" onchange="symbol()">
+        <option></option>
+        <option value="⇒">⇒&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;im</option>
+        <option value="⇐">⇐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;ff</option>
+      </select>
+    </div>
     <button class="topbar-btn topbar-right" id="save_button" onclick="saveFile()">Save</button>
 		<button class="topbar-btn topbar-right" id="load_button" onclick="loadFile()">Load</button>
-    <button class="topbar-btn topbar-right" id="text"onclick="print()">Print</button>
-		<!-- <div class="clear"></div> -->
+    <button class="topbar-btn topbar-right" id="text" onclick="print()">Print</button>
+		<div class="clear"></div>
   </div>
   <body>
     <div class="page-container">
@@ -27,23 +46,22 @@
               <div id="editor"></div>
             </div>
 
-            <div class="splitter">
-              <div id="slider"></div>
-            </div>
+            <div class="splitter"></div>
 
             <div class="panel-right">
               <div id="theorems">
                 <table>
                     <tr>
-                        <th>Name</th>
-                        <th>EQ or something???</th>
+                        <th class="centerIt">Rule</th>
+                        <th class="centerIt">Name</th>
+                        <th class="centerIt">Equation</th>
                     </tr>
                 </table>
               </div>
             </div>
         </div>
     </div>
-
 </body>
-	<script src="app.js" charset="utf-8"></script>
+
+<script src="app.js" charset="utf-8"></script>
 </html>

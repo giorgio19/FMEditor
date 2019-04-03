@@ -1,10 +1,11 @@
-// Generated from Slick.g4 by ANTLR 4.7.1
+// Generated from Slick.g4 by ANTLR 4.7.2
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 var SlickListener = require('./SlickListener').SlickListener;
 var SlickVisitor = require('./SlickVisitor').SlickVisitor;
 
 var grammarFileName = "Slick.g4";
+
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\u0003C\u016b\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
@@ -392,6 +393,7 @@ SlickParser.RULE_inverseCall = 28;
 SlickParser.RULE_functionCall = 29;
 SlickParser.RULE_typedVar = 30;
 
+
 function DocContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -490,6 +492,7 @@ SlickParser.prototype.doc = function() {
     return localctx;
 };
 
+
 function ProofContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -574,6 +577,7 @@ SlickParser.prototype.proof = function() {
     }
     return localctx;
 };
+
 
 function StandardProofContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -741,6 +745,7 @@ SlickParser.prototype.standardProof = function() {
     return localctx;
 };
 
+
 function StartExpoContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -807,6 +812,7 @@ SlickParser.prototype.startExpo = function() {
     }
     return localctx;
 };
+
 
 function EndExpoContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -875,6 +881,7 @@ SlickParser.prototype.endExpo = function() {
     return localctx;
 };
 
+
 function ProofHeadContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -938,6 +945,7 @@ SlickParser.prototype.proofHead = function() {
     }
     return localctx;
 };
+
 
 function SepContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -1017,6 +1025,7 @@ SlickParser.prototype.sep = function() {
     }
     return localctx;
 };
+
 
 function HeaderContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -1165,6 +1174,7 @@ SlickParser.prototype.header = function() {
     }
     return localctx;
 };
+
 
 function TheoremContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -1316,6 +1326,7 @@ SlickParser.prototype.theorem = function() {
     return localctx;
 };
 
+
 function MethodContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -1384,6 +1395,7 @@ SlickParser.prototype.method = function() {
     }
     return localctx;
 };
+
 
 function MethodNameContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -1828,6 +1840,7 @@ SlickParser.prototype.methodName = function() {
     return localctx;
 };
 
+
 function CaseProofContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -1927,6 +1940,7 @@ SlickParser.prototype.caseProof = function() {
     return localctx;
 };
 
+
 function CaseVariableContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -2001,6 +2015,7 @@ SlickParser.prototype.caseVariable = function() {
     }
     return localctx;
 };
+
 
 function CaseListContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -2079,6 +2094,7 @@ SlickParser.prototype.caseList = function() {
     return localctx;
 };
 
+
 function Case1Context(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -2147,6 +2163,7 @@ SlickParser.prototype.case1 = function() {
     }
     return localctx;
 };
+
 
 function Case2Context(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -2217,6 +2234,7 @@ SlickParser.prototype.case2 = function() {
     return localctx;
 };
 
+
 function CaseProof1Context(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -2285,6 +2303,7 @@ SlickParser.prototype.caseProof1 = function() {
     }
     return localctx;
 };
+
 
 function CaseProof2Context(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -2355,6 +2374,7 @@ SlickParser.prototype.caseProof2 = function() {
     return localctx;
 };
 
+
 function StepContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -2421,6 +2441,7 @@ SlickParser.prototype.step = function() {
     }
     return localctx;
 };
+
 
 function ExprContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -3469,6 +3490,7 @@ SlickParser.prototype.expr = function(_p) {
     return localctx;
 };
 
+
 function HintContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -3541,6 +3563,7 @@ SlickParser.prototype.hint = function() {
     }
     return localctx;
 };
+
 
 function HintOpContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -3624,6 +3647,7 @@ SlickParser.prototype.hintOp = function() {
     }
     return localctx;
 };
+
 
 function VarlistContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -3712,6 +3736,7 @@ SlickParser.prototype.varlist = function() {
     return localctx;
 };
 
+
 function ExprlistContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -3799,6 +3824,7 @@ SlickParser.prototype.exprlist = function() {
     return localctx;
 };
 
+
 function EmptyRangeExprContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -3885,6 +3911,7 @@ SlickParser.prototype.emptyRangeExpr = function() {
     }
     return localctx;
 };
+
 
 function QuantifiedExprContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -3981,6 +4008,7 @@ SlickParser.prototype.quantifiedExpr = function() {
     }
     return localctx;
 };
+
 
 function SetEnumerationContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -4079,6 +4107,7 @@ SlickParser.prototype.setEnumeration = function() {
     return localctx;
 };
 
+
 function SetComprehensionContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -4169,6 +4198,7 @@ SlickParser.prototype.setComprehension = function() {
     return localctx;
 };
 
+
 function InverseCallContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
@@ -4239,6 +4269,7 @@ SlickParser.prototype.inverseCall = function() {
     }
     return localctx;
 };
+
 
 function FunctionCallContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -4391,6 +4422,7 @@ SlickParser.prototype.functionCall = function() {
     }
     return localctx;
 };
+
 
 function TypedVarContext(parser, parent, invokingState) {
 	if(parent===undefined) {
