@@ -13,7 +13,7 @@ const impliesUnicode = '\u21D2';
 const followsFromUnicode = '\u21d0';
 const lessThanUnicode = '\u003C';
 const greaterThanUnicode = '\u003E';
-const doesNotEqualUnicode = '\u2262';
+const doesNotEqualUnicode = '\u2260';
 const leftBracketUnicode = '\u3008';
 const rightBracketUnicode = '\u3009';
 const hintUnicode = padding + leftBracketUnicode + '  ' + rightBracketUnicode;
@@ -134,6 +134,15 @@ var bindings = {
         }
       }
     },
+  doesNotImply:{
+    key: 'm',
+    empty: false,
+    prefix: /;ni$/,
+    handler: function(range,context){
+        this.quill.deleteText(range.index - 3, 3);
+        this.quill.insertText(range.index - 3, ' ' + doesNotImplyUnicode + ' ');
+    }
+  },
   follows:{
       key: 'f',
       empty:false,
@@ -149,6 +158,15 @@ var bindings = {
           }
         }
       },
+    doesNotFF:{
+      key: 'f',
+      empty: false,
+      prefix: /;nf$/,
+      handler: function(range,context){
+          this.quill.deleteText(range.index - 3, 3);
+          this.quill.insertText(range.index - 3, ' ' + doesNotFollowFromUnicode + ' ');
+      }
+    },
   equals:{ //may only need hint version
     key: 'q',
     empty:false,
@@ -163,6 +181,20 @@ var bindings = {
           // this.quill.setSelection(range.index + 1);
         }
       }
+  },
+  doesNotEqual:{
+    key: 'q',
+    empty: false,
+    prefix: /;ne$/,
+    handler: function (range, context){
+      this.quill.deleteText(range.index - 3, 3);
+      if (context.offset == 3){
+        this.quill.insertText(range.index - 3, doesNotEqualUnicode + "  " + hintUnicode);
+        this.quill.setSelection(range.index + 7);
+      } else {
+        this.quill.insertText(range.index - 3,' '  +doesNotEqualUnicode + ' ');
+      }
+    }
   },
   less:{
     key: 't',
@@ -269,6 +301,15 @@ var bindings = {
       this.quill.insertText(range.index - 1, ' ' + equivalesUnicode + ' ');
     }
   },
+  notEquivales:{
+    key: 187,
+    empty: false,
+    prefix: /!$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, ' ' + notEquivalesUnicode + ' ');
+    }
+  },
   conjunction:{
     key: 'n',
     empty:false,
@@ -317,15 +358,6 @@ var bindings = {
       this.quill.insertText(range.index - 1, ' ¬ ');
     }
   },
-  notEquivales:{
-    key: 187,
-    empty: false,
-    prefix: /!$/,
-    handler: function(range,context){
-      this.quill.deleteText(range.index - 1, 1);
-      this.quill.insertText(range.index - 1, ' ' + notEquivalesUnicode + ' ');
-    }
-  },
   textSub:{
     key: 187,
     empty: false,
@@ -352,6 +384,15 @@ var bindings = {
     handler: function(range,context){
       this.quill.deleteText(range.index - 2, 2);
       this.quill.insertText(range.index - 2, ' ' + elementOfUnicode + ' ');
+    }
+  },
+  notElementOf:{
+    key: 'l',
+    empty: false,
+    prefix: /;ne$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 3, 3);
+      this.quill.insertText(range.index - 3, ' ' + notElementOfUnicode + ' ');
     }
   },
   union:{
@@ -434,6 +475,42 @@ var bindings = {
     handler: function(range,context){
       this.quill.deleteText(range.index - 2, 2);
       this.quill.insertText(range.index - 2, ' ' + existentialQuanitiferUnicode);
+    }
+  },
+  properSub:{
+    key: 'b',
+    empty: false,
+    prefix: /;S$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, ' ' + properSubsetOfUnicode + ' ');
+    }
+  },
+  notPropSub:{
+    key: 'b',
+    empty: false,
+    prefix: /;nS$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 3, 3);
+      this.quill.insertText(range.index - 3, ' ' + notProperSubsetOfUnicode+ ' ');
+    }
+  },
+  properSup:{
+    key: 'p',
+    empty: false,
+    prefix: /;S$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 2, 2);
+      this.quill.insertText(range.index - 2, ' ' + properSupersetOfUnicode + ' ');
+    }
+  },
+  notPropSup:{
+    key: 'p',
+    empty: false,
+    prefix: /;nS$/,
+    handler: function(range,context){
+      this.quill.deleteText(range.index - 3, 3);
+      this.quill.insertText(range.index - 3, ' ' + notProperSupersetOfUnicode + ' ');
     }
   },
 

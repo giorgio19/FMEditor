@@ -74,7 +74,8 @@ th.centerIt {
 td.eq {
   border: 1px solid black;
   text-align: left;
-  padding: 10px 15px 10px 15px;
+  padding: 10px 5px 10px 15px;
+	padding:
 }
 
 td.name{
