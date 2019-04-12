@@ -21,6 +21,8 @@ body, html {
   margin-top: 30px;
   overflow: hidden;
   font-family: sans-serif;
+	padding: 15px;
+	background-color: #1e1e1e;
   /* avoid browser level touch actions */
   xtouch-action: none;
 }
@@ -30,9 +32,9 @@ body, html {
 	/* only manually resize */
 	width: 40%;
 	min-width: 40%;
-  max-width: 99%;
+  max-width: 100%;
 	white-space: nowrap;
-	background: #3a3a3a;
+	background:#535353;
 	overflow: hidden;
 	color: white;
 	position: relative;
@@ -50,7 +52,7 @@ body, html {
   flex: 1 1 auto;
   /* resizable */
   width: 50%;
-  background: #eee;
+  background: #535353;
   overflow: scroll;
   padding: 10px 10px 10px 10px;
   position: relative;
@@ -68,7 +70,11 @@ table, td{
 
 th.centerIt {
   border: 1px solid black;
-  text-align: center;
+  text-align: left;
+	color: #009aff;
+	padding-left: .65em;
+	font-size: 16px;
+
 }
 
 td.eq {
@@ -78,7 +84,7 @@ td.eq {
 }
 
 td.name{
-  text-align: center;
+  text-align: left;
   padding-left: 1em;
   padding-right: 1em;
 }
@@ -97,15 +103,18 @@ select{
 .clear {
 	clear: both;
 }
+
 /*Topbar*/
 .topbar {
-	height: 30px;
+	height: 50px;
 	width:100%;
 	float: left;
 	background: #1e1e1e;
 	/* margin-bottom: 36px; */
 	position: absolute;
 	z-index: 1;
+	padding-top: 15px;
+	padding-left: 15px;
 }
 .topbar-left {
 	top: 0;
@@ -163,6 +172,7 @@ white-space: nowrap;
 	font-family: montserrat;
 	padding: 25px 25px 50px 25px;
 	color: white;
+	border: 1px solid #404040;
 }
 
 .splitter {
@@ -170,12 +180,12 @@ flex: 0 0 auto;
 width: 18px;
 min-height: 98%;
 cursor: col-resize;
-z-index: 1;
+z-index: 0;
 }
 
 #slider {
 width:18px;
-height:99%;
+height:85%;
 position: absolute;
 background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
 }
@@ -195,7 +205,7 @@ font-family: montserrat;
 	text-align: left;
 	top: 30px;
 	width:inherit;
-	height:98%;
+	height:100%;
 	position: absolute;
 	overflow-y: scroll;
 	background: #424242;
@@ -203,11 +213,5 @@ font-family: montserrat;
 	font-family: montserrat;
 	padding: 25px 25px 50px 25px;
 	color: #fff;
-	border: 1px solid silver;
-}
-
-th{
-	color: #009aff;
-	font-size: 16px;
-	border-bottom: : 500px;
+	border: 1px solid #1e1e1e;
 }
