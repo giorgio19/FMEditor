@@ -36,7 +36,7 @@
       "type": "axiom",
       "rule": "3.8",
       "eq": "$\\textit{false} \\equiv \\neg \\textit{true}$",
-      "name": "Definition of \\textit{false}"
+      "name": "Definition of $\\textit{false}$"
     },
     {
       "type": "axiom",
@@ -57,7 +57,7 @@
     {
       "rule": "3.12",
       "eq": "$\\neg \\neg p \\equiv p$",
-      "name": "Double Negation"
+      "name": "Double negation"
     },
     {
       "rule": "3.13",
@@ -89,12 +89,12 @@
     },
     {
       "rule": "3.19",
-      "eq": "$p \\not \\equiv q \\equiv r \\ \\ \\equiv \\ \\ p \\equiv q \\not \\equiv r$",
+      "eq": "$p \\not \\equiv q \\equiv r \\ \\equiv \\ p \\equiv q \\not \\equiv r$",
       "name": "Mutual interchangeability"
     },
     {
       "rule": "3.19.1",
-      "eq": "$p \\not \\equiv p \\not \\equiv q \\ \\ \\equiv \\ \\ q$"
+      "eq": "$p \\not \\equiv p \\not \\equiv q \\ \\equiv \\ q$"
     },
 
 
@@ -195,23 +195,13 @@
       "name": "Contradiction"
     },
     {
-      "rule": "3.43a",
-      "eq": "$p \\wedge (p \\vee q)\\ \\equiv\\ p$",
+      "rule": "3.43",
+      "eq": "$\\text{(a) p} \\wedge (p \\vee q)\\ \\equiv\\ p\\\\\\text{(b) p} \\vee (p \\wedge q)\\ \\equiv\\ p$",
       "name": "Absorption"
     },
     {
-      "rule": "3.43b",
-      "eq": "$p \\vee (p \\wedge q)\\ \\equiv\\ p$",
-      "name": "Absorption"
-    },
-    {
-      "rule": "3.44a",
-      "eq": "$p \\wedge (\\neg p \\vee q)\\ \\equiv\\ p \\wedge q$",
-      "name": "Absorption"
-    },
-    {
-      "rule": "3.44b",
-      "eq": "$p \\vee (\\neg p \\wedge q)\\ \\equiv\\ p \\vee q$",
+      "rule": "3.44",
+      "eq": "$\\text{(a) p} \\wedge (\\neg p \\vee q)\\ \\equiv\\ p \\wedge q\\\\\\text{(b) p} \\vee (\\neg p \\wedge q)\\ \\equiv\\ p \\vee q$",
       "name": "Absorption"
     },
     {
@@ -230,13 +220,8 @@
       "name": "Consensus"
     },
     {
-      "rule": "3.47a",
-      "eq": "$\\neg (p \\wedge q)\\ \\equiv\\ \\neg p \\vee \\neg q$",
-      "name": "De Morgan"
-    },
-    {
-      "rule": "3.47b",
-      "eq": "$\\neg (p \\vee q)\\ \\equiv\\ \\neg p \\wedge \\neg q$",
+      "rule": "3.47",
+      "eq": "$\\text{(a) } \\neg (p \\wedge q)\\ \\equiv\\ \\neg p \\vee \\neg q\\\\\\text{(b) }\\neg (p \\vee q)\\ \\equiv\\ \\neg p \\wedge \\neg q$",
       "name": "De Morgan"
     },
     {
@@ -268,17 +253,14 @@
     },
     {
       "rule": "3.55",
-      "eq": "$(p \\wedge q) \\wedge r\\ \\equiv\\ p\\ \\equiv\\ q\\ \\equiv\\ r\\ \\equiv\\ p \\vee q\\ \\equiv\\ q \\vee r\\ \\equiv\\ r \\vee p\\ \\equiv\\ p \\vee q \\vee r$"
+      "eq": "$(p \\wedge q) \\wedge r\\ \\equiv\\ p\\ \\equiv\\ q\\ \\equiv\\ r\\ \\equiv\\ \\\\\\>\\>\\>\\>\\>\\>\\>p \\vee q\\ \\equiv\\ q \\vee r\\ \\equiv\\ r \\vee p\\ \\equiv\\ p \\vee q \\vee r$"
     },
-
-
-
     {
       "section": "Implication",
       "type": "axiom",
       "rule": "3.57",
       "eq": "$p \\Rightarrow q\\ \\equiv\\ p \\vee q\\ \\equiv\\ q$",
-      "name": "Definition of Implication"
+      "name": "Definition of implication"
     },
     {
       "type": "axiom",
@@ -377,34 +359,14 @@
       "eq": "$\\textit{false} \\Rightarrow p\\ \\equiv\\ \\textit{true}$"
     },
     {
-      "rule": "3.76a",
-      "eq": "$p \\Rightarrow p \\vee q$",
-      "name": "Weakening/strengthening"
-    },
-    {
-      "rule": "3.76b",
-      "eq": "$p \\wedge q \\Rightarrow p$",
-      "name": "Weakening/strengthening"
-    },
-    {
-      "rule": "3.76c",
-      "eq": "$p \\wedge q \\Rightarrow p \\vee q$",
-      "name": "Weakening/strengthening"
-    },
-    {
-      "rule": "3.76d",
-      "eq": "$p \\vee (q \\wedge r) \\Rightarrow p \\vee q$",
-      "name": "Weakening/strengthening"
-    },
-    {
-      "rule": "3.76e",
-      "eq": "$p \\wedge q \\Rightarrow p \\wedge (q \\vee r)$",
+      "rule": "3.76",
+      "eq": "$\\text{(a) p} \\Rightarrow p \\vee q\\\\\\text{(b) p}\\wedge q \\Rightarrow p\\\\\\text{(c) p} \\wedge q \\Rightarrow p \\vee q\\\\\\text{(d) p} \\vee (q \\wedge r) \\Rightarrow p \\vee q\\\\\\text{(e) p} \\wedge q \\Rightarrow p \\wedge (q \\vee r)$",
       "name": "Weakening/strengthening"
     },
     {
       "rule": "3.76.1",
       "eq": "$p \\wedge q \\Rightarrow p \\vee r$",
-      "name": "Weakening/strengthening"
+      "name": "Weakning/strengthening"
     },
     {
       "rule": "3.76.2",
@@ -439,18 +401,8 @@
       "name": "Antisymmetry"
     },
     {
-      "rule": "3.82a",
-      "eq": "$(p \\Rightarrow q) \\wedge (q \\Rightarrow r) \\Rightarrow (p \\Rightarrow r)$",
-      "name": "Transitivity"
-    },
-    {
-      "rule": "3.82b",
-      "eq": "$(p \\equiv q) \\wedge (q \\Rightarrow r) \\Rightarrow (p \\Rightarrow r)$",
-      "name": "Transitivity"
-    },
-    {
-      "rule": "3.82c",
-      "eq": "$(p \\Rightarrow q) \\wedge (q \\equiv r) \\Rightarrow (p \\Rightarrow r)$",
+      "rule": "3.82",
+      "eq": "$\\text{(a) (p }\\Rightarrow q) \\wedge (q \\Rightarrow r) \\Rightarrow (p \\Rightarrow r)\\\\\\text{(b) (p} \\equiv q) \\wedge (q \\Rightarrow r) \\Rightarrow (p \\Rightarrow r)\\\\\\text{(c) (p} \\Rightarrow q) \\wedge (q \\equiv r) \\Rightarrow (p \\Rightarrow r)$",
       "name": "Transitivity"
     },
     {
@@ -462,9 +414,6 @@
       "rule": "3.82.2",
       "eq": "$(p \\equiv q) \\Rightarrow (p \\Rightarrow q)$"
     },
-
-
-
     {
       "section": "Leibniz as an axiom",
       "type": "axiom",
@@ -473,38 +422,19 @@
       "name": "Leibniz"
     },
     {
-      "rule": "3.84a",
-      "eq": "$(e = f) \\wedge E^z_e\\ \\equiv\\ (e = f) \\wedge E^z_f$",
+      "rule": "3.84",
+      "eq": "$\\text{(a) (e = f)} \\wedge E^z_e\\ \\equiv\\ (e = f) \\wedge E^z_f\\\\\\text{(b) (e = f)} \\Rightarrow E^z_e\\ \\equiv\\ (e = f) \\Rightarrow E^z_f\\\\\\text{(c) q} \\wedge (e = f) \\Rightarrow E^z_e\\ \\equiv\\ q \\wedge (e = f) \\Rightarrow E^z_f$",
       "name": "Substitution"
     },
+
     {
-      "rule": "3.84b",
-      "eq": "$(e = f) \\Rightarrow E^z_e\\ \\equiv\\ (e = f) \\Rightarrow E^z_f$",
-      "name": "Substitution"
-    },
-    {
-      "rule": "3.84c",
-      "eq": "$q \\wedge (e = f) \\Rightarrow E^z_e\\ \\equiv\\ q \\wedge (e = f) \\Rightarrow E^z_f$",
-      "name": "Substitution"
-    },
-    {
-      "rule": "3.85a",
-      "eq": "$p \\Rightarrow E^z_p\\ \\equiv\\ p \\Rightarrow E^z_\\textit{true}$</li>",
+      "rule": "3.85",
+      "eq": "$\\text{(a) p }\\Rightarrow E^z_p\\ \\equiv\\ p \\Rightarrow E^z_\\textit{true}\\\\\\text{(b) q}\\wedge p \\Rightarrow E^z_p\\ \\equiv\\ q \\wedge p \\Rightarrow E^z_\\textit{true}$",
       "name": "Replace by $\\textit{true}$"
     },
     {
-      "rule": "3.85b",
-      "eq": "$q \\wedge p \\Rightarrow E^z_p\\ \\equiv\\ q \\wedge p \\Rightarrow E^z_\\textit{true}$",
-      "name": "Replace by $\\textit{true}$"
-    },
-    {
-      "rule": "3.86a",
-      "eq": "$E^z_p \\Rightarrow p\\ \\equiv\\ E^z_\\textit{false} \\Rightarrow p$</li>",
-      "name": "Replace by $\\textit{false}$"
-    },
-    {
-      "rule": "3.86b",
-      "eq": "$E^z_p \\Rightarrow p \\vee q\\ \\equiv\\ E^z_\\textit{false} \\Rightarrow p \\vee q$",
+      "rule": "3.86",
+      "eq": "$\\text{(a) }E^z_p \\Rightarrow p\\ \\equiv\\ E^z_\\textit{false} \\Rightarrow p\\\\\\text{(b) }E^z_p \\Rightarrow p \\vee q\\ \\equiv\\ E^z_\\textit{false} \\Rightarrow p \\vee q$",
       "name": "Replace by $\\textit{false}$"
     },
     {
@@ -544,13 +474,10 @@
       "eq": "$(p \\Rightarrow q) \\Rightarrow (p \\wedge r \\Rightarrow q \\wedge r)$",
       "name": "Monotonicity of $\\wedge$"
     },
-
-
-
     {
       "section": "Proof technique metatheorems",
       "rule": "4.4",
-      "eq": "To prove $P_1 \\wedge P_2 \\Rightarrow Q$, assume $P_1$ and $P_2$, and prove $Q$.",
+      "eq": "To prove $P_1 \\wedge P_2 \\Rightarrow Q$, assume $P_1$ and $P_2$, and prove $Q$.$\\\\$You cannot use textual subsitution in $P_1$ or $P_2$.",
       "name": "Deduction (assume conjuncts of antecedent)"
     },
     {
@@ -596,66 +523,62 @@
     {
       "type": "axiom",
       "rule": "8.14",
-      "eq": "$(\\star x\\mid x = E:P) = P[x:=E]$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{ 'x' },\\textit{ 'E'}\\text{ )},\\\\(\\star x\\mid x = E:P) = P[x:=E]$",
       "name": "One-point rule"
     },
     {
       "type": "axiom",
       "rule": "8.15",
-      "eq": "$(\\star x\\mid R:P) \\star (\\star x \\mid R: Q) = (\\star x \\mid R : P \\star Q)$",
+      "eq": "$\\text{Provided } \\textit{P, Q : }\\mathbb{B} \\text{ or }\\textit{R }\\text{is finite,}\\\\(\\star x\\mid R:P) \\star (\\star x \\mid R: Q) = (\\star x \\mid R : P \\star Q)$",
       "name": "Distributivity"
     },
     {
       "type": "axiom",
       "rule": "8.16",
-      "eq": "$(\\star x\\mid R \\vee S : P) = (\\star x \\mid R: P) \\star (\\star x \\mid S : P)$",
+      "eq": "$\\text{Provided }\\textit{R }\\wedge\\textit{ S }\\equiv\\textit{ false }\\text{and }\\textit{P : }\\mathbb{B}\\text{ or }\\textit{R }\\text{and }\\textit{S }\\text{are finite,}\\\\(\\star x\\mid R \\vee S : P) = (\\star x \\mid R: P) \\star (\\star x \\mid S : P)$",
       "name": "Range split for independent R and S"
     },
     {
       "type": "axiom",
       "rule": "8.17",
-      "eq": "$(\\star x\\mid R \\vee S : P) \\star (\\star x \\mid R \\wedge S : P) = (\\star x \\mid R : P) \\star (\\star x \\mid S : P)$",
+      "eq": "$\\text{Provided }\\textit{P : }\\mathbb{B}\\text{ or }\\textit{R }\\text{and }\\textit{S}\\text{ are finite,}\\\\(\\star x\\mid R \\vee S : P) \\star (\\star x \\mid R \\wedge S : P) = (\\star x \\mid R : P) \\star (\\star x \\mid S : P)$",
       "name": "Range split"
     },
     {
       "type": "axiom",
       "rule": "8.18",
-      "eq": "$(\\star x\\mid R \\vee S : P) = (\\star x\\mid R : P) \\star (\\star x\\mid S : P)$",
+      "eq": "$\\text{Provided }\\star\\text{ is idempotent or}\\textit{ R }\\text{and}\\textit{ Q }\\text{ are finite,}\\\\(\\star x\\mid R \\vee S : P) = (\\star x\\mid R : P) \\star (\\star x\\mid S : P)$",
       "name": "Range split for idempotent $\\star$"
     },
     {
       "type": "axiom",
       "rule": "8.19",
-      "eq": "$(\\star x\\mid R : (\\star y\\mid Q : P)) = (\\star y\\mid R : (\\star x \\mid Q : P))$",
+      "eq": "$\\text{Provided }\\star\\text{ is idempotent or }\\textit{R }\\text{and }\\textit{Q }\\text{are finite,}\\\\\\neg\\textit{occurs}\\text{(}\\textit{'y', 'R'}\\text{ ), }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'Q'}\\text{ )}\\\\(\\star x\\mid R : (\\star y\\mid Q : P)) = (\\star y\\mid R : (\\star x \\mid Q : P))$",
       "name": "Interchange of dummies"
     },
     {
       "type": "axiom",
       "rule": "8.20",
-      "eq": "$(\\star x, y \\mid R \\wedge Q : P) = (\\star x \\wedge R : (\\star y \\mid Q : P))$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'y', 'R,'}\\text{ ),}\\\\(\\star x, y \\mid R \\wedge Q : P) = (\\star x \\wedge R : (\\star y \\mid Q : P))$",
       "name": "Nesting"
     },
     {
       "type": "axiom",
       "rule": "8.21",
-      "eq": "$(\\star x \\mid R : P) = (\\star y \\mid R[x := y] : P[x := y])$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'y', 'R, P'}\\text{ ),}\\\\(\\star x \\mid R : P) = (\\star y \\mid R[x := y] : P[x := y])$",
       "name": "Dummy renaming"
     },
     {
       "rule": "8.22",
-      "eq": "$(\\star x \\mid R : P) = (\\star y \\mid R[x := f.y]: P[x := f.y])$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'y', 'R, P'}\\text{ ), and }\\textit{f }\\text{ has an inverse,}\\\\(\\star x \\mid R : P) = (\\star y \\mid R[x := f.y]: P[x := f.y])$",
       "name": "Change of dummy"
     },
     {
-      "rule": "8.23a",
-      "eq": "$(\\star i \\mid 0 \\le i < n + 1 : P) = (\\star i \\mid 0 \\le i < n : P) \\star P[i := n]$",
+      "rule": "8.23",
+      "eq": "$\\text{For }\\textit{n: }\\mathbb{N,}\\\\\\text{(a) }(\\star i \\mid 0 \\le i < n + 1 : P) = (\\star i \\mid 0 \\le i < n : P) \\star P[i := n]\\\\\\text{(b) }(\\star i \\mid 0 \\le i < n + 1 : P) = P[i := 0] \\star (\\star i \\mid 0 < i < n + 1: P)$",
       "name": "Split off term"
     },
-    {
-      "rule": "8.23b",
-      "eq": "$(\\star i \\mid 0 \\le i < n + 1 : P) = P[i := 0] \\star (\\star i \\mid 0 < i < n + 1: P)$",
-      "name": "Split off term"
-    },
+
     {
       "section": "Universal quantification",
       "subtext": "Notation: $\\star x \\mid : P)$ means $(\\star x \\mid \\textit{true} : P)$.",
@@ -665,38 +588,13 @@
       "name": "Trading"
     },
     {
-      "rule": "9.3a",
-      "eq": "$(\\forall x \\mid R : P) \\equiv (\\forall x \\mid : \\neg R \\vee P)$",
+      "rule": "9.3",
+      "eq": "$\\text{(a) }(\\forall x \\mid R : P) \\equiv (\\forall x \\mid : \\neg R \\vee P)\\\\\\text{(b) }(\\forall x \\mid R : P) \\equiv (\\forall x \\mid : R \\wedge P \\equiv R)\\\\\\text{(c) }(\\forall x \\mid R : P) \\equiv (\\forall x \\mid : R \\vee P \\equiv P)$",
       "name": "Trading"
     },
     {
-      "rule": "9.3b",
-      "eq": "$(\\forall x \\mid R : P) \\equiv (\\forall x \\mid : R \\wedge P \\equiv R)$",
-      "name": "Trading"
-    },
-    {
-      "rule": "9.3c",
-      "eq": "$(\\forall x \\mid R : P) \\equiv (\\forall x \\mid : R \\vee P \\equiv P)$",
-      "name": "Trading"
-    },
-    {
-      "rule": "9.4a",
-      "eq": "$(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : R \\Rightarrow P)$",
-      "name": "Trading"
-    },
-    {
-      "rule": "9.4b",
-      "eq": "$(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : \\neg R \\vee P)$",
-      "name": "Trading"
-    },
-    {
-      "rule": "9.4c",
-      "eq": "$(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : R \\wedge P \\equiv R)$",
-      "name": "Trading"
-    },
-    {
-      "rule": "9.4d",
-      "eq": "$(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : R \\vee P \\equiv P)$",
+      "rule": "9.4",
+      "eq": "$\\text{(a) }(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : R \\Rightarrow P)\\\\\\text{(b) }(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : \\neg R \\vee P)\\\\\\text{(c) }(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : R \\wedge P \\equiv R)\\\\\\text{(d) }(\\forall x \\mid Q \\wedge R : P) \\equiv (\\forall x \\mid Q : R \\vee P \\equiv P)$",
       "name": "Trading"
     },
     {
@@ -707,16 +605,16 @@
     {
       "type": "axiom",
       "rule": "9.5",
-      "eq": "$P \\vee (\\forall x \\mid R : Q) \\equiv (\\forall x \\mid R : P \\vee Q)$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'P'}\\text{ ),}\\\\P \\vee (\\forall x \\mid R : Q) \\equiv (\\forall x \\mid R : P \\vee Q)$",
       "name": "Distributivity of $\\vee$ over $\\forall$"
     },
     {
       "rule": "9.6",
-      "eq": "$(\\forall x \\mid R : P) \\equiv P \\vee (\\forall x \\mid : \\neg R)$"
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'P'}\\text{ ),}\\\\(\\forall x \\mid R : P) \\equiv P \\vee (\\forall x \\mid : \\neg R)$"
     },
     {
       "rule": "9.7",
-      "eq": "$\\neg (\\forall x \\mid : \\neg R) \\Rightarrow ((\\forall x \\mid R: P \\wedge Q) \\equiv P \\wedge (\\forall x \\mid R : Q))$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'P'}\\text{ ),}\\\\\\neg (\\forall x \\mid : \\neg R) \\Rightarrow ((\\forall x \\mid R: P \\wedge Q) \\equiv P \\wedge (\\forall x \\mid R : Q))$",
       "name": "Distributivity of $\\wedge$ over $\\forall$"
     },
     {
@@ -752,9 +650,6 @@
       "eq": "$P \\text{ is a theorem iff }(\\forall x \\mid : P) \\text{ is a theorem.}$",
       "name": "Metatheorem"
     },
-
-
-
     {
       "section": "Existential quantification",
       "type": "axiom",
@@ -763,18 +658,8 @@
       "name": "Generalized De Morgan"
     },
     {
-      "rule": "9.18a",
-      "eq": "$\\neg (\\exists x \\mid R : \\neg P) \\equiv (\\forall x \\mid R : P)$",
-      "name": "Generalized De Morgan"
-    },
-    {
-      "rule": "9.18b",
-      "eq": "$\\neg (\\exists x \\mid R : P) \\equiv (\\forall x \\mid R: \\neg P)$",
-      "name": "Generalized De Morgan"
-    },
-    {
-      "rule": "9.18c",
-      "eq": "$(\\exists x \\mid R : \\neg P) \\equiv \\neg (\\forall x \\mid R : P)$",
+      "rule": "9.18",
+      "eq": "$\\text{(a) }\\neg (\\exists x \\mid R : \\neg P) \\equiv (\\forall x \\mid R : P)\\\\\\text{(b) }\\neg (\\exists x \\mid R : P) \\equiv (\\forall x \\mid R: \\neg P)\\\\\\text{(c) }(\\exists x \\mid R : \\neg P) \\equiv \\neg (\\forall x \\mid R : P)$",
       "name": "Generalized De Morgan"
     },
     {
@@ -798,12 +683,12 @@
     },
     {
       "rule": "9.21",
-      "eq": "$P \\wedge (\\exists x \\mid R : Q) \\equiv (\\exists x \\mid R : P \\wedge Q)$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'P' }\\text{),}\\\\P \\wedge (\\exists x \\mid R : Q) \\equiv (\\exists x \\mid R : P \\wedge Q)$",
       "name": "Distributivity of $\\wedge$ over $\\exists$"
     },
     {
       "rule": "9.22",
-      "eq": "$(\\exists x \\mid R : P) \\equiv P \\wedge (\\exists x \\mid : R)$"
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'P' }\\text{),}\\\\(\\exists x \\mid R : P) \\equiv P \\wedge (\\exists x \\mid : R)$"
     },
     {
       "rule": "9.23",
@@ -836,16 +721,13 @@
     },
     {
       "rule": "9.29",
-      "eq": "$(\\exists x \\mid R : (\\forall y \\mid Q : P)) \\Rightarrow (\\forall y \\mid Q : (\\exists x \\mid R : P))$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{(}\\textit{'y', 'R' }\\text{)}\\text{ and }\\neg\\textit{occurs}\\text{(}\\textit{'x', 'Q' }\\text{),}\\\\(\\exists x \\mid R : (\\forall y \\mid Q : P)) \\Rightarrow (\\forall y \\mid Q : (\\exists x \\mid R : P))$",
       "name": "Interchange of quantification"
     },
     {
       "rule": "9.30",
-      "eq": "$(\\exists x \\mid R : P) \\Rightarrow Q \\text{ is a theorem iff}\\$R \\wedge P)[x := \\hat{x}] \\Rightarrow Q \\text{ is a theorem.}$"
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{('}\\hat{x}\\textit{', 'Q' }\\text{),}\\\\(\\exists x \\mid R : P) \\Rightarrow Q \\text{ is a theorem iff (R} \\wedge P)[x := \\hat{x}] \\Rightarrow Q \\text{ is a theorem.}$"
     },
-
-
-
     {
       "section": "A theory of sets",
       "rule": "11.2",
@@ -854,7 +736,7 @@
     {
       "type": "axiom",
       "rule": "11.3",
-      "eq": "$F \\in \\{x \\mid R : E\\} \\equiv (\\exists x \\mid R : F = E)$",
+      "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{('}\\textit{x', 'F'}\\text{ ),}\\\\F \\in \\{x \\mid R : E\\} \\equiv (\\exists x \\mid R : F = E)$",
       "name": "Set membership"
     },
     {
@@ -890,7 +772,7 @@
     {
       "type": "axiom",
       "rule": "11.5.1",
-      "eq": "$\\{x \\mid R\\} = \\{x \\mid R : x\\}$",
+      "eq": "$\\text{For }\\textit{x }\\text{a single variable,}\\\\\\{x \\mid R\\} = \\{x \\mid R : x\\}$",
       "name": "Abbreviation"
     },
     {
@@ -899,11 +781,11 @@
     },
     {
       "rule": "11.7",
-      "eq": "$x \\in \\{x \\mid R\\}\\ \\equiv\\ R$"
+      "eq": "$x \\in \\{x \\mid R\\}\\ \\equiv\\ R\\\\\\textit{R }\\text{is the characteristic predicate of the set.}$"
     },
     {
       "rule": "11.7.1",
-      "eq": "$y \\in \\{x \\mid R\\}\\ \\equiv\\ R[x := y]$"
+      "eq": "$y \\in \\{x \\mid R\\}\\ \\equiv\\ R[x := y] \\text{for any expression }\\textit{y}$"
     },
     {
       "rule": "11.9",
@@ -915,8 +797,8 @@
     },
     {
       "rule": "11.11",
-      "eq": "<ol class=\"norm\"><li>Use Leibniz directly.</li><li>Use axiom Extensionality (11.4) and prove the (9.8) Lemma<br/>$v \\in S\\ \\equiv\\ v \\in T$ for an arbitrary value $v$.</li><li>Prove $Q \\equiv R$ and conclude $\\{x \\mid Q\\} = \\{x \\mid R\\}$.</li></ol>",
-      "name": "Methods for proving set equality"
+      "eq": "$\\text{(a) Use Leibniz directly.}\\\\\\text{(b) Use axiom Extensionality (11.4) and prove}\\\\\\text{the (9.8) Lemma }v \\in S\\ \\equiv\\ v \\in T\\text{ for an arbitrary value }\\textit{v}.\\\\\\text{(c) Prove }\\textit{Q }\\equiv\\textit{ R }\\text{and conclude }\\{x \\mid Q\\} = \\{x \\mid R\\}.$",
+      "name": "Methods for proving set equality $\\textit{S }= \\textit{T}:$"
     },
 
 
@@ -992,12 +874,12 @@
     },
     {
       "rule": "11.24",
-      "eq": "Let $E_s$ be a set expression constructed from set variables,<br/>$\\emptyset$, $\\textbf{U}$, $\\sim$, $\\cup$, and $\\cap$. Then $E_p$ is the expression constructed from $E_s$<br/>by replacing: $\\emptyset$ with $\\textit{false}$, $\\textbf{U}$ with $\\textit{true}$, $\\cup$ with $\\vee$, $\\cap$ with $\\wedge$, $\\sim$ with $\\neg$.<br/>The construction is reversible: $E_s$ can be constructed from $E_p$.<br/>",
-      "name": "Definition, $E_p$"
+      "eq": "$\\text{Let }E_s\\text{ be a set expression constructed from set variables, }\\emptyset, \\textbf{U}, \\sim, \\cup,\\text{ and }\\cap.\\\\\\text{Then }E_p\\text{ is the expression constructed from }E_s\\text{ by replacing: }\\\\ \\ \\ \\text{(a) }\\emptyset\\text{ with }\\textit{false},\\\\ \\ \\ \\text{(b) }\\textbf{U}\\text{ with }\\textit{true},\\\\ \\ \\ \\text{(c) }\\cup\\text{ with }\\vee,\\\\ \\ \\ \\text{(d) }\\cap\\text{ with }\\wedge,\\\\ \\ \\ \\text{(e) }\\sim\\text{ with }\\neg.\\\\\\text{The construction is reversible: }E_s\\text{ can be constructed from }E_p.$",
+      "name": "Definition. $E_p$"
     },
     {
       "rule": "11.25",
-      "eq": "For any set expressions $E_s$ and $F_s$:<ol class=\"norm\"><li>$E_s = F_s$ is valid iff $E_p \\equiv F_p$ is valid,</li><li>$E_s \\subseteq F_s$ is valid iff $E_p \\rightarrow F_p$ is valid,</li><li>$E_s = \\textbf{U}$ is valid iff $E_p$ is valid.</li></ol>",
+      "eq": "$\\text{For any set expressions }E_s\\text{ and }F_s\\\\ \\ \\ \\text{(a) }E_s = F_s\\text{ is valid iff }E_p \\equiv F_p\\text{ is valid,}\\\\ \\ \\ \\text{(b) }E_s \\subseteq F_s\\text{ is valid iff }E_p \\rightarrow F_p\\text{ is valid,}\\\\ \\ \\ \\text{(c) }E_s = \\textbf{U}\\text{ is valid iff }E_p\\text{ is valid.}$",
       "name": "Metatheorem"
     },
 
@@ -1039,8 +921,6 @@
       "eq": "$S \\,\\,\\cup\\, \\sim S\\ =\\ \\emptyset$",
       "name": "Excluded middle"
     },
-
-
 
     {
       "section": "Basic properties of $\\cap$",
@@ -1093,17 +973,10 @@
       "name": "Distributivity of $\\cap$ over $\\cup$"
     },
     {
-      "rule": "11.42a",
-      "eq": "$\\sim (S \\cup T)\\ =\\ \\sim S\\;\\cap \\sim T$",
+      "rule": "11.42",
+      "eq": "$\\text{(a) }\\sim (S \\cup T)\\ =\\ \\sim S\\;\\cap \\sim T\\\\\\text{(b) }\\sim (S \\cap T)\\ =\\ \\sim S\\;\\cup \\sim T$",
       "name": "De Morgan"
     },
-    {
-      "rule": "11.42b",
-      "eq": "$\\sim (S \\cap T)\\ =\\ \\sim S\\;\\cup \\sim T$",
-      "name": "De Morgan"
-    },
-
-
 
     {
       "section": "Additional properties of $\\cup$ and $\\cap$",
@@ -1230,22 +1103,10 @@
       "eq": "$(\\exists x \\mid x \\in S: x \\not \\in T)\\ \\Rightarrow\\ S \\neq T$"
     },
     {
-      "rule": "11.70a",
-      "eq": "$S \\subseteq T \\wedge T \\subset U\\ \\Rightarrow\\ S \\subset U$",
+      "rule": "11.70",
+      "eq": "$\\text{(a) }S \\subseteq T \\wedge T \\subset U\\ \\Rightarrow\\ S \\subset U\\\\\\text{(b) }S \\subset T \\wedge T \\subseteq U\\ \\Rightarrow\\ S \\subset U\\\\\\text{(c) }S \\subset T \\wedge T \\subset U\\ \\Rightarrow\\ S \\subset U$",
       "name": "Transitivity"
     },
-    {
-      "rule": "11.70b",
-      "eq": "$S \\subset T \\wedge T \\subseteq U\\ \\Rightarrow\\ S \\subset U$",
-      "name": "Transitivity"
-    },
-    {
-      "rule": "11.70c",
-      "eq": "$S \\subset T \\wedge T \\subset U\\ \\Rightarrow\\ S \\subset U$",
-      "name": "Transitivity"
-    },
-
-
 
     {
       "section": "Theorems concerning power set $\\mathcal{P}$",
@@ -1263,7 +1124,7 @@
     {
       "type": "axiom",
       "rule": "11.76",
-      "eq": "$\\text{Set }S\\text{ partitions }T\\text{ if}\\\\\\text{(i) the sets in }S\\text{ are pairwise disjoint and}\\\\\\text{(ii) the union of the sets in }S\\text{ is }T\\text{, that is, if}\\$\\forall u,v\\mid u \\in S \\wedge v \\in S \\wedge u \\neq v: u \\cap v = \\emptyset) \\wedge (\\cup u \\mid u \\in S : u) = T$",
+      "eq": "$\\text{Set }S\\text{ partitions }T\\text{ if}\\\\\\text{(i) the sets in }S\\text{ are pairwise disjoint and}\\\\\\text{(ii) the union of the sets in }S\\text{ is }T\\text{, that is, if}\\\\(\\forall u,v\\mid u \\in S \\wedge v \\in S \\wedge u \\neq v: u \\cap v = \\emptyset) \\wedge (\\cup u \\mid u \\in S : u) = T$",
       "name": "Partition"
     },
 
@@ -1283,22 +1144,23 @@
 
 
 
+
     {
-      "section": "Mathematical Induction",
+      "section": "Mathematical induction",
       "type": "axiom",
       "rule": "12.3",
       "eq": "$(\\forall n : \\mathbb{N} \\mid : (\\forall i \\mid 0 \\leq i < n : P.i) \\Rightarrow P.n)\\ \\Rightarrow\\ (\\forall n : \\mathbb{N} \\mid : P.n)$",
-      "name": "Mathematical Induction over $\\mathbb{N}$"
+      "name": "Mathematical induction over $\\mathbb{N}$"
     },
     {
       "rule": "12.4",
       "eq": "$(\\forall n: \\mathbb{N} \\mid : (\\forall i \\mid 0 \\leq i < n: P.i) \\Rightarrow P.n)\\ \\equiv\\ (\\forall n: \\mathbb{N} \\mid : P.n)$",
-      "name": "Mathematical Induction over $\\mathbb{N}$"
+      "name": "Mathematical induction over $\\mathbb{N}$"
     },
     {
       "rule": "12.5",
       "eq": "$P.0 \\wedge (\\forall n:\\mathbb{N} \\mid : (\\forall i \\mid 0 \\leq i \\leq n : P.i) \\Rightarrow P.(n + 1))\\\\\\ \\ \\ \\ \\equiv\\ (\\forall n : \\mathbb{N} \\mid : P.n)$",
-      "name": "Mathematical Induction over $\\mathbb{N}$"
+      "name": "Mathematical induction over $\\mathbb{N}$"
     },
     {
       "type": "axiom",
@@ -1315,19 +1177,19 @@
       "type": "axiom",
       "rule": "12.13",
       "eq": "$0! = 1\\\\n! = n \\cdot (n - 1)!\\quad\\text{for } n > 0$",
-      "name": "Defintion, Factorial"
+      "name": "Definition, factorial"
     },
     {
       "type": "axiom",
       "rule": "12.14",
       "eq": "$F_{0} = 0,\\quad F_{1} = 1\\\\F_{n} = F_{n - 1} + F_{n - 2}\\quad \\text{for } n > 1$",
-      "name": "Defintion, Fibonacci"
+      "name": "Definition, Fibonacci"
     },
     {
       "type": "axiom",
       "rule": "12.14.1",
       "eq": "$\\phi = (1 + \\sqrt{5})/2 \\approx 1.618\\\\\\hat \\phi = (1 - \\sqrt{5})/2 \\approx -0.618$",
-      "name": "Defintion, Golden Ratio"
+      "name": "Definition, golden ratio"
     },
     {
       "rule": "12.15",
@@ -1349,38 +1211,38 @@
       "section": "Inductively defined binary trees",
       "type": "axiom",
       "rule": "12.30",
-      "eq": "$\\emptyset\\text{ is a binary tree, called the empty tree.}\\$d,l,r)\\text{ is a binary tree, for } d: \\mathbb{Z}\\text{ and } l, r\\text{ binary trees.}$",
-      "name": "Defintion, Binary Tree"
+      "eq": "$\\emptyset\\text{ is a binary tree, called the empty tree.}\\\\\\#(d,l,r)\\text{ is a binary tree, for } d: \\mathbb{Z}\\text{ and } l, r\\text{ binary trees.}$",
+      "name": "Definition, Binary Tree"
     },
     {
       "type": "axiom",
       "rule": "12.31",
       "eq": "$\\#\\emptyset = 0\\\\\\#(d,l,r) = 1 + \\#l + \\#r$",
-      "name": "Defintion, Number of Nodes"
+      "name": "Definition, Number of Nodes"
     },
     {
       "type": "axiom",
       "rule": "12.32",
       "eq": "$\\textit{height.}\\emptyset = 0\\\\\\textit{height.}(d,l,r) = 1 + \\textit{max}(\\textit{height.}l + \\textit{height.}r)$",
-      "name": "Defintion, Height"
+      "name": "Definition, Height"
     },
     {
       "type": "axiom",
       "rule": "12.32.1",
       "eq": "$\\text{A leaf is a node with no children (i.e. two empty subtrees).}$",
-      "name": "Defintion, Leaf"
+      "name": "Definition, Leaf"
     },
     {
       "type": "axiom",
       "rule": "12.32.2",
       "eq": "$\\text{An internal node is a node that is not a leaf.}$",
-      "name": "Defintion, Internal node"
+      "name": "Definition, Internal Node"
     },
     {
       "type": "axiom",
       "rule": "12.32.3",
       "eq": "$\\text{A binary tree is complete if every node has}\\\\\\text{either 0 or 2 children.}$",
-      "name": "Defintion, Complete"
+      "name": "Definition, Complete"
     },
     {
       "rule": "12.33",
@@ -1424,7 +1286,7 @@
       "type": "axiom",
       "rule": "p.4",
       "eq": "$\\{Q\\}\\;S\\;\\{R\\}\\ \\equiv\\ (Q \\Rightarrow wp.S.R)$",
-      "name": "Defintion, Hoare triple"
+      "name": "Definition, Hoare triple"
     },
     {
       "rule": "p.5",
@@ -1435,7 +1297,7 @@
       "type": "axiom",
       "rule": "p.6",
       "eq": "$S = T\\ \\equiv\\ (\\text{For all }R, wp.S.R \\equiv wp.T.R)$",
-      "name": "Defintion, Program equivalence"
+      "name": "Definition, Program equivalence"
     },
     {
       "rule": "p.7",
@@ -1453,7 +1315,7 @@
       "type": "axiom",
       "rule": "p.10",
       "eq": "$wp.\\textit{skip}.R\\ \\equiv\\ R$",
-      "name": "Defintion, skip"
+      "name": "Definition, skip"
     },
     {
       "rule": "p.11",
@@ -1463,7 +1325,7 @@
       "type": "axiom",
       "rule": "p.12",
       "eq": "$wp.\\textit{abort}.R\\ \\equiv\\ \\textit{false}$",
-      "name": "Defintion, abort"
+      "name": "Definition, abort"
     },
     {
       "rule": "p.13",
@@ -1473,7 +1335,7 @@
       "type": "axiom",
       "rule": "p.14",
       "eq": "$wp.(S; T).R\\ \\equiv\\ wp.S.(wp.T.R)$",
-      "name": "Defintion, Composition"
+      "name": "Definition, Composition"
     },
     {
       "rule": "p.15",
@@ -1493,7 +1355,7 @@
       "type": "axiom",
       "rule": "p.18",
       "eq": "$wp.(x := E).R\\ \\equiv\\ R[x := E]$",
-      "name": "Defintion, Assignment"
+      "name": "Definition, Assignment"
     },
     {
       "rule": "p.19",
@@ -1513,8 +1375,8 @@
     {
       "type": "axiom",
       "rule": "p.22",
-      "eq" : "$wp.IFG.R\\ \\equiv\\ (B1 \\vee B2 \\vee B3) \\wedge\\$B1 \\Rightarrow wp.S1.R) \\wedge (B2 \\Rightarrow wp.S2.R) \\wedge (B3 \\Rightarrow wp.S3.R)$",
-      "name": "Defintion, $IFG$"
+      "eq" : "$wp.IFG.R\\ \\equiv\\ \\\\ (B1 \\vee B2 \\vee B3) \\wedge\\$B1 \\Rightarrow wp.S1.R) \\\\\\wedge (B2 \\Rightarrow wp.S2.R) \\wedge (B3 \\Rightarrow wp.S3.R)$",
+      "name": "Definition, $IFG$"
     },
     {
       "rule": "p.23",
@@ -1525,7 +1387,7 @@
     {
       "rule": "p.24",
       "eq": "$\\text{To prove }\\{Q\\}\\;IFG\\;\\{R\\}\\text{, it suffices to prove}\\\\\\text{(a) }Q \\Rightarrow B1 \\vee B2 \\vee B3\\text{,}\\\\\\text{(b) }\\{Q \\wedge B1\\}\\;S1\\;\\{R\\}\\text{,}\\\\\\text{(c) }\\{Q \\wedge B2\\}\\;S2\\;\\{R\\}\\text{, and}\\\\\\text{(d) }\\{Q \\wedge B3\\}\\;S3\\;\\{R\\}\\text{.}$",
-      "name": "proof method for $IFG$"
+      "name": "Proof method for $IFG$"
     },
     {
       "rule": "p.25",
@@ -1567,13 +1429,6 @@
       "rule": "14.2",
       "eq": "$\\langle b,c \\rangle = \\langle b', c'\\rangle\\ \\equiv\\ \\ b = b' \\wedge c = c'$",
       "name": "Pair equality"
-
-    },
-    {
-      "rule": "",
-      "eq": "&vellip;"
     }
-
-
   ]
 }

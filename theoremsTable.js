@@ -1,4 +1,4 @@
-const theoremsStr = require('./Antlr/theorems.json');
+const theoremsStr = require('./Antlr/theoremsFormat.json');
 
 MathJax.Hub.Config({
   extensions: [

@@ -6,8 +6,7 @@ const SlickLexer = require('./SlickLexer.js').SlickLexer;
 const SlickParser = require('./SlickParser.js').SlickParser;
 const fs = require('fs');
 const theoremsStr = require('./theorems.json');
-// console.log(theorems);
-// const theoremsStr= fs.readFileSync(theorems).toString();
+
 
 
 class SlickCompiler extends SlickListener {
