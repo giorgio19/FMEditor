@@ -91,6 +91,15 @@ var bindings = {
       this.quill.setSelection(range.index + 3);
     }
   },
+  exerciseBrackets:{
+    key: 219,
+    prefix: /;$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, '[[[' + '\n\n' + ']]]')
+      this.quill.setSelection(range.index + 3);
+    }
+  },
   brackets:{
     key: 219,
     handler: function(range,context){
@@ -176,24 +185,18 @@ var bindings = {
         if(context.offset == 2){
           this.quill.insertText(range.index - 2, equalsUnicode + "  " + hintUnicode);
           this.quill.setSelection(range.index + 8);
-        } else {
-          this.quill.insertText(range.index - 2, ' ' + equalsUnicode + ' ');
-          // this.quill.setSelection(range.index + 1);
+        } else { //inline so would only be using equivales
+          this.quill.insertText(range.index - 2, " " + equivalesUnicode + " ");
         }
       }
   },
-  doesNotEqual:{
+  doesNotEquivale:{
     key: 'q',
     empty: false,
     prefix: /;ne$/,
     handler: function (range, context){
       this.quill.deleteText(range.index - 3, 3);
-      if (context.offset == 3){
-        this.quill.insertText(range.index - 3, doesNotEqualUnicode + "  " + hintUnicode);
-        this.quill.setSelection(range.index + 7);
-      } else {
-        this.quill.insertText(range.index - 3,' '  +doesNotEqualUnicode + ' ');
-      }
+      this.quill.insertText(range.index - 3,' '  + notEquivalesUnicode + ' ');
     }
   },
   less:{
@@ -522,6 +525,16 @@ var bindings = {
     handler: function(range,context){
       this.quill.deleteText(range.index - 4, 4);
       this.quill.insertText(range.index - 4, 'Name:\t\t\t\t\nPin:\t\t\t\t\t\nClass:\t\t\t\t\nAssignment:\t\n\nProve ');
+    }
+  },
+  exercise:{
+    key: 'e',
+    shiftKey: true,
+    prefix: /;$/,
+    handler: function(range, context){
+      this.quill.deleteText(range.index - 1, 1);
+      this.quill.insertText(range.index - 1, 'Exercise '+ '\n\n[[[' + '\n\n' + ']]]')
+      this.quill.setSelection(range.index + 8);
     }
   },
   prove:{
