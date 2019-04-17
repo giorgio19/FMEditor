@@ -12,7 +12,7 @@ endExpo : EXPO ;
 
 proofHead : 'Proof';
 
-sep : '-' '-' '-' '-'+ ;
+sep : '-'+ ;
 
 header : (theorem method?)        # TheoremHeader
   | 'Exercise' RULENUM            # ExerciseHeader
