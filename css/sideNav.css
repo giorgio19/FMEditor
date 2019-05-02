@@ -1,0 +1,60 @@
+body, html {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background: #1e1e1e;
+	margin-bottom: auto;
+	font-family: sans-serif;
+}
+
+.sidenav {
+  height: 95%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 30px;
+  right: 0;
+  background-color: #eee;
+  overflow: scroll;
+  transition: 0.5s;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav a {font-size: 18px;}
+}
+
+#theorems{
+	padding: 5px 5px 5px 5px;
+}
+
+table, td{
+	border: 0.1px solid black;
+	width: 500px;
+	position:relative;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	border-spacing: 0px;
+}
+
+th.centerIt {
+  text-align: center;
+}
+
+td.eq {
+  text-align: left;
+  padding: 10px 5px 10px 15px;
+	padding:
+}
+
+td.name{
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+}

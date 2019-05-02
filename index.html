@@ -1,67 +1,54 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" type="text/css" href="quill.snow.css">
-    <script src = "https://rawgit.com/RickStrahl/jquery-resizable/master/src/jquery-resizable.js"></script>
+    <title>Predicate</title>
+    <link rel="stylesheet" type="text/css" href="./css/sideNav.css">
+    <link rel="stylesheet" type="text/css" href="./css/topBar.css">
+    <link rel="stylesheet" type="text/css" href="./css/quill.snow.css">
     <script> window.jQuery = window.$ = require('jquery'); </script>
     <script type="text/javascript" src="./node_modules/mathjax-electron/MathJax-2.7.5/MathJax.js"></script>
-    <script src="./theoremsTable.js"></script>
-    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script src="./js/theoremsTable.js"></script>
   </head>
-
-  <div class="topbar"style="-webkit-app-region: drag">
-    <!-- experimenting with dropdown for symbols -->
-    <div class="topbar-left" style="width: 125px;">
-      <select id="hintSelect" onchange="hint()">
-        <option></option>
-        <option value="=">=</option>
-        <option value="⇒">⇒</option>
-        <option value="⇐">⇐</option>
-        <option value="<"><</option>
-        <option value="≤">≤</option>
-        <option value=">">></option>
-        <option value="≥">≥</option>
-      </select>
-    </div>
-    <div class="topbar-left" style="width: 125px;">
-      <select id="symbolSelect" onchange="symbol()">
-        <option></option>
-        <option value="⇒">⇒&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;im</option>
-        <option value="⇐">⇐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;ff</option>
-      </select>
-    </div>
-    <button class="topbar-btn topbar-right" id="save_button" onclick="saveFile()">Save</button>
-		<button class="topbar-btn topbar-right" id="load_button" onclick="loadFile()">Load</button>
-    <button class="topbar-btn topbar-right" id="text" onclick="print()">Print</button>
-		<div class="clear"></div>
-  </div>
   <body>
-    <div class="page-container">
-        <div class="panel-container">
-
-            <div class="panel-left">
-              <div id="editor"></div>
-            </div>
-
-            <div class="splitter"></div>
-
-            <div class="panel-right">
-              <div id="theorems">
-                <table>
-                    <tr>
-                        <th class="centerIt">Rule</th>
-                        <th class="centerIt">Name</th>
-                        <th class="centerIt">Equation</th>
-                    </tr>
-                </table>
-              </div>
-            </div>
-        </div>
+    <div class="topbar"style="-webkit-app-region: drag">
+      <span style="top:0px;font-size:25px;cursor:pointer" class="topbar-btn topbar-left" onclick="nav()">&#9776;</span>
+      <button class="topbar-btn topbar-right" id="save_button" onclick="saveFile()">Save</button>
+      <button class="topbar-btn topbar-right" id="load_button" onclick="loadFile()">Load</button>
+      <button class="topbar-btn topbar-right" id="text" onclick="print()">Print</button>
+      <div class="clear"></div>
     </div>
-</body>
 
-<script src="app.js" charset="utf-8"></script>
+    <div id="mySidenav" class="sidenav">
+    <div id="theorems">
+      <table>
+          <tr>
+              <th class="centerIt">Rule</th>
+              <th class="centerIt">Name</th>
+              <th class="centerIt">Equation</th>
+          </tr>
+      </table>
+    </div>
+    </div>
+
+    <!-- Use any element to open the sidenav -->
+    <!-- <span onclick="openNav()">open</span> -->
+
+  <!-- Add all page content inside this div if you want the side nav to push page
+  content to the right (not used if you only want the sidenav to sit on top of the
+  page -->
+  <div id="main">
+    <h2>Sidenav Push Example</h2>
+    <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
+
+  </div>
+
+
+
+    <script>
+      // You can also require other files to run in this process
+      require('./js/renderer.js')
+    </script>
+    <script src="./js/app.js" charset="utf-8"></script>
+  </body>
 </html>
