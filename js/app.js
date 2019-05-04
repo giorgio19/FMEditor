@@ -7,7 +7,7 @@ const Quill = require('quill');
 
 function nav() {
   if (document.getElementById("right").style.width == 0){
-    document.getElementById("left").style.width = "75%";
+    document.getElementById("left").style.width = "15%";
   } else {
     document.getElementById("left").style.width = "100%";
   }

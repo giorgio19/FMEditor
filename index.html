@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <title>Predicate</title>
-    <link rel="stylesheet" type="text/css" href="./css/sideNav.css">
     <link rel="stylesheet" type="text/css" href="./css/topBar.css">
-    <link rel="stylesheet" type="text/css" href="./css/resizer.css">
+    <link rel="stylesheet" type="text/css" href="./css/splitter.css">
+    <link rel="stylesheet" type="text/css" href="./css/theorem.css">
     <link rel="stylesheet" type="text/css" href="./css/quill.snow.css">
     <script> window.jQuery = window.$ = require('jquery'); </script>
     <script type="text/javascript" src="./node_modules/mathjax-electron/MathJax-2.7.5/MathJax.js"></script>
     <script src="./js/theoremsTable.js"></script>
-    <script src="jquery-resizeable.js"></script>
+    <script src="./js/jquery-resizeable.js"></script>
   </head>
   <body>
     <div class="topbar"style="-webkit-app-region: drag">
@@ -21,31 +21,23 @@
       <div class="clear"></div>
     </div>
 
-  <div id="container" class="panel-container">
+    <div id="container" class="panel-container">
+      <div id="left" class="panel-left">
+      </div>
 
-    <div id="left" class="panel-left">
+      <div id="split" class="splitter"></div>
 
+      <div id="right" class="panel-right">
+        <div>
+        <table>
+            <tr>
+                <th class="centerIt">Rule</th>
+                <th class="centerIt">Name</th>
+                <th class="centerIt">Equation</th>
+            </tr>
+        </table>
+        </div>
     </div>
-
-    <div id="split" class="splitter">
-
-    </div>
-
-    <div id="right" class="panel-right">
-
-    </div>
-</div>
-
-
-  <!-- Add all page content inside this div if you want the side nav to push page
-  content to the right (not used if you only want the sidenav to sit on top of the
-  page -->
-
-
-
-
-
-
     <script>
       // You can also require other files to run in this process
       require('./js/renderer.js');

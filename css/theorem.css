@@ -1,0 +1,25 @@
+table, td{
+	border: 0.1px solid black;
+	width: 500px;
+	position:relative;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	border-spacing: 0px;
+}
+
+th.centerIt {
+  text-align: center;
+}
+
+td.eq {
+  text-align: left;
+  padding: 10px 5px 10px 15px;
+	padding:
+}
+
+td.name{
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+}
