@@ -6,20 +6,17 @@ const SlickCompiler = require('./Antlr/SlickCompiler').SlickCompiler
 const Quill = require('quill');
 
 function nav() {
-  console.log('start');
-  if (document.getElementById("mySidenav").style.width != "50%"){
-    document.getElementById("mySidenav").style.width = "50%";
-    document.getElementById("main").style.marginRight = "50%";
+  if (document.getElementById("right").style.width == 0){
+    document.getElementById("left").style.width = "75%";
   } else {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginRight = "0";
+    document.getElementById("left").style.width = "100%";
   }
 }
 
-function closeNav() {
-
-}
-
+$(".panel-left").resizable({
+  handleSelector: ".splitter",
+  resizeHeight: false
+});
 
 var loadedfs;
 

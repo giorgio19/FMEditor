@@ -1,0 +1,32 @@
+/* horizontal panel*/
+.panel-container {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 30px;
+}
+.panel-left {
+    flex: 0 0 auto;  /* only manually resize */
+    width: 100%;
+    min-width: 0px;
+    max-width: 100%;
+    white-space: nowrap;
+    background: #838383;
+    color: white;
+}
+.splitter {
+    flex: 0 0 auto;
+    width: 15px;
+    background: url(../vsizegrip.png) center center no-repeat #535353;
+    /* min-height: 200px; */
+    cursor: col-resize;
+}
+.panel-right {
+    flex: 1 1 auto; /* resizable */
+    /* min-height: 200px; */
+    min-width: 0px;
+    background: #eee;
+}
