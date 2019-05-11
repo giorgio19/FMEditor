@@ -5,11 +5,23 @@ const {app, BrowserWindow} = require('electron')
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
+// Quit when all windows are closed.
+app.on('window-all-closed', function() {
+  // On macOS it is common for applications and their menu bar
+  // to stay active until the user quits explicitly with Cmd + Q
+    app.quit();
+});
+
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    show: false,
+   'width': 1800,
+   'height': 800,
+   // 'minWidth': 800,
+   'minHeight': 600,
+   titleBarStyle: '',
+   title: 'Formal Methods Editor',
     webPreferences: {
       nodeIntegration: true
     }
@@ -20,6 +32,10 @@ function createWindow () {
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
+
+  mainWindow.once('ready-to-show', () => {
+   mainWindow.show()
+ })
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

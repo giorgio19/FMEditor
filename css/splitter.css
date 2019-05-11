@@ -27,6 +27,7 @@ body, html {
     white-space: nowrap;
     background: #838383;
     color: white;
+		overflow-y: scroll;
 }
 .splitter {
     flex: 0 0 auto;
