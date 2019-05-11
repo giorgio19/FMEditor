@@ -1410,7 +1410,7 @@
     },
     {
       "rule": "p.29",
-      "eq": "$\\text{Suppose}$<ul class=\"norm\"><li>$\\{P \\wedge B\\}\\;S\\;\\{P\\}\\ \\text{holds---i.e. execution of S begun in a state}\\\\\\text{in which }P\\text{ and }B\\text{ are }\\textit{true}\\text{ terminates with }P\\textit{ true}\\text{---and}$</li><li>$\\{P\\}\\ \\mathbf{do}\\ B \\rightarrow S\\ \\mathbf{od}\\ \\{\\textit{true}\\}\\text{---i.e. execution of the loop begun}\\\\\\text{in a state in which }P\\text{ is }\\textit{true}\\text{ terminates.}$</li><br/>$\\text{Then }\\{P\\}\\ \\mathbf{do}\\ B \\rightarrow S\\ \\mathbf{od}\\ \\{P \\wedge \\neg B\\}\\ \\text{holds.}$</ul>",
+      "eq": "$\\text{Suppose}$<ul class=\"norm\"><li>$\\{P \\wedge B\\}\\;S\\;\\{P\\}\\ \\text{holds --- i.e. execution of S begun in a state}\\\\\\text{in which }P\\text{ and }B\\text{ are }\\textit{true}\\text{ terminates with }P\\textit{ true}\\text{ --- and}$</li><li>$\\{P\\}\\ \\mathbf{do}\\ B \\rightarrow S\\ \\mathbf{od}\\ \\{\\textit{true}\\}\\text{ --- i.e. execution of the loop begun}\\\\\\text{in a state in which }P\\text{ is }\\textit{true}\\text{ terminates.}$</li><br/>$\\text{Then }\\{P\\}\\ \\mathbf{do}\\ B \\rightarrow S\\ \\mathbf{od}\\ \\{P \\wedge \\neg B\\}\\ \\text{holds.}$</ul>",
       "name": "Fundamental Invariance Theorem"
     },
     {

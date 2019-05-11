@@ -5,11 +5,14 @@ const dialog = remote.require('electron').dialog;
 const SlickCompiler = require('./Antlr/SlickCompiler').SlickCompiler
 const Quill = require('quill');
 
+var openFlag = false;
 function nav() {
-  if (document.getElementById("left").style.width == 0){
-    document.getElementById("left").style.width = "15%";
-  } else if (document.getElementById("left").style.width == 0){
+  if (!openFlag){
+      document.getElementById("left").style.width = "42%";
+      openFlag = true;
+  } else {
     document.getElementById("left").style.width = "100%";
+    openFlag = false;
   }
 }
 
