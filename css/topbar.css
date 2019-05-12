@@ -33,7 +33,7 @@ button {
 	margin: 7px 0;
 	color: white;
 	font-size: 16px;
-	font-family: montserrat;
+	font-family: sans-serif;
 }
 .topbar-right {
 	top: 0;
@@ -41,12 +41,13 @@ button {
 	float: right;
 	position: relative;
 	z-index: 1;
-	font-family: montserrat;
+	font-family: sans-serif;
 }
 .topbar-btn {
 	height: 30px;
 	background: #1e1e1e;
 	color: #bababa;
+	font-size:14px;
 }
 .topbar-btn:hover {
 	background: #535353;
