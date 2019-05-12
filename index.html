@@ -14,7 +14,11 @@
   </head>
   <body>
     <div class="topbar"style="-webkit-app-region: drag">
-      <span style="top:0px;font-size:25px;cursor:pointer" class="topbar-btn topbar-left" onclick="nav()">&#9776;</span>
+      <div class="container" onclick="nav(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
       <button class="topbar-btn topbar-right" id="save_button" onclick="saveFile()">Save</button>
       <button class="topbar-btn topbar-right" id="load_button" onclick="loadFile()">Load</button>
       <button class="topbar-btn topbar-right" id="text" onclick="print()">Print</button>

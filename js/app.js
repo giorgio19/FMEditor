@@ -6,8 +6,9 @@ const SlickCompiler = require('./Antlr/SlickCompiler').SlickCompiler
 const Quill = require('quill');
 
 var openFlag = false;
-function nav() {
-  if (!openFlag){
+function nav(x) {
+   x.classList.toggle("change");
+   if (!openFlag){
       document.getElementById("left").style.width = "42%";
       openFlag = true;
   } else {
