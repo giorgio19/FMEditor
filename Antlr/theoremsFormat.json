@@ -1,7 +1,7 @@
 {
   "theorems": [
     {
-      "section": "Equivalence and $\\textit{true}$",
+      "section": "$\\text{Equivalence and }\\textit{true}$",
       "type": "axiom",
       "rule": "3.1",
       "eq": "$((p \\equiv q) \\equiv r)\\ \\equiv\\ (p \\equiv (q \\equiv r))$",
