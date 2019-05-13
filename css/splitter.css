@@ -25,9 +25,9 @@ body, html {
     min-width: 0px;
     max-width: 100%;
     white-space: nowrap;
-    background: #838383;
+    background:#A5A5A5;
     color: white;
-		overflow-y: scroll;
+	overflow-y: hidden;
 }
 .splitter {
     flex: 0 0 auto;
