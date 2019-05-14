@@ -55,8 +55,8 @@ $(document).ready(function () {
 });
 
 function createTable(){
-    $("#accBegin").prepend("<input id='search' type='text' placeholder='Search..'>");
-    $("#accBegin").append("$\\text{Theorem Sections}$");
+    // $("#accBegin").prepend("<input id='search' type='text' placeholder='Search..'>");
+    // $("#accBegin").append("$\\text{Theorem Sections}$");
     var theorems = theoremsStr.theorems;
     var i = 0;
     var str = "<button class='accordion'>" + theorems[i].section + "</button><div class='panel'><table>"
@@ -85,5 +85,5 @@ function createTable(){
           str += "<td class='eq'>" + theorems[i].eq + "</td></tr>";
         }
       }
-        $("#begin").append(str);
+        $("#right").append(str);
     }
