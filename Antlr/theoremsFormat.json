@@ -32,7 +32,7 @@
 
 
     {
-      "section": "Negation, inequivalence and $\\textit{false}$",
+      "section": "$\\text{Negation, inequivalence and }\\textit{false}$",
       "type": "axiom",
       "rule": "3.8",
       "eq": "$\\textit{false} \\equiv \\neg \\textit{true}$",
@@ -100,7 +100,7 @@
 
 
     {
-      "section": "Disjunction",
+      "section": "$\\text{Disjunction}$",
       "type": "axiom",
       "rule": "3.24",
       "eq": "$p \\vee q\\ \\equiv\\ q \\vee p$",
@@ -153,7 +153,7 @@
 
 
     {
-      "section": "Conjunction",
+      "section": "$\\text{Conjunction}$",
       "type": "axiom",
       "rule": "3.35",
       "eq": "$p \\wedge q\\ \\equiv\\ p\\ \\equiv\\ q\\ \\equiv\\ p \\vee q$",
@@ -256,7 +256,7 @@
       "eq": "$(p \\wedge q) \\wedge r\\ \\equiv\\ p\\ \\equiv\\ q\\ \\equiv\\ r\\ \\equiv\\ \\\\\\>\\>\\>\\>\\>\\>\\>p \\vee q\\ \\equiv\\ q \\vee r\\ \\equiv\\ r \\vee p\\ \\equiv\\ p \\vee q \\vee r$"
     },
     {
-      "section": "Implication",
+      "section": "$\\text{Implication}$",
       "type": "axiom",
       "rule": "3.57",
       "eq": "$p \\Rightarrow q\\ \\equiv\\ p \\vee q\\ \\equiv\\ q$",
@@ -415,7 +415,7 @@
       "eq": "$(p \\equiv q) \\Rightarrow (p \\Rightarrow q)$"
     },
     {
-      "section": "Leibniz as an axiom",
+      "section": "$\\text{Leibniz as an axiom}$",
       "type": "axiom",
       "rule": "3.83",
       "eq": "$e = f \\Rightarrow E^z_e = E^z_f$",
@@ -460,7 +460,7 @@
 
 
     {
-      "section": "Additional theorems concerning implication",
+      "section": "$\\text{Additional theorems concerning implication}$",
       "rule": "4.1",
       "eq": "$p \\Rightarrow (q \\Rightarrow p)$"
     },
@@ -475,7 +475,7 @@
       "name": "Monotonicity of $\\wedge$"
     },
     {
-      "section": "Proof technique metatheorems",
+      "section": "$\\text{Proof technique metatheorems}$",
       "rule": "4.4",
       "eq": "To prove $P_1 \\wedge P_2 \\Rightarrow Q$, assume $P_1$ and $P_2$, and prove $Q$.$\\\\$You cannot use textual subsitution in $P_1$ or $P_2$.",
       "name": "Deduction (assume conjuncts of antecedent)"
@@ -514,7 +514,7 @@
 
 
     {
-      "section": "General laws of quantification",
+      "section": "$\\text{General laws of quantification}$",
       "type": "axiom",
       "rule": "8.13",
       "eq": "$(\\star x\\mid\\textit{false}:P) = u$",
@@ -580,7 +580,7 @@
     },
 
     {
-      "section": "Universal quantification",
+      "section": "$\\text{Universal quantification}$",
       "subtext": "Notation: $\\star x \\mid : P)$ means $(\\star x \\mid \\textit{true} : P)$.",
       "type": "axiom",
       "rule": "9.2",
@@ -651,7 +651,7 @@
       "name": "Metatheorem"
     },
     {
-      "section": "Existential quantification",
+      "section": "$\\text{Existential quantification}$",
       "type": "axiom",
       "rule": "9.17",
       "eq": "$(\\exists x \\mid R : P) \\equiv \\neg(\\forall \\mid R : \\neg P)$",
@@ -729,7 +729,7 @@
       "eq": "$\\text{Provided }\\neg\\textit{occurs}\\text{('}\\hat{x}\\textit{', 'Q' }\\text{),}\\\\(\\exists x \\mid R : P) \\Rightarrow Q \\text{ is a theorem iff (R} \\wedge P)[x := \\hat{x}] \\Rightarrow Q \\text{ is a theorem.}$"
     },
     {
-      "section": "A theory of sets",
+      "section": "$\\text{A theory of sets}$",
       "rule": "11.2",
       "eq": "$\\{e_0, \\dots , e_{n - 1}\\} = \\{x \\mid x = e_0 \\vee \\dots \\vee x = e_{n - 1} : x\\}$"
     },
@@ -804,7 +804,7 @@
 
 
     {
-      "section": "Operations on sets",
+      "section": "$\\text{Operations on sets}$",
       "type": "axiom",
       "rule": "11.12",
       "eq": "$\\#S = (\\Sigma x \\mid x \\in S : 1)$",
@@ -886,7 +886,7 @@
 
 
     {
-      "section": "Basic properties of $\\cup$",
+      "section": "$\\text{Basic properties of }\\cup$",
       "rule": "11.26",
       "eq": "$S \\cup T\\ =\\ T \\cup S$",
       "name": "Symmetry of $\\cup$"
@@ -923,7 +923,7 @@
     },
 
     {
-      "section": "Basic properties of $\\cap$",
+      "section": "$\\text{Basic properties of }\\cap$",
       "rule": "11.33",
       "eq": "$S \\cap T\\ =\\ T \\cap S$",
       "name": "Symmetry of $\\cap$"
@@ -962,7 +962,7 @@
 
 
     {
-      "section": "Basic properties of combinations of $\\cup$ and $\\cap$",
+      "section": "$\\text{Basic properties of combinations of }\\cup\\text{ and }\\cap$",
       "rule": "11.40",
       "eq": "$S \\cup (T \\cap U)\\ =\\ (S \\cup T) \\cap (S \\cup U)$",
       "name": "Distributivity of $\\cup$ over $\\cap$"
@@ -979,7 +979,7 @@
     },
 
     {
-      "section": "Additional properties of $\\cup$ and $\\cap$",
+      "section": "$\\text{Additional properties of }\\cup\\text{ and } \\cap$",
       "rule": "11.43",
       "eq": "$S \\subseteq T \\wedge U \\subseteq V\\ \\Rightarrow\\ (S \\cup U) \\subseteq (T \\cup V)$"
     },
@@ -1007,7 +1007,7 @@
 
 
     {
-      "section": "Properties of set difference",
+      "section": "$\\text{Properties of set difference}$",
       "rule": "11.49",
       "eq": "$S - T\\ =\\ S \\,\\,\\cap\\,\\sim T$"
     },
@@ -1039,7 +1039,7 @@
 
 
     {
-      "section": "Implication versus subset",
+      "section": "$\\text{Implication versus subset}$",
       "rule": "11.56",
       "eq": "$(\\forall x \\mid : P \\Rightarrow Q)\\ \\equiv\\ \\{x \\mid P\\} \\subseteq \\{x \\mid Q\\}$"
     },
@@ -1047,7 +1047,7 @@
 
 
     {
-      "section": "Properties of subset",
+      "section": "$\\text{Properties of subset}$",
       "rule": "11.57",
       "eq": "$S \\subseteq T \\wedge T \\subseteq S\\ \\equiv\\ S = T$",
       "name": "Antisymmetry"
@@ -1109,7 +1109,7 @@
     },
 
     {
-      "section": "Theorems concerning power set $\\mathcal{P}$",
+      "section": "$\\text{Theorems concerning power set }\\mathcal{P}$",
       "rule": "11.71",
       "eq": "$\\mathcal{P}\\,\\emptyset\\ =\\ \\{\\emptyset\\}$"
     },
@@ -1131,7 +1131,7 @@
 
 
     {
-      "section": "Bags",
+      "section": "$\\text{Bags}$",
       "type": "axiom",
       "rule": "11.79",
       "eq": "$v \\in \\lbag x \\mid R : E \\rbag\\ \\equiv\\ (\\exists x \\mid R : v = E) $",
@@ -1146,7 +1146,7 @@
 
 
     {
-      "section": "Mathematical induction",
+      "section": "$\\text{Mathematical induction}$",
       "type": "axiom",
       "rule": "12.3",
       "eq": "$(\\forall n : \\mathbb{N} \\mid : (\\forall i \\mid 0 \\leq i < n : P.i) \\Rightarrow P.n)\\ \\Rightarrow\\ (\\forall n : \\mathbb{N} \\mid : P.n)$",
@@ -1208,7 +1208,7 @@
       "eq": "$F_{n + m} = F_{m} \\cdot F_{n + 1} + F_{m - 1} \\cdot F_{n}\\quad\\text{for }n \\geq 0\\text{ and }m \\geq 1$"
     },
     {
-      "section": "Inductively defined binary trees",
+      "section": "$\\text{Inductively defined binary trees}$",
       "type": "axiom",
       "rule": "12.30",
       "eq": "$\\emptyset\\text{ is a binary tree, called the empty tree.}\\\\\\#(d,l,r)\\text{ is a binary tree, for } d: \\mathbb{Z}\\text{ and } l, r\\text{ binary trees.}$",
@@ -1265,7 +1265,7 @@
       "eq": "$\\text{Every nonempty complete tree has an odd number of nodes.}$"
     },
     {
-      "section": "A theory of programs",
+      "section": "$\\text{A theory of programs}$",
       "type": "axiom",
       "rule": "p.1",
       "eq": "$wp.S.\\textit{false} \\equiv \\textit{false}$",
@@ -1424,7 +1424,7 @@
       "name": "False guard"
     },
     {
-      "section": "Relations and functions",
+      "section": "$\\text{Relations and functions}$",
       "type": "axiom",
       "rule": "14.2",
       "eq": "$\\langle b,c \\rangle = \\langle b', c'\\rangle\\ \\equiv\\ \\ b = b' \\wedge c = c'$",

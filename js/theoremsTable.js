@@ -58,16 +58,30 @@ function createTable(){
     var i = 0;
     var str = "<button class='accordion'>" + theorems[i].section + "</button><div class='panel'><table>"
          + "<tr>"
-            + "<th class='centerIt'>Rule</th>"
-            + "<th class='centerIt'>Name</th>"
-            + "<th class='centerIt'>Equation</th>"
-        "</tr>";
-    for (i; i < theorems.length; i++) {
-        str += "<tr/>"
-        // theorems[i].section != undefined ? tr.append("<button class='accordion'>" + theorems[i].section + "</button><div class='panel'>");
-        str += "<td>" + "(" + theorems[i].rule.bold() + ")" + "</td>";
+            + "<th>Rule</th>"
+            + "<th>Name</th>"
+            + "<th>Equation</th>"
+        + "</tr><tr/>";
+        str += "<tr><td>(" + theorems[i].rule.bold() + ")</td>";
         theorems[i].name != undefined ? str += "<td class = name>" + theorems[i].name + "</td>" : str += "<td class = name> </td>";
-        str += "<td class='eq'>" + theorems[i].eq + "</td>";
-        $('table').append(str);
-
-  }  $("#right").append(str + "</div>");}
+        str += "<td class='eq'>" + theorems[i].eq + "</td></tr>";
+      for (i=1; i < theorems.length; i++) {
+        if (theorems[i].section != undefined){
+          str+= "</table></div><button class='accordion'>" + theorems[i].section + "</button><div class='panel'><table>"
+               + "<tr>"
+                  + "<th>Rule</th>"
+                  + "<th>Name</th>"
+                  + "<th>Equation</th>"
+              + "</tr><tr/>";
+              str += "<tr><td>(" + theorems[i].rule.bold() + ")</td>";
+              theorems[i].name != undefined ? str += "<td class = name>" + theorems[i].name + "</td>" : str += "<td class = name> </td>";
+              str += "<td class='eq'>" + theorems[i].eq + "</td></tr>";
+        } else {
+          str += "<tr><td>" + "(" + theorems[i].rule.bold() + ")" + "</td>";
+          theorems[i].name != undefined ? str += "<td class = name>" + theorems[i].name + "</td>" : str += "<td class = name> </td>";
+          str += "<td class='eq'>" + theorems[i].eq + "</td></tr>";
+        }
+      }
+        $("#right").append(str);
+        console.log(str);
+    }

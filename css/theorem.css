@@ -31,9 +31,10 @@
   background-color: white;
   max-height: 0;
   transition: max-height 0.2s ease-out;
+  overflow: hidden;
 }
 
-table, td{
+table, td {
 	border: 0.1px solid black;
 	width: 500px;
 	position:relative;
@@ -43,9 +44,6 @@ table, td{
 	border-spacing: 0px;
 }
 
-th.centerIt {
-  text-align: center;
-}
 
 td.eq {
   text-align: left;
@@ -53,7 +51,10 @@ td.eq {
 }
 
 td.name{
-  text-align: center;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+td.rule{
+  text-align: center;
 }
