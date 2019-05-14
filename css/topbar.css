@@ -42,6 +42,7 @@ button {
 	position: relative;
 	z-index: 1;
 	font-family: montserrat;
+	font-size: 16px;
 }
 .topbar-btn {
 	height: 35px;
