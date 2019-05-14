@@ -11,6 +11,14 @@
   transition: 0.4s;
 }
 
+#accBegin{
+  text-align:center;
+}
+
+#search{
+  float:left;
+}
+
 .active, .accordion:hover {
   background-color: #ccc;
 }
@@ -32,6 +40,7 @@
   max-height: 0;
   transition: max-height 0.2s ease-out;
   overflow: hidden;
+  width:100%
 }
 
 table{

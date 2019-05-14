@@ -64,19 +64,3 @@ button {
 	cursor:pointer;
 	padding: 18px;
 }
-
-
-/* Style the search box inside the navigation bar */
-.topnav input[type=text] {
-  float: left;
-  padding: 6px;
-  border: none;
-  font-size: 17px;
-}
-
-.topnav:after{
-	content: '\02795';
-	font-size: 15px;
-	color: #7777;
-	float: right
-}
