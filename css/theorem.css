@@ -34,9 +34,9 @@
   overflow: hidden;
 }
 
-table, td {
+table{
 	border: 0.1px solid black;
-	width: 500px;
+	width: 100%;
 	position:relative;
 	text-align: center;
 	font-size: 12px;
@@ -44,17 +44,31 @@ table, td {
 	border-spacing: 0px;
 }
 
+td{
+  border: 0.1px solid black;
+}
+
+tr{
+  width:100%;
+}
 
 td.eq {
   text-align: left;
   padding: 5px 0px 5px 10px;
+  width: 65%;
 }
 
 td.name{
   padding-left: 1em;
   padding-right: 1em;
+  width: 25%;
 }
 
 td.rule{
   text-align: center;
+  width:10%;
+}
+
+tr:hover{
+  background-color: #ccc;
 }
