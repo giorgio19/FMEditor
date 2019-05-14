@@ -10,7 +10,7 @@ button {
 
 /*Topbar*/
 .topbar {
-	height: 30px;
+	height: 35px;
 	width:100%;
 	float: left;
 	background: #1e1e1e;
@@ -44,7 +44,7 @@ button {
 	font-family: montserrat;
 }
 .topbar-btn {
-	height: 30px;
+	height: 35px;
 	background: #1e1e1e;
 	color: #bababa;
 }
@@ -55,4 +55,28 @@ button {
 .topbar-btn:active {
 	background: #1e1e1e;
 	cursor: pointer;
+}
+
+/* Add a black background color to the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+	cursor:pointer;
+	padding: 18px;
+}
+
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+  float: left;
+  padding: 6px;
+  border: none;
+  font-size: 17px;
+}
+
+.topnav:after{
+	content: '\02795';
+	font-size: 15px;
+	color: #7777;
+	float: right
 }

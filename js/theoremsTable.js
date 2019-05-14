@@ -51,6 +51,7 @@ $(document).ready(function () {
       }
     });
   }
+
 });
 
 function createTable(){
@@ -83,5 +84,4 @@ function createTable(){
         }
       }
         $("#right").append(str);
-        console.log(str);
     }
