@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "antlr4": "^4.7.2",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "mathjax-electron": "^3.0.0",
     "node-latex": "^2.4.4",

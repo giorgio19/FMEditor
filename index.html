@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <title>Predicate</title>
+    <link rel="stylesheet" type="text/css" href="./node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./css/theorem.css">
     <link rel="stylesheet" type="text/css" href="./css/topbar.css">
     <link rel="stylesheet" type="text/css" href="./css/topnav.css">
     <link rel="stylesheet" type="text/css" href="./css/splitter.css">
     <link rel="stylesheet" type="text/css" href="./css/quill-snow.css">
+
     <script> window.jQuery = window.$ = require('jquery'); </script>
     <script type="text/javascript" src="./node_modules/mathjax-electron/MathJax-2.7.5/MathJax.js"></script>
     <script src="./js/theoremsTable.js"></script>
@@ -20,9 +22,9 @@
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
-      <button class="topbar-btn topbar-right" id="save_button" onclick="saveFile()">Save</button>
-      <button class="topbar-btn topbar-right" id="load_button" onclick="loadFile()">Load</button>
-      <button class="topbar-btn topbar-right" id="text" onclick="print()">Print</button>
+        <button class="topbar-btn topbar-right" id="save_button" onclick="saveFile()">Save</button>
+        <button class="topbar-btn topbar-right" id="load_button" onclick="loadFile()">Load</button>
+        <button class="topbar-btn topbar-right" id="text" onclick="print()">Print</button>
       <div class="clear"></div>
     </div>
 
@@ -35,7 +37,8 @@
 
       <div id="right" class="panel-right">
         <div class="topnav">
-
+          <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i>
         </div>
       </div>
     </div>
