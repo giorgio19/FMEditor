@@ -59,11 +59,6 @@ $(".panel-left").resizable({
   resizeHeight: false
 });
 
-$(".panel-top").resizable({
-  handleSelector: ".splitter-horizontal",
-  resizeWidth: false
-});
-
 var bindings = {
   //for indented line
   padEnter:{
@@ -695,35 +690,35 @@ var editor = new Quill('#editor', {
 // Save and Load files
 var loadedfs;
 
-function format(){
-  editor.format('color', 'red');
-  editor.format('font', 'monospace')
-  console.log('color should be red and with a monospace font');
-}
-
-function symbol(){
-  // var x = document.getElementById("symbolSelect").value;
-  var str = "";
-  $( "#symbolSelect option:selected" ).each(function() {
-    str += " " + $( this ).val() + " ";
-  });
-  editor.insertText(editor.getSelection().index, str);
-}
-
-function hint(){
-  var str = "";
-  $( "#hintSelect option:selected" ).each(function() {
-    str += $( this ).val();
-  });
-  if (str == ""){
-    return;
-  } else if (str == "⇒" || str == "⇐"){
-    editor.insertText(editor.getSelection().index, str + hintUnicode);
-  } else {
-    editor.insertText(editor.getSelection().index, str + "  " + hintUnicode);
-  }
-  editor.setSelection(editor.getSelection().index - 2);
-}
+// function format(){
+//   editor.format('color', 'red');
+//   editor.format('font', 'monospace')
+//   console.log('color should be red and with a monospace font');
+// }
+//
+// function symbol(){
+//   var x = document.getElementById("symbolSelect").value;
+//   var str = "";
+//   $( "#symbolSelect option:selected" ).each(function() {
+//     str += " " + $( this ).val() + " ";
+//   });
+//   editor.insertText(editor.getSelection().index, str);
+// }
+//
+// function hint(){
+//   var str = "";
+//   $( "#hintSelect option:selected" ).each(function() {
+//     str += $( this ).val();
+//   });
+//   if (str == ""){
+//     return;
+//   } else if (str == "⇒" || str == "⇐"){
+//     editor.insertText(editor.getSelection().index, str + hintUnicode);
+//   } else {
+//     editor.insertText(editor.getSelection().index, str + "  " + hintUnicode);
+//   }
+//   editor.setSelection(editor.getSelection().index - 2);
+// }
 
 
 function print() {
@@ -782,61 +777,3 @@ function readFromFile(editor, filename) {
         editor.setText(data);
     });
 }
-
-
-// keeping in case can get it to work at another time
-
-// function bindKey(quill, text, prefix, key, shift, replace, hint, pair, quant) {
-//   // console.log('keySeq type = ' + typeof keySeq);
-//   // const key: string = (typeof keySeq === 'number' ? keySeq : keySeq.substr(keySeq.length - 1, 1));
-//   // const prefix: string = (typeof keySeq === 'number' ? '' : (keySeq.length > 1 ? keySeq.substr(0, keySeq.length - 1) : ''));
-//   let bindObj;
-//   if (shift) {
-//     bindObj = {key: key, shiftKey: true};
-//   } else {
-//     bindObj = {key: key};
-//   }
-//   const anchor = (hint ? '\\s{5}' : '\\S*');
-//   const bindOptions = {
-//     collapsed: true,
-//     prefix: new RegExp(anchor + prefix + '$'),
-//     // offset: -10
-//   };
-//   if (hint) {
-//     // bindOptions.offset = 5 + prefix.length;
-//   }
-//   console.log("bindOptions: " + bindOptions + '\nPrefix: '+ prefix);
-//   this.editor.keyboard.addBinding(bindObj, bindOptions,
-//   (range, context) => {
-//     this.editor.format('bold', false);
-//     this.editor.format('italic', false);
-//     let preLength = prefix.length;
-//     if (prefix.startsWith('\\')) {
-//         preLength--;
-//     }
-//     if (pair){
-//       const off = (hint ? this.spacing + preLength : preLength);
-//       this.editor.deleteText(range.index - prefix.length, prefix.length);
-//       this.editor.insertText(range.index - prefix.length , text);
-//     } else {
-//     const off = (hint ? this.spacing + preLength : preLength);
-//     this.editor.deleteText(range.index - prefix.length, prefix.length);
-//     this.editor.insertText(range.index - prefix.length , text);
-//     // this.editor.setSelection(range.index + (hint ? + text.length - 7 - preLength : preLength + text.length - (pair ? 3 : quant ? 11 : 2)));
-//     console.log("prefix after everything: " + prefix);
-//   }
-//   });
-// }
-
-// function bindHint(quill, text, prefix, key, shift, replace) {
-//   this.bindKey(this.editor, text, prefix, key, shift, replace, true);
-//   console.log('bindhint ' + prefix);
-// }
-
-// function bindPair(quill, text, prefix, key, shift, replace) {
-//   this.bindKey(this.editor, text, prefix, key, shift, replace, false, true);
-// }
-
-// function bindQuant(quill, text, prefix, key, shift, replace) {
-//   this.bindKey(this.editor, text, prefix, key, shift, replace, false, false, true);
-// }
