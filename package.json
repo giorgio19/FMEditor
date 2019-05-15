@@ -2,7 +2,7 @@
   "name": "fmeditor",
   "version": "1.0.0",
   "description": "Editor for Formal Methods using Electron and Quill.",
-  "main": "./js/main.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
