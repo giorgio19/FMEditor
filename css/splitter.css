@@ -7,51 +7,49 @@ body, html {
 	background: #1e1e1e;
 	margin-bottom: auto;
 	font-family: montserrat;
-}
 
+}
 .panel-container {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    width: 100%;
-    height: 99%;
-    position: absolute;
-    margin-top: 35px;
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	width: 100%;
+	height: 99%;
+	position: absolute;
+	margin-top: 35px;
 }
 .panel-left {
-    flex: 0 0 auto;  /* only manually resize */
-    width: 100%;
-		height: 97%;
-    min-width: 0px;
-    max-width: 100%;
-    white-space: nowrap;
-    background:#A5A5A5;
-    color: white;
-		overflow: hidden;
+	flex: 0 0 auto;  /* only manually resize */
+	width: 100%;
+	height: 97%;
+	min-width: 0px;
+	max-width: 100%;
+	white-space: nowrap;
+	background: #979797;
+	color: white;
+	overflow: hidden;
 }
 .splitter {
-    flex: 0 0 auto;
-    width: 15px;
-    background: url(./vsizegrip.png) center center no-repeat #535353;
-    /* min-height: 200px; */
-    cursor: col-resize;
-		top: 0px;
+	flex: 0 0 auto;
+	width: 15px;
+	background: url(./vsizegrip.png) center center no-repeat #535353;
+	/* min-height: 200px; */
+	cursor: col-resize;
+	top: 0px;
 }
 .panel-right {
-    flex: 1 1 auto; /* resizable */
-    /* min-height: 200px; */
-    min-width: 0px;
-    background: #eee;
-    overflow: scroll;
-		height: 97%;
-
+	flex: 1 1 auto; /* resizable */
+	/* min-height: 200px; */
+	min-width: 0px;
+	background: #eee;
+	overflow: scroll;
+	height: 97%;
+	width:0px;
 }
-
 .container {
-  display: inline-block;
-  cursor: pointer;
+	display: inline-block;
+	cursor: pointer;
 }
-
 .bar1, .bar2, .bar3 {
 	width: 35px;
 	height: 5px;
@@ -59,15 +57,14 @@ body, html {
 	margin: 6px 0;
 	transition: 0.3s;
 }
-
 .change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	transform: rotate(-45deg) translate(-9px, 6px);
 }
-
-.change .bar2 {opacity: 0;}
-
+.change .bar2 {
+	opacity: 0;
+}
 .change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
+	-webkit-transform: rotate(45deg) translate(-8px, -8px);
+	transform: rotate(45deg) translate(-8px, -8px);
 }

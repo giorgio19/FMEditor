@@ -1,17 +1,15 @@
 .clear {
 	clear: both;
 }
-
 button {
-  -webkit-app-region: no-drag;
+	-webkit-app-region: no-drag;
 	outline: none;
 	border: none;
 }
-
 /*Topbar*/
 .topbar {
 	height: 35px;
-	width:100%;
+	width: 100%;
 	float: left;
 	background: #1e1e1e;
 	/* margin-bottom: 36px; */

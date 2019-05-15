@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Predicate</title>
-    <link rel="stylesheet" type="text/css" href="./node_modules/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/theorem.css">
-    <link rel="stylesheet" type="text/css" href="./css/topbar.css">
-    <link rel="stylesheet" type="text/css" href="./css/topnav.css">
-    <link rel="stylesheet" type="text/css" href="./css/splitter.css">
-    <link rel="stylesheet" type="text/css" href="./css/quill-snow.css">
-
-    <script> window.jQuery = window.$ = require('jquery'); </script>
-    <script type="text/javascript" src="./node_modules/mathjax-electron/MathJax-2.7.5/MathJax.js"></script>
-    <script src="./js/theoremsTable.js"></script>
-    <script src="./js/jquery-resizable.js"></script>
-  </head>
-  <body>
-    <div class="topbar" style="-webkit-app-region: drag">
-      <div class="container" onclick="nav(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
-        <button class="topbar-btn topbar-right" id="save_button" onclick="saveFile()">Save</button>
-        <button class="topbar-btn topbar-right" id="load_button" onclick="loadFile()">Load</button>
-        <button class="topbar-btn topbar-right" id="text" onclick="print()">Print</button>
-      <div class="clear"></div>
-    </div>
-
-    <div id="container" class="panel-container">
-      <div id="left" class="panel-left">
-        <div id="editor"></div>
-      </div>
-
-      <div id="split" class="splitter"></div>
-
-      <div id="right" class="panel-right">
-        <div class="topnav">
-          <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i>
-        </div>
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+<title>Predicate</title>
+<link rel="stylesheet" type="text/css" href="./node_modules/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="./css/theorem.css">
+<link rel="stylesheet" type="text/css" href="./css/topbar.css">
+<link rel="stylesheet" type="text/css" href="./css/topnav.css">
+<link rel="stylesheet" type="text/css" href="./css/splitter.css">
+<link rel="stylesheet" type="text/css" href="./css/quill-snow.css">
+<script> window.jQuery = window.$ = require('jquery'); </script>
+<script type="text/javascript" src="./node_modules/mathjax-electron/MathJax-2.7.5/MathJax.js"></script>
+<script src="./js/theoremsTable.js"></script>
+<script src="./js/jquery-resizable.js"></script>
+</head>
+<body>
+<div class="topbar" style="-webkit-app-region: drag">
+  <div class="container" onclick="nav(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  <button class="topbar-btn topbar-right" id="save_button" onclick="saveFile()">Save</button>
+  <button class="topbar-btn topbar-right" id="load_button" onclick="loadFile()">Load</button>
+  <button class="topbar-btn topbar-right" id="text" onclick="print()">Print</button>
+  <div class="clear"></div>
+</div>
+<div id="container" class="panel-container">
+  <div id="left" class="panel-left">
+    <div id="editor"></div>
+  </div>
+  <div id="split" class="splitter"></div>
+  <div id="right" class="panel-right">
+    <div class="topnav">
+      <div class="search-container">
+    		<button id="collapse" style="float:left"></button>
+    		<button type="submit"><em class="fa fa-search"></em></button>
+        <input type="text" placeholder="Search.." name="search">
       </div>
     </div>
-    <script>
-      // You can also require other files to run in this process
-      require('./js/renderer.js');
-    </script>
-    <script src="./js/app.js" charset="utf-8"></script>
-  </body>
+    <div id="theorems"></div>
+  </div>
+</div>
+<script>
+  // You can also require other files to run in this process
+  require('./js/renderer.js');
+</script>
+<script src="./js/app.js" charset="utf-8"></script>
+</body>
 </html>
